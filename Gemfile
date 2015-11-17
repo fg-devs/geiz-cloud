@@ -47,8 +47,6 @@ end
 
 
 #### ADDED BY GEIZCLOUD DEVELOPERS ####
-# Write HTML tags in a simpler way
-gem 'haml'
 # For environment variables
 gem 'figaro'
 # For user authentication
