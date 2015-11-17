@@ -1,0 +1,80 @@
+<% content_for :no_scaffold do %>
+
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+      <div>
+
+        <div>
+          <h1 class="logo-name"><%= t('project_name') %></h1>
+        </div>
+
+        <h3><%= t('account.welcome') %></h3>
+        <p><%= t('account.login_to') %></p>
+
+
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'm-t') do |f| %>
+          <%= devise_error_messages! %>
+
+          <div class="form-group">
+            <%= f.email_field :email, class: 'form-control', placeholder: t('account.email'), autofocus: true %>
+          </div>
+
+          <div class="form-group">
+            <%= f.password_field :password, class: 'form-control', placeholder: t('account.password'), autocomplete: 'off' %>
+          </div>
+
+          <%= f.button t('account.login'), class: 'btn btn-primary block full-width m-b' %>
+
+          <p class="text-muted text-center">
+            <small><%= t('account.no_account_yet') %></small>
+          </p>
+
+          <%= render 'devise/shared/links' %>
+        <% end %>
+
+        <p class="m-t"><small>&copy; <%= t('copyright') %></small></p>
+      </div>
+    </div>
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>Log in</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end -%>
+
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
