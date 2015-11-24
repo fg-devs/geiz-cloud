@@ -62,3 +62,26 @@ de:
 
 
 
+  # Devise error messages
+  errors:
+    format: "%{message}"
+    messages:
+      not_saved: 'Vorgang konnte nicht durchgeführt werden:'
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            first_name:
+              blank: 'Vorname ist erforderlich'
+            last_name:
+              blank: 'Nachname ist erforderlich'
+            email:
+              invalid: 'E-Mail Adresse ist ungültig'
+              tw_invalid: 'E-Mail Adresse muss eine "@technikum-wien.at" Adresse sein'
+              blank: 'E-Mail Adresse ist erforderlich'
+            password:
+              blank: 'Passwort ist erforderlich'
+              too_short: 'Passwort ist zu kurz'
+            password_confirmation:
+              confirmation: 'Passwort wiederholen ist ungültig'

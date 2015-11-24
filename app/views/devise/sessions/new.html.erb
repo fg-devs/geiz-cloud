@@ -10,7 +10,7 @@
 
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'm-t') do |f| %>
-      <%= devise_error_messages! %>
+      <%= render 'shared/messages' %>
 
       <div class="form-group">
         <%= f.email_field :email, class: 'form-control', placeholder: t('account.email'), autofocus: true %>

@@ -20,8 +20,6 @@
 
 ## Project Status
 ### ToDos
-* REGISTRATION: Check E-Mail for ...@technikum-wien.at
-* DEVISE: Translate devise error messages
 * GENERAL: Authorization - Check in controllers and in HTML to display links only to authorized users
 * CLOUD_SERVICES: Show Cloud Services with filters
 * CLOUD_SERVICES: Add Cloud Services to product comparison
@@ -37,3 +35,5 @@
 
 ### Completed
 * Registration: min. 8 characters delete or refactor
+* REGISTRATION: Check E-Mail for ...@technikum-wien.at
+* DEVISE: Translate devise error messages

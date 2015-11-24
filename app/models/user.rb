@@ -6,6 +6,6 @@ class User < ActiveRecord::Base
   # Additional validations
   validates :first_name, presence: true
   validates :last_name, presence: true
-
+  validates_with TechnikumEmailValidator
 
 end
