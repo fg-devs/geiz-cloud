@@ -1,51 +1,47 @@
-<% content_for :no_scaffold do %>
+<div class="middle-box text-center loginscreen animated fadeInDown">
+  <div>
 
-    <div class="middle-box text-center loginscreen animated fadeInDown">
-      <div>
-
-        <div>
-          <h1 class="logo-name"><%= t('project_name') %></h1>
-        </div>
-
-        <h3><%= t('account.welcome') %></h3>
-        <p><%= t('account.register_to') %></p>
-
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'm-t') do |f| %>
-          <%= devise_error_messages! %>
-
-          <div class="form-group">
-            <%= f.text_field :first_name, class: 'form-control', placeholder: t('account.first_name'), autofocus: true %>
-          </div>
-
-          <div class="form-group">
-            <%= f.text_field :last_name, class: 'form-control', placeholder: t('account.last_name') %>
-          </div>
-
-          <div class="form-group">
-            <%= f.email_field :email, class: 'form-control', placeholder: t('account.email') %>
-          </div>
-
-          <div class="form-group">
-            <%= f.password_field :password, class: 'form-control',
-                                 placeholder: t('account.password') + ' ' + t('account.min_chars', chars: @minimum_password_length), autocomplete: 'off' %>
-          </div>
-
-          <div class="form-group">
-            <%= f.password_field :password_confirmation, class: 'form-control',
-                                 placeholder: t('account.repeat_password'), autocomplete: 'off' %>
-          </div>
-
-          <%= f.button t('account.register'), class: 'btn btn-primary block full-width m-b' %>
-
-          <p class="text-muted text-center">
-            <small><%= t('account.account_yet') %></small>
-          </p>
-
-          <%= render 'devise/shared/links' %>
-        <% end %>
-
-        <p class="m-t"><small>&copy; <%= t('copyright') %></small></p>
-      </div>
+    <div>
+      <h1 class="logo-name"><%= t('project_name_short') %></h1>
     </div>
 
-<% end %>
+    <h3><%= t('account.welcome') %></h3>
+    <p><%= t('account.register_to') %></p>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'm-t') do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="form-group">
+        <%= f.text_field :first_name, class: 'form-control', placeholder: t('account.first_name'), autofocus: true %>
+      </div>
+
+      <div class="form-group">
+        <%= f.text_field :last_name, class: 'form-control', placeholder: t('account.last_name') %>
+      </div>
+
+      <div class="form-group">
+        <%= f.email_field :email, class: 'form-control', placeholder: t('account.email') %>
+      </div>
+
+      <div class="form-group">
+        <%= f.password_field :password, class: 'form-control',
+                             placeholder: t('account.password') + ' ' + t('account.min_chars', chars: @minimum_password_length), autocomplete: 'off' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.password_field :password_confirmation, class: 'form-control',
+                             placeholder: t('account.repeat_password'), autocomplete: 'off' %>
+      </div>
+
+      <%= f.button t('account.register'), class: 'btn btn-primary block full-width m-b' %>
+
+      <p class="text-muted text-center">
+        <small><%= t('account.account_yet') %></small>
+      </p>
+
+      <%= render 'devise/shared/links' %>
+    <% end %>
+
+    <p class="m-t"><small>&copy; <%= t('copyright') %></small></p>
+  </div>
+</div>

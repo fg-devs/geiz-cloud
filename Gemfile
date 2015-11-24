@@ -46,14 +46,17 @@ group :development do
 end
 
 
+
 #### ADDED BY GEIZCLOUD DEVELOPERS ####
-# For environment variables
+# For environment variables (https://github.com/laserlemon/figaro)
 gem 'figaro'
-# For user authentication
+# For user authentication (https://github.com/plataformatec/devise)
 gem 'devise'
+# For breadcrumbs (https://github.com/lassebunk/gretel)
+gem 'gretel'
 
 
-## Rails-assets (frontend application dependencies)
+## Rails-assets (frontend application dependencies; https://rails-assets.org)
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-font-awesome', '~> 4.3.0'

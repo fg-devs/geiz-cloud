@@ -21,8 +21,24 @@
 
 de:
 
-  project_name: 'GZ'
+  project_name: 'GeizCloud'
+  project_name_short: 'GZ'
   copyright: '2015 GeizCloud'
+  version: 'Version'
+
+  navigation:
+    product_comparison: 'Produktvergleich'
+    cloud_services: 'Cloud Services'
+    display_cloud_services: 'Cloud Services anzeigen'
+    create_cloud_services: 'Cloud Service anlegen'
+    user_administration: 'Benutzerverwaltung'
+    profile: 'Profil'
+    edit_profile: 'Profil ändern'
+    logout: 'Ausloggen'
+
+  breadcrumbs:
+    home: 'Home'
+    cloud_services: 'Cloud Services'
 
   account:
     login: 'Einloggen'
