@@ -12,6 +12,10 @@
     - MYSQL_DEV_PASSWORD: xxx
     - MYSQL_PRD_PASSWORD: xxx
 
+## Developing
+### Git
+* Use --no-ff option to merge branches (for example `$ git merge --no-ff feature-xxxx`)
+
 ## Information, Tutorials and more
 - [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links)
 - [Rails Assets](http://rails-assets.org) (for application dependencies, ex. Bootstrap)
