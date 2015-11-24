@@ -2,7 +2,7 @@
 
 ## Used versions
 - Ruby 2.2.0 (Tip: use [Ruby Version Manager](https://rvm.io) to manage Ruby versions)
-- Rails 4.2.5
+- Rails 4.2.5 (will be installed with Bundler automatically through Gemfile)
 
 ## Installation
 1. Pull/Clone repository
@@ -20,8 +20,20 @@
 
 ## Project Status
 ### ToDos
-* Check E-Mail for ...@technikum-wien.at
-* Translate devise error messages
+* REGISTRATION: Check E-Mail for ...@technikum-wien.at
+* DEVISE: Translate devise error messages
+* GENERAL: Authorization - Check in controllers and in HTML to display links only to authorized users
+* CLOUD_SERVICES: Show Cloud Services with filters
+* CLOUD_SERVICES: Add Cloud Services to product comparison
+* CLOUD_SERVICES: Remove Cloud Services from product comparison
+* CLOUD_SERVICES: Show Cloud Services as admin
+* CLOUD_SERVICES: Create Cloud Services as admin
+* CLOUD_SERVICES: Update Cloud Services as admin
+* USER/SESSION_MGMT: Show users as admin
+* USER/SESSION_MGMT: Update users as admin
+* USER/SESSION_MGMT: Edit profile
+* USER/SESSION_MGMT: Logout
+* REST_API: Create REST API for Cloud Service Providers
 
 ### Completed
 * Registration: min. 8 characters delete or refactor
