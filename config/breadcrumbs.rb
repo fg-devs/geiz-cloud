@@ -2,11 +2,20 @@ crumb :root do
   link I18n.t('breadcrumbs.home'), root_path
 end
 
-
+# Search cloud services
 crumb :cloud_services do
   link I18n.t('breadcrumbs.cloud_services')
   parent :root
 end
+
+# Edit profile
+crumb :edit_profile do
+  link I18n.t('breadcrumbs.edit_profile')
+  parent :root
+end
+
+
+
 
 # crumb :projects do
 #   link "Projects", projects_path

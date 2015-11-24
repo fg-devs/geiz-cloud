@@ -29,11 +29,11 @@
 * CLOUD_SERVICES: Update Cloud Services as admin
 * USER/SESSION_MGMT: Show users as admin
 * USER/SESSION_MGMT: Update users as admin
-* USER/SESSION_MGMT: Edit profile
-* USER/SESSION_MGMT: Logout
 * REST_API: Create REST API for Cloud Service Providers
 
 ### Completed
 * Registration: min. 8 characters delete or refactor
 * REGISTRATION: Check E-Mail for ...@technikum-wien.at
 * DEVISE: Translate devise error messages
+* USER/SESSION_MGMT: Logout
+* USER/SESSION_MGMT: Edit profile
