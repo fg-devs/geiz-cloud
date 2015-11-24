@@ -39,6 +39,14 @@ de:
   breadcrumbs:
     home: 'Home'
     cloud_services: 'Cloud Services'
+    edit_profile: 'Profil ändern'
+
+  buttons:
+    save: 'Speichern'
+    cancel: 'Abbrechen'
+
+  profile:
+    edit_profile: 'Profil ändern'
 
   account:
     login: 'Einloggen'
@@ -56,6 +64,8 @@ de:
     first_name: 'Vorname'
     last_name: 'Nachname'
     email: 'E-Mail'
+    current_password: 'Aktuelles Passwort'
+    new_password: 'Neues Passwort'
     password: 'Passwort'
     repeat_password: 'Passwort wiederholen'
 
@@ -80,8 +90,11 @@ de:
               invalid: 'E-Mail Adresse ist ungültig'
               tw_invalid: 'E-Mail Adresse muss eine "@technikum-wien.at" Adresse sein'
               blank: 'E-Mail Adresse ist erforderlich'
+            current_password:
+              blank: 'Aktuelles Passwort ist erforderlich'
+              invalid: 'Aktuelles Passwort ist falsch'
             password:
               blank: 'Passwort ist erforderlich'
               too_short: 'Passwort ist zu kurz'
             password_confirmation:
-              confirmation: 'Passwort wiederholen ist ungültig'
+              confirmation: 'Passwörter stimmen nicht überein'
