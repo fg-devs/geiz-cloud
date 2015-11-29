@@ -37,4 +37,20 @@ body.top-navigation {
 
 
 
-
+// TABLE
+.table {
+  thead {
+    td {
+      font-weight: bold;
+    }
+  }
+  tbody {
+    tr {
+      td.action-icons {
+        a {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+}

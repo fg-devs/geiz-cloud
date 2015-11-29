@@ -6,7 +6,7 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= devise_error_messages! %>
 
-    <%= # Remove this block, if confirmable feature will not be used
+    <% # Remove this block, if confirmable feature will not be used
         # otherwise follow this tutorial: https://github.com/plataformatec/devise/wiki/How-To:-Add-:confirmable-to-Users %>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>

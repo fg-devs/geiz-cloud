@@ -1,0 +1,72 @@
+<% breadcrumb :user_administration %>
+
+<div class="ibox afloat-e-margins">
+  <div class="ibox-title">
+    <h5><%= I18n.t('user_administration.all_users') %></h5>
+
+  </div>
+  <div class="ibox-content">
+
+    <!-- Search field -->
+    <div class="row">
+      <div class="col-sm-3">
+        <input type="text" class="form-control input-sm m-b-xs" id="filter" placeholder="<%= t('user_administration.search_users') %>">
+      </div>
+    </div>
+
+    <!-- Table with users -->
+    <% unless @users.nil? %>
+    <table id="footable-users" class="footable table table-stripped" data-page-size="8" data-filter="#filter">
+      <thead>
+        <tr>
+          <th data-hide="phone"><%= t('account.first_name') %></th>
+          <th data-hide="phone"><%= t('account.last_name') %></th>
+          <th><%= t('account.email') %></th>
+          <th class="text-center"><%= t('status') %></th>
+          <td class="text-center" data-sort-ignore="false"><%= t('actions') %></td>
+        </tr>
+      </thead>
+
+      <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.first_name %></td>
+          <td><%= user.last_name %></td>
+          <td><%= user.email %></td>
+          <td class="text-center">
+            <% if user_active?(user) %>
+            <span class="glyphicon glyphicon-ok text-info"></span>
+            <% else %>
+            <span class="glyphicon glyphicon-remove text-danger"></span>
+            <% end %>
+          </td>
+          <td class="text-center action-icons">
+            <%= link_to edit_admin_user_path(user) do %>
+                <i class="glyphicon glyphicon-pencil"></i>
+            <% end %>
+
+            <% unless user.admin || user == current_user %>
+              <%= link_to admin_user_path(user), data: { confirm: t('user_administration.sure_to_change_status') }, method: :delete do %>
+                <% if user_active?(user) %>
+                  <i class="fa fa-lock"></i>
+                <% else %>
+                  <i class="fa fa-unlock"></i>
+                <% end %>
+              <% end %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+
+      <tfoot>
+      <tr>
+        <td colspan="5" class="footable-visible">
+          <%= paginate @users %>
+        </td>
+      </tr>
+      </tfoot>
+    </table>
+    <% end %>
+
+  </div>
+</div>
