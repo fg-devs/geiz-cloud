@@ -30,6 +30,7 @@ de:
   actions: 'Aktionen'
 
   navigation:
+    search: 'Suchen'
     product_comparison: 'Produktvergleich'
     cloud_services: 'Cloud Services'
     display_cloud_services: 'Cloud Services anzeigen'
