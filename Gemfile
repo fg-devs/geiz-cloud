@@ -54,7 +54,10 @@ gem 'figaro'
 gem 'devise'
 # For breadcrumbs (https://github.com/lassebunk/gretel)
 gem 'gretel'
-
+# For pagination (https://github.com/amatsuda/kaminari)
+gem 'kaminari'
+# To generate Seeds with sample data (https://github.com/stympy/faker)
+gem 'faker'
 
 ## Rails-assets (frontend application dependencies; https://rails-assets.org)
 source 'https://rails-assets.org' do

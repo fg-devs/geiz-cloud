@@ -8,5 +8,16 @@
 
 
 # Create Admin User
-User.create({first_name: "Adm", last_name: "min", email: "kuhbana@gmail.com", password: "12345678",
-             password_confirmation: "12345678", admin: true})
+# User.create({first_name: 'Administrator', last_name: 'Administrator', email: 'kuhbana@gmail.com', password: '12345678',
+#              password_confirmation: '12345678', admin: true})
+
+
+# Create sample users
+1.upto(20) do |i|
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name
+
+  User.create({first_name: first_name, last_name: last_name,
+               email: i.to_s + '_' + first_name + '.' + last_name + '@technikum-wien.at', password: '12345678',
+               password_confirmation: '12345678', admin: false})
+end

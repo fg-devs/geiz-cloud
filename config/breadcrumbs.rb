@@ -8,6 +8,24 @@ crumb :cloud_services do
   parent :root
 end
 
+# Administration
+crumb :administration do
+  link I18n.t('breadcrumbs.administration')
+  parent :root
+end
+
+# Display all users
+crumb :user_administration do
+  link I18n.t('breadcrumbs.user_administration'), admin_users_path
+  parent :administration
+end
+
+# Administrate specific user
+crumb :administrate_user do
+  link I18n.t('breadcrumbs.edit_user')
+  parent :user_administration
+end
+
 # Edit profile
 crumb :edit_profile do
   link I18n.t('breadcrumbs.edit_profile')

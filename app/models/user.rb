@@ -8,4 +8,9 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   validates_with TechnikumEmailValidator
 
+  # Overrides Devise method: Check if user is allowed for login
+  def active_for_authentication?
+    super && active
+  end
+
 end

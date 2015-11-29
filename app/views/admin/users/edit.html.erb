@@ -1,0 +1,38 @@
+<% breadcrumb :administrate_user %>
+
+<div class="ibox float-e-margins">
+  <div class="ibox-title">
+    <h5><%= t('profile.edit_user', first_name: @user.first_name, last_name: @user.last_name) %></h5>
+  </div>
+
+  <div class="ibox-content">
+    <div class="row">
+      <div class="col-md-6">
+      <%= form_for(@user, url: admin_user_path, method: :put) do |f| %>
+
+          <%= render 'shared/form_messages', object: f.object %>
+
+          <div class="form-group">
+            <%= f.label :first_name, t('account.first_name') %>
+            <%= f.text_field :first_name, class: 'form-control', placeholder: t('account.first_name'), autofocus: true %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :last_name, t('account.last_name') %>
+            <%= f.text_field :last_name, class: 'form-control', placeholder: t('account.last_name') %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :email, t('account.email') %>
+            <%= f.email_field :email, class: 'form-control', placeholder: t('account.email') %>
+          </div>
+
+          <!-- Buttons -->
+          <%= f.button t('buttons.save'), class: 'btn btn-primary' %>
+          <%= link_to(t('buttons.cancel'), admin_users_path, class: 'btn btn-white') %>
+
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -29,9 +29,11 @@
           </ul>
         </li>
 
+        <% if current_user.admin? %>
         <li>
-          <%= link_to t('navigation.user_administration') %>
+          <%= link_to(t('navigation.user_administration'), admin_users_path) %>
         </li>
+        <% end %>
       </ul>
 
       <!-- Right side -->

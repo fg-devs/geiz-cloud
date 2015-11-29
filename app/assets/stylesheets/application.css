@@ -12,8 +12,9 @@
  *
  *= require bootstrap
  *= require font-awesome
- *= require inspinia/inspinia
- *= require inspinia/animate
+ *= require inspinia
+ *= require animate
+ *= require footable.core
  *= require_tree .
  *= require_self
  */

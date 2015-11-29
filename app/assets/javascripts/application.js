@@ -14,4 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require footable/footable.min
+//= require footable/footable.filter.min
+//= require footable/footable.sort.min
 //= require_tree .
