@@ -10,13 +10,13 @@
     <!-- Search field -->
     <div class="row">
       <div class="col-sm-3">
-        <input type="text" class="form-control input-sm m-b-xs" id="filter" placeholder="<%= t('user_administration.search_users') %>">
+        <input type="text" class="form-control input-sm m-b-xs" id="filter-users" placeholder="<%= t('user_administration.search_users') %>">
       </div>
     </div>
 
     <!-- Table with users -->
     <% unless @users.nil? %>
-    <table id="footable-users" class="footable table table-stripped" data-page-size="8" data-filter="#filter">
+    <table id="footable-users" class="footable table table-stripped" data-page-size="8" data-filter="#filter-users">
       <thead>
         <tr>
           <th data-hide="phone"><%= t('account.first_name') %></th>
