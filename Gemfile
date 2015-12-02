@@ -48,6 +48,11 @@ end
 
 
 #### ADDED BY GEIZCLOUD DEVELOPERS ####
+group :development do
+  # For better debugging (https://github.com/charliesome/better_errors)
+  gem 'better_errors'
+end
+
 # For environment variables (https://github.com/laserlemon/figaro)
 gem 'figaro'
 # For user authentication (https://github.com/plataformatec/devise)
