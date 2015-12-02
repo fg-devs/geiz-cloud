@@ -2,7 +2,7 @@
 
 <div class="ibox afloat-e-margins">
   <div class="ibox-title">
-    <h5><%= I18n.t('user_administration.all_users') %></h5>
+    <h5><%= t('user_administration.registered_users') %></h5>
 
   </div>
   <div class="ibox-content">
@@ -12,7 +12,13 @@
       <div class="col-sm-3">
         <input type="text" class="form-control input-sm m-b-xs" id="filter-users" placeholder="<%= t('user_administration.search_users') %>">
       </div>
+      <div class="col-sm-9 text-right">
+          <div class="pagination-info">
+            <%= page_entries_info @users, entry_name: t('user_administration.user') %>
+          </div>
+      </div>
     </div>
+
 
     <!-- Table with users -->
     <% unless @users.nil? %>
@@ -33,7 +39,7 @@
           <td><%= user.first_name %></td>
           <td><%= user.last_name %></td>
           <td><%= user.email %></td>
-          <td class="text-center">
+          <td class="text-center" data-value="<%= user.active %>">
             <% if user_active?(user) %>
             <span class="glyphicon glyphicon-ok text-info"></span>
             <% else %>
@@ -58,15 +64,17 @@
         </tr>
       <% end %>
 
-      <tfoot>
-      <tr>
-        <td colspan="5" class="footable-visible">
-          <%= paginate @users %>
-        </td>
-      </tr>
-      </tfoot>
     </table>
-    <% end %>
+
+    <div class="row">
+      <div class="col-lg-12 text-right">
+        <%= paginate @users %>
+
+      </div>
+    </div>
+
+
+  <% end %>
 
   </div>
 </div>

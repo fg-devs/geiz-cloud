@@ -48,13 +48,21 @@ de:
     edit_user: 'Benutzer ändern'
     edit_profile: 'Profil ändern'
 
-  views:
-    pagination:
-      truncate: '...'
-      first: 'Erste'
-      last: 'Letzte'
-      previous: 'Vorherige'
-      next: 'Nächste'
+  pagination:
+    truncate: '...'
+    first: 'Erste'
+    last: 'Letzte'
+    previous: 'Vorherige'
+    next: 'Nächste'
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "Keine %{entry_name} gefunden"
+          one: "Zeige <b>1</b> %{entry_name}"
+          other: "Zeige alle <b>%{count}</b> %{entry_name}"
+      more_pages:
+        display_entries: "Zeige <b>%{first}&nbsp;-&nbsp;%{last}</b> von <b>%{total}</b> Ergebnissen"
 
   buttons:
     save: 'Speichern'
@@ -86,8 +94,9 @@ de:
     repeat_password: 'Passwort wiederholen'
 
   user_administration:
+    user: 'Benutzer'
     search_users: 'Benutzer suchen'
-    all_users: 'Alle Benutzer'
+    registered_users: 'Registrierte Benutzer'
     user_updated: 'Der Benutzer wurde erfolgreich aktualisiert.'
     status_updated: 'Der Status des Benutzers wurde erfolgreich aktualisiert.'
     sure_to_change_status: 'Bist du dir sicher, dass du den Status des Benutzers ändern möchtest?'
