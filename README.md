@@ -33,6 +33,7 @@
 * CLOUD_SERVICES: Show Cloud Services as admin
 * CLOUD_SERVICES: Update Cloud Services as admin
 * REST_API: Create REST API for Cloud Service Providers
+* GENERAL: UserService GetAll Remove ::
 
 ### Completed
 * Registration: min. 8 characters delete or refactor

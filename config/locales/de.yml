@@ -28,6 +28,7 @@ de:
 
   status: 'Status'
   actions: 'Aktionen'
+  new: 'Neu'
 
   navigation:
     search: 'Suchen'
@@ -104,8 +105,10 @@ de:
     sure_to_change_status: 'Bist du dir sicher, dass du den Status des Benutzers ändern möchtest?'
 
   cloud_service_administration:
+    cloud_services: 'Cloud Services'
     create_cloud_service: 'Cloud Service anlegen'
     display_cloud_services: 'Cloud Services anzeigen'
+    search_cloud_services: 'Cloud Services suchen'
     cloud_service_model: 'Cloud Service Modell'
     title: 'Titel'
     short_description: 'Kurzbeschreibung'
@@ -126,6 +129,8 @@ de:
     active: 'Aktiv'
     inactive: 'Inaktiv'
     cloud_service_created: 'Cloud Services wurde erfolgreich erstellt.'
+    status_updated: 'Der Status des Cloud Services wurde erfolgreich aktualisiert.'
+    sure_to_change_status: 'Bist du dir sicher, dass du den Status des Cloud Services ändern möchtest?'
 
 
   # Devise error messages
@@ -198,3 +203,12 @@ de:
               blank: 'Speicherplatz ist erforderlich'
             bandwidth:
               blank: 'Bandbreite ist erfoderlich'
+
+  number:
+    currency:
+      format:
+        format: "%n %u"
+        unit: "&euro;"
+        separator: "."
+        delimiter: ","
+        precision: 2

@@ -21,15 +21,15 @@
 
 
     <!-- Table with users -->
-    <% unless @users.nil? %>
-    <table id="footable-users" class="footable table table-stripped" data-page-size="8" data-filter="#filter-users">
+    <% unless @users.nil? || @users.blank? %>
+    <table id="footable-users" class="footable table table-stripped toggle-arrow-tiny" data-filter="#filter-users">
       <thead>
         <tr>
+          <th><%= t('account.last_name') %></th>
           <th data-hide="phone"><%= t('account.first_name') %></th>
-          <th data-hide="phone"><%= t('account.last_name') %></th>
-          <th><%= t('account.email') %></th>
+          <th data-hide="phone"><%= t('account.email') %></th>
           <th class="text-center"><%= t('status') %></th>
-          <td class="text-center" data-sort-ignore="false"><%= t('actions') %></td>
+          <th class="text-center" data-sort-ignore="true"><%= t('actions') %></th>
         </tr>
       </thead>
 
