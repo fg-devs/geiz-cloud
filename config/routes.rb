@@ -10,7 +10,8 @@ Rails.application.routes.draw do
     delete 'users/:id'  => 'users#activate_or_deactivate'
 
     # Cloud Services
-    resources :cloud_services
+    resources :cloud_services, except: :destroy
+    delete 'cloud_services/:id'  => 'cloud_services#activate_or_deactivate'
   end
 
 

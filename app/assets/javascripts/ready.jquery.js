@@ -7,8 +7,9 @@ $(document).ready(function() {
         showSpinner: false
     });
 
-    // Init footable for user table
+    // Init footables
     $('#footable-users').footable();
+    $('#footable-cloud-services').footable();
 
     // Init Checkbox plugin
     $('.i-checks').iCheck({
@@ -29,8 +30,9 @@ $(document).ready(function() {
 
 $(document).on('page:load', function() {
 
-    // Init footable for user table
+    // Init footables
     $('#footable-users').footable();
+    $('#footable-cloud-services').footable();
 
     // Init Checkbox plugin
     $('.i-checks').iCheck({

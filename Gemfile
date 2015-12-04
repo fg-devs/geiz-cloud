@@ -51,6 +51,8 @@ end
 group :development do
   # For better debugging (https://github.com/charliesome/better_errors)
   gem 'better_errors'
+  # Advanced Database cleaning tool (https://github.com/DatabaseCleaner/database_cleaner)
+  gem 'database_cleaner'
 end
 
 # For environment variables (https://github.com/laserlemon/figaro)

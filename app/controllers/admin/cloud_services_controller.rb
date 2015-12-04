@@ -6,6 +6,8 @@ class Admin::CloudServicesController < ApplicationController
 
   # GET admin/cloud_services
   def index
+    cloud_services = CloudServiceService::GetAll.build.call
+    @cloud_services = cloud_services.page(params[:page]).per(10)
   end
 
   # GET admin/cloud_services/new
@@ -36,6 +38,17 @@ class Admin::CloudServicesController < ApplicationController
 
   end
 
+
+  # DELETE admin/cloud_services/:id
+  def activate_or_deactivate
+    success, @cloud_service = CloudServiceService::ChangeStatus.build.call(params[:id])
+
+    if success
+      redirect_to(admin_cloud_services_path, flash: { success: I18n.t('cloud_service_administration.status_updated') })
+    else
+      render 'index'
+    end
+  end
 
   private
 
