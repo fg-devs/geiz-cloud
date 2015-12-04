@@ -3,6 +3,9 @@ $(document).ready(function() {
 
     // TODO: REFACTOR...
 
+    NProgress.configure({
+        showSpinner: false
+    });
 
     // Init footable for user table
     $('#footable-users').footable();

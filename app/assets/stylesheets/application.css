@@ -12,6 +12,8 @@
  *
  *= require bootstrap
  *= require font-awesome
+ *= require nprogress
+ *= require nprogress-bootstrap
  *= require inspinia
  *= require animate
  *= require footable.core

@@ -63,6 +63,8 @@ gem 'gretel'
 gem 'kaminari'
 # To generate Seeds with sample data (https://github.com/stympy/faker)
 gem 'faker'
+# Show AJAX loader on page loading, due to Turbolinks (https://github.com/caarlos0/nprogress-rails)
+gem 'nprogress-rails'
 
 ## Rails-assets (frontend application dependencies; https://rails-assets.org)
 source 'https://rails-assets.org' do

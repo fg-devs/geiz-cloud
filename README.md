@@ -26,13 +26,11 @@
 ## Project Status
 ### ToDos
 * GENERAL: Authorization - Check in controllers and in HTML to display links only to authorized users
-* GENERAL: Add Turbolinks loader for better usability
 * GENERAL: Add active_link_to in navigation to mark current visited links
 * CLOUD_SERVICES: Show Cloud Services with filters
 * CLOUD_SERVICES: Add Cloud Services to product comparison
 * CLOUD_SERVICES: Remove Cloud Services from product comparison
 * CLOUD_SERVICES: Show Cloud Services as admin
-* CLOUD_SERVICES: Create Cloud Services as admin
 * CLOUD_SERVICES: Update Cloud Services as admin
 * REST_API: Create REST API for Cloud Service Providers
 
@@ -44,3 +42,5 @@
 * USER/SESSION_MGMT: Edit profile
 * USER/SESSION_MGMT: Show users as admin
 * USER/SESSION_MGMT: Update users as admin
+* CLOUD_SERVICES: Create Cloud Services as admin
+* GENERAL: Add Turbolinks loader for better usability
