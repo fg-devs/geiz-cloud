@@ -22,6 +22,7 @@
           <%= link_to t('navigation.product_comparison') %>
         </li>
 
+        <% if current_user.admin? %>
         <li class="dropdown">
           <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown">
             <%= t('navigation.cloud_services') %>
@@ -29,11 +30,10 @@
           </a>
           <ul role="menu" class="dropdown-menu">
             <li><%= link_to t('navigation.display_cloud_services') %></li>
-            <li><%= link_to t('navigation.create_cloud_services') %></li>
+            <li><%= link_to(t('navigation.create_cloud_services'), new_admin_cloud_service_path) %></li>
           </ul>
         </li>
 
-        <% if current_user.admin? %>
         <li>
           <%= link_to(t('navigation.user_administration'), admin_users_path) %>
         </li>

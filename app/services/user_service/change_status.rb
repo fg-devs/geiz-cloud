@@ -1,4 +1,4 @@
-class Services::User::ChangeStatus
+class UserService::ChangeStatus
 
   def self.build
     new

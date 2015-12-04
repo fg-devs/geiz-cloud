@@ -1,4 +1,4 @@
-class Services::User::Update
+class UserService::Update
 
   def self.build
     new

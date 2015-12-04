@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :rememberable, :trackable, :validatable
 
+  # Relationships
+  has_many :cloud_services
+
   # Additional validations
   validates :first_name, presence: true
   validates :last_name, presence: true

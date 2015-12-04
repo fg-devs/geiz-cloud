@@ -44,6 +44,8 @@ de:
     home: 'Home'
     cloud_services: 'Cloud Services'
     administration: 'Administration'
+    cloud_service_administration: 'Cloud Services verwalten'
+    create_cloud_service: 'Cloud Service anlegen'
     user_administration: 'Benutzerverwaltung'
     edit_user: 'Benutzer ändern'
     edit_profile: 'Profil ändern'
@@ -101,9 +103,29 @@ de:
     status_updated: 'Der Status des Benutzers wurde erfolgreich aktualisiert.'
     sure_to_change_status: 'Bist du dir sicher, dass du den Status des Benutzers ändern möchtest?'
 
-
-  services:
-    error_messages:
+  cloud_service_administration:
+    create_cloud_service: 'Cloud Service anlegen'
+    display_cloud_services: 'Cloud Services anzeigen'
+    cloud_service_model: 'Cloud Service Modell'
+    title: 'Titel'
+    short_description: 'Kurzbeschreibung'
+    long_description: 'Langbeschreibung'
+    price: 'Preis'
+    price_per_month: 'Preis pro Monat'
+    price_per_timeunit_or_calcunit: 'Preis pro Zeiteinheit/Recheneinheit'
+    price_per_timeunit: 'Preis pro Zeiteinheit'
+    provider_url: 'Link zum Angebot'
+    operating_system: 'Betriebssystem'
+    ram: 'RAM (in MB)'
+    cpu: 'CPU (in GHz)'
+    storage: 'Speicherplatz (in MB)'
+    bandwidth: 'Bandbreite (in Mb/s)'
+    paas_categories: 'PaaS Kategorien'
+    saas_categories: 'SaaS Kategorien'
+    status: 'Status'
+    active: 'Aktiv'
+    inactive: 'Inaktiv'
+    cloud_service_created: 'Cloud Services wurde erfolgreich erstellt.'
 
 
   # Devise error messages
@@ -111,6 +133,21 @@ de:
     format: "%{message}"
     messages:
       not_saved: 'Vorgang konnte nicht durchgeführt werden:'
+
+
+  # Language strings that are used in database
+  for_database:
+    paas_categories:
+      monitoring_and_alerting: 'Monitoring und Alarmierung'
+      operation_and_deployment: 'Betrieb und Deployment'
+      scaling: 'Skalierung'
+      apis_and_devtools: 'APIs und Developer Tools'
+      standards_and_transferability: 'Standards und Übertragbarkeit'
+      security: 'Security'
+    saas_categories:
+      collaboration: 'Kollaboration'
+
+  # ActiveRecord errors
   activerecord:
     errors:
       models:
@@ -132,3 +169,32 @@ de:
               too_short: 'Passwort ist zu kurz'
             password_confirmation:
               confirmation: 'Passwörter stimmen nicht überein'
+        cloud_service:
+          attributes:
+            title:
+              blank: 'Titel ist erforderlich'
+              too_long: 'Titel ist zu lang (max. %{count} Zeichen)'
+            short_description:
+              blank: 'Kurzbeschreibung ist erforderlich'
+              too_long: 'Kurzbeschreibung ist zu lang (max. %{count} Zeichen)'
+            long_description:
+              blank: 'Langbeschreibung ist erfoderlich'
+            provider_url:
+              blank: 'Link zum Angebot ist erfoderlich'
+              too_long: 'Link zum Angebot ist zu lang (max. %{count} Zeichen)'
+            price:
+              blank: 'Preis ist erforderlich'
+            paas_categories:
+              blank: 'Mindestens eine PaaS Kategorie ist erforderlich'
+            saas_categories:
+              blank: 'Mindestens eine SaaS Kategorie ist erforderlich'
+        iaas_attribute:
+          attributes:
+            ram:
+              blank: 'RAM ist erforderlich'
+            cpu:
+              blank: 'CPU ist erforderlich'
+            storage:
+              blank: 'Speicherplatz ist erforderlich'
+            bandwidth:
+              blank: 'Bandbreite ist erfoderlich'

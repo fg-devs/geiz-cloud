@@ -1,4 +1,4 @@
-class Services::User::GetAll
+class UserService::GetAll
 
   def self.build
     new
@@ -6,7 +6,7 @@ class Services::User::GetAll
 
   # Get all registered users
   def call
-    User.all
+    ::User.all
   end
 
 end

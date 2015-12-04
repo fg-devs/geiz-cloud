@@ -1,4 +1,4 @@
-class Services::User::GetSingle
+class UserService::GetSingle
 
   def self.build
     new

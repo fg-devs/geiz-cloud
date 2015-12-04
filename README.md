@@ -26,6 +26,8 @@
 ## Project Status
 ### ToDos
 * GENERAL: Authorization - Check in controllers and in HTML to display links only to authorized users
+* GENERAL: Add Turbolinks loader for better usability
+* GENERAL: Add active_link_to in navigation to mark current visited links
 * CLOUD_SERVICES: Show Cloud Services with filters
 * CLOUD_SERVICES: Add Cloud Services to product comparison
 * CLOUD_SERVICES: Remove Cloud Services from product comparison
