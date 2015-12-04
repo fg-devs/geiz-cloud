@@ -17,4 +17,5 @@
 //= require footable/footable.min
 //= require footable/footable.filter.min
 //= require footable/footable.sort.min
+//= require icheck.min
 //= require_tree .

@@ -1,0 +1,24 @@
+<div class="form-group">
+  <%= f.label :operating_system_id, t('cloud_service_administration.operating_system') %>
+  <%= f.select :operating_system_id, options_from_collection_for_select(@operating_systems, 'id', 'name', @cloud_service.iaas_attribute.operating_system_id), {}, autofocus: true, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <%= f.label :ram, t('cloud_service_administration.ram') %>
+  <%= f.number_field :ram, class: 'form-control', placeholder: t('cloud_service_administration.ram') %>
+</div>
+
+<div class="form-group">
+  <%= f.label :cpu, t('cloud_service_administration.cpu') %>
+  <%= f.number_field :cpu, class: 'form-control', placeholder: t('cloud_service_administration.cpu') %>
+</div>
+
+<div class="form-group">
+  <%= f.label :storage, t('cloud_service_administration.storage') %>
+  <%= f.number_field :storage, class: 'form-control', placeholder: t('cloud_service_administration.storage') %>
+</div>
+
+<div class="form-group">
+  <%= f.label :bandwidth, t('cloud_service_administration.bandwidth') %>
+  <%= f.number_field :bandwidth, class: 'form-control', placeholder: t('cloud_service_administration.bandwidth') %>
+</div>

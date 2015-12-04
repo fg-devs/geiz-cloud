@@ -5,8 +5,12 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
 
   namespace :admin do
+    # User
     resources :users, only: [:index, :edit, :update]
     delete 'users/:id'  => 'users#activate_or_deactivate'
+
+    # Cloud Services
+    resources :cloud_services
   end
 
 

@@ -1,0 +1,35 @@
+<div class="form-group">
+  <%= f.label :title, t('cloud_service_administration.title') %>
+  <%= f.text_field :title, class: 'form-control', placeholder: t('cloud_service_administration.title') %>
+</div>
+
+<div class="form-group">
+  <%= f.label :short_description, t('cloud_service_administration.short_description') %>
+  <%= f.text_field :short_description, class: 'form-control', placeholder: t('cloud_service_administration.short_description') %>
+</div>
+
+<div class="form-group">
+  <%= f.label :long_description, t('cloud_service_administration.long_description') %>
+  <%= f.text_area :long_description, class: 'form-control', rows: '8', placeholder: t('cloud_service_administration.long_description') %>
+</div>
+
+<div class="form-group">
+  <%= f.label :provider_url, t('cloud_service_administration.provider_url') %>
+  <%= f.url_field :provider_url, class: 'form-control', placeholder: t('cloud_service_administration.provider_url') %>
+</div>
+
+<div class="form-group">
+  <%= f.label :active, t('cloud_service_administration.status') %>
+  <div class="i-checks">
+    <label>
+      <%= f.radio_button :active, '1', checked: @cloud_service.active ? true : false %>
+      <%= t('cloud_service_administration.active') %>
+    </label>
+  </div>
+  <div class="i-checks">
+    <label>
+      <%= f.radio_button :active, '0', checked: !@cloud_service.active ? true : false %>
+      <%= t('cloud_service_administration.inactive') %>
+    </label>
+  </div>
+</div>

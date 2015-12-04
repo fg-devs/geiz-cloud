@@ -1,0 +1,34 @@
+// Place all the styles related to the CloudServices controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#new_cloud_service {
+
+  &.type-selected-iaas {
+    .saas-toggle {
+      display: none;
+    }
+    .paas-toggle {
+      display: none;
+    }
+  }
+
+  &.type-selected-paas {
+    .iaas-toggle {
+      display: none;
+    }
+    .saas-toggle {
+      display: none;
+    }
+  }
+
+  &.type-selected-saas {
+    .iaas-toggle {
+      display: none;
+    }
+    .paas-toggle {
+      display: none;
+    }
+  }
+
+}
