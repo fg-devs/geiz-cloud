@@ -3,7 +3,7 @@
 ## What is it?
 Web based application to find and compare Cloud Services from different providers.
 
-Features:
+###Features:
 * Search Cloud Services (attribute based search)
 * Add Cloud Services to product comparison
 * Administration of Cloud Services (Add, Update, Activate/Deactivate)
@@ -26,11 +26,11 @@ Features:
     - MYSQL_PRD_PASSWORD: xxx
 
 ## Information, Tutorials and more
-- [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links)
-- For detailed information about used gems, please refer to /Gemfile
-- [Rails Assets](http://rails-assets.org) (for frontend application dependencies, ex. Bootstrap)
-- [Rails Services for Business Logic](http://adamniedzielski.github.io/blog/2014/11/25/my-take-on-services-in-rails/) (Why using service layer?)
-- [Frontend Framework - INSPINIA (based on Bootstrap3)](http://wrapbootstrap.com/preview/WB0R5L90S)
+* [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links)
+* For detailed information about used gems, please refer to Gemfile
+* [Rails Assets](http://rails-assets.org) (for frontend application dependencies, ex. Bootstrap)
+* [Rails Services for Business Logic](http://adamniedzielski.github.io/blog/2014/11/25/my-take-on-services-in-rails/) (Why using service layer?)
+* [Frontend Framework - INSPINIA (based on Bootstrap3)](http://wrapbootstrap.com/preview/WB0R5L90S)
 
 ## Project Status
 ### Pending
