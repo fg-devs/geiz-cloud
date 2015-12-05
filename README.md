@@ -33,8 +33,7 @@
 * CLOUD_SERVICES: Show Cloud Services as admin
 * CLOUD_SERVICES: Update Cloud Services as admin
 * REST_API: Create REST API for Cloud Service Providers
-* GENERAL: UserService GetAll Remove ::
-* GENERAL: Refactor helpers --> do not pass parameter, use instance variable instead (if its not called in a loop)
+
 * DB_SEED: Create seeds for SaaS categories
 * JAVASCRIPT: Refactor ready.jquery.js
 
@@ -48,3 +47,5 @@
 * USER/SESSION_MGMT: Update users as admin
 * CLOUD_SERVICES: Create Cloud Services as admin
 * GENERAL: Add Turbolinks loader for better usability
+* GENERAL: UserService GetAll Remove ::
+* GENERAL: Refactor helpers --> do not pass parameter, use instance variable instead (if its not called in a loop)

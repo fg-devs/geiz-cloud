@@ -6,7 +6,7 @@ class UserService::GetAll
 
   # Get all registered users
   def call
-    ::User.all
+    User.all
   end
 
 end
