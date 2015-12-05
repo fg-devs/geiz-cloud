@@ -3,7 +3,7 @@
 ## What is it?
 Web based application to find and compare Cloud Services from different providers.
 
-###Features:
+### Features:
 * Search Cloud Services (attribute based search)
 * Add Cloud Services to product comparison
 * Administration of Cloud Services (Add, Update, Activate/Deactivate)
