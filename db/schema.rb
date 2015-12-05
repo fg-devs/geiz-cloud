@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151204151153) do
+ActiveRecord::Schema.define(version: 20151205085033) do
 
   create_table "cloud_service_types", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -23,13 +23,13 @@ ActiveRecord::Schema.define(version: 20151204151153) do
     t.string   "title",                 limit: 255
     t.string   "short_description",     limit: 255
     t.text     "long_description",      limit: 65535
-    t.decimal  "price",                               precision: 10
+    t.decimal  "price",                               precision: 10, scale: 2
     t.string   "provider_url",          limit: 255
     t.boolean  "active"
     t.integer  "cloud_service_type_id", limit: 4
     t.integer  "user_id",               limit: 4
-    t.datetime "created_at",                                         null: false
-    t.datetime "updated_at",                                         null: false
+    t.datetime "created_at",                                                   null: false
+    t.datetime "updated_at",                                                   null: false
   end
 
   add_index "cloud_services", ["cloud_service_type_id"], name: "index_cloud_services_on_cloud_service_type_id", using: :btree
@@ -47,12 +47,12 @@ ActiveRecord::Schema.define(version: 20151204151153) do
 
   create_table "iaas_attributes", force: :cascade do |t|
     t.decimal  "ram",                           precision: 10
-    t.decimal  "cpu",                           precision: 10
+    t.decimal  "cpu",                           precision: 10, scale: 2
     t.decimal  "storage",                       precision: 10
     t.decimal  "bandwidth",                     precision: 10
     t.integer  "cloud_service_id",    limit: 4
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
+    t.datetime "created_at",                                             null: false
+    t.datetime "updated_at",                                             null: false
     t.integer  "operating_system_id", limit: 4
   end
 

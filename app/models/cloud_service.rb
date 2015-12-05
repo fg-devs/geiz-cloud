@@ -23,7 +23,7 @@ class CloudService < ActiveRecord::Base
   validates :title, presence: true, length: { maximum: 100 }
   validates :short_description, presence: true, length: { maximum: 255 }
   validates :long_description, presence: true
-  validates :price, presence: true
+  validates :price, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :provider_url, presence: true, length: { maximum: 255 }
 
   # IaaS must not be validated. It is a different kind of association and has its own validations

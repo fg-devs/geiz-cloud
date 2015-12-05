@@ -5,9 +5,9 @@ class IaasAttribute < ActiveRecord::Base
   belongs_to :operating_system
 
   # Validations
-  validates :ram, presence: true
-  validates :cpu, presence: true
-  validates :storage, presence: true
-  validates :bandwidth, presence: true
+  validates :ram, presence: true, numericality: { greater_than_or_equal_to: 0 }
+  validates :cpu, presence: true, numericality: { greater_than_or_equal_to: 0 }
+  validates :storage, presence: true, numericality: { greater_than_or_equal_to: 0 }
+  validates :bandwidth, presence: true, numericality: { greater_than_or_equal_to: 0 }
 
 end

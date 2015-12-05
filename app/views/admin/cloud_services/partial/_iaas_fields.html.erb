@@ -5,20 +5,20 @@
 
 <div class="form-group">
   <%= f.label :ram, t('cloud_service_administration.ram') %>
-  <%= f.number_field :ram, class: 'form-control', placeholder: t('cloud_service_administration.ram') %>
+  <%= f.number_field :ram, class: 'form-control', placeholder: t('cloud_service_administration.ram'), min: 0 %>
 </div>
 
 <div class="form-group">
   <%= f.label :cpu, t('cloud_service_administration.cpu') %>
-  <%= f.number_field :cpu, class: 'form-control', placeholder: t('cloud_service_administration.cpu') %>
+  <%= f.number_field :cpu, class: 'form-control', placeholder: t('cloud_service_administration.cpu'), min: 0, step: :any %>
 </div>
 
 <div class="form-group">
   <%= f.label :storage, t('cloud_service_administration.storage') %>
-  <%= f.number_field :storage, class: 'form-control', placeholder: t('cloud_service_administration.storage') %>
+  <%= f.number_field :storage, class: 'form-control', placeholder: t('cloud_service_administration.storage'), min: 0 %>
 </div>
 
 <div class="form-group">
   <%= f.label :bandwidth, t('cloud_service_administration.bandwidth') %>
-  <%= f.number_field :bandwidth, class: 'form-control', placeholder: t('cloud_service_administration.bandwidth') %>
+  <%= f.number_field :bandwidth, class: 'form-control', placeholder: t('cloud_service_administration.bandwidth'), min: 0 %>
 </div>

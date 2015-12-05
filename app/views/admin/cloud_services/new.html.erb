@@ -38,8 +38,7 @@
               <%= f.label :price, t('cloud_service_administration.price_per_timeunit') %>
             </div>
 
-
-            <%= f.number_field :price, class: 'form-control', placeholder: t('cloud_service_administration.price') %>
+            <%= f.number_field :price, class: 'form-control', placeholder: t('cloud_service_administration.price'), min: 0, step: :any %>
           </div>
 
 

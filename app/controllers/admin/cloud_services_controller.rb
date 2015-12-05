@@ -35,7 +35,6 @@ class Admin::CloudServicesController < ApplicationController
     else
       render 'new'
     end
-
   end
 
 
@@ -49,6 +48,7 @@ class Admin::CloudServicesController < ApplicationController
       render 'index'
     end
   end
+
 
   private
 

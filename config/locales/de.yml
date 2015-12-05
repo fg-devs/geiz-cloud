@@ -189,6 +189,8 @@ de:
               too_long: 'Link zum Angebot ist zu lang (max. %{count} Zeichen)'
             price:
               blank: 'Preis ist erforderlich'
+              greater_than_or_equal_to: 'Preis muss größer als %{count} sein'
+              not_a_number: 'Preis muss ein numerischer Wert sein'
             paas_categories:
               blank: 'Mindestens eine PaaS Kategorie ist erforderlich'
             saas_categories:
@@ -197,18 +199,28 @@ de:
           attributes:
             ram:
               blank: 'RAM ist erforderlich'
+              greater_than_or_equal_to: 'RAM muss größer als %{count} sein'
+              not_a_number: 'RAM muss ein numerischer Wert sein'
             cpu:
               blank: 'CPU ist erforderlich'
+              greater_than_or_equal_to: 'CPU muss größer als %{count} sein'
+              not_a_number: 'CPU muss ein numerischer Wert sein'
             storage:
               blank: 'Speicherplatz ist erforderlich'
+              greater_than_or_equal_to: 'Speicherplatz muss größer als %{count} sein'
+              not_a_number: 'Speicherplatz muss ein numerischer Wert sein'
             bandwidth:
               blank: 'Bandbreite ist erfoderlich'
+              greater_than_or_equal_to: 'Bandbreite muss größer als %{count} sein'
+              not_a_number: 'Bandbreite muss ein numerischer Wert sein'
 
+
+  # Options for Rails build-in number_to_currency helper method
   number:
     currency:
       format:
         format: "%n %u"
         unit: "&euro;"
-        separator: "."
-        delimiter: ","
+        separator: ","
+        delimiter: "."
         precision: 2
