@@ -4,12 +4,12 @@
 Web based application to find and compare Cloud Services from different providers.
 
 Features:
-- Search Cloud Services (attribute based search)
-- Add Cloud Services to product comparison
-- Administration of Cloud Services (Add, Update, Activate/Deactivate)
-- Administration of registered users (Update, Activate/Deactivate)
-- Register/Login
-- REST API for Cloud providers
+* Search Cloud Services (attribute based search)
+* Add Cloud Services to product comparison
+* Administration of Cloud Services (Add, Update, Activate/Deactivate)
+* Administration of registered users (Update, Activate/Deactivate)
+* Register/Login
+* REST API for Cloud providers
 
 ## Used versions
 - Ruby 2.2.0 (Tip: use [Ruby Version Manager](https://rvm.io) to manage Ruby versions)
@@ -24,10 +24,6 @@ Features:
     - MYSQL_DEV_PASSWORD: xxx
     - MYSQL_PRD_USER: xxx
     - MYSQL_PRD_PASSWORD: xxx
-
-## Developing
-### Git
-* Use --no-ff option to merge branches (for example `$ git merge --no-ff feature-xxxx`)
 
 ## Information, Tutorials and more
 - [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links)
