@@ -19,23 +19,21 @@
 ## Information, Tutorials and more
 - [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links)
 - For detailed information about used gems, please refer to /Gemfile
-- [Rails Assets](http://rails-assets.org) (for application dependencies, ex. Bootstrap)
+- [Rails Assets](http://rails-assets.org) (for frontend application dependencies, ex. Bootstrap)
 - [Rails Services for Business Logic](http://adamniedzielski.github.io/blog/2014/11/25/my-take-on-services-in-rails/) (Why using service layer?)
 - [Frontend Framework - INSPINIA (based on Bootstrap3)](http://wrapbootstrap.com/preview/WB0R5L90S)
 
 ## Project Status
-### ToDos
+### Pending
 * GENERAL: Authorization - Check in controllers and in HTML to display links only to authorized users
 * GENERAL: Add active_link_to in navigation to mark current visited links
 * CLOUD_SERVICES: Show Cloud Services with filters
 * CLOUD_SERVICES: Add Cloud Services to product comparison
 * CLOUD_SERVICES: Remove Cloud Services from product comparison
-* CLOUD_SERVICES: Show Cloud Services as admin
-* CLOUD_SERVICES: Update Cloud Services as admin
 * REST_API: Create REST API for Cloud Service Providers
-
 * DB_SEED: Create seeds for SaaS categories
-* JAVASCRIPT: Refactor ready.jquery.js
+
+### In Progress
 
 ### Completed
 * Registration: min. 8 characters delete or refactor
@@ -46,6 +44,9 @@
 * USER/SESSION_MGMT: Show users as admin
 * USER/SESSION_MGMT: Update users as admin
 * CLOUD_SERVICES: Create Cloud Services as admin
+* CLOUD_SERVICES: Show Cloud Services as admin
+* CLOUD_SERVICES: Update Cloud Services as admin
 * GENERAL: Add Turbolinks loader for better usability
 * GENERAL: UserService GetAll Remove ::
 * GENERAL: Refactor helpers --> do not pass parameter, use instance variable instead (if its not called in a loop)
+* JAVASCRIPT: Refactor Javascripts
