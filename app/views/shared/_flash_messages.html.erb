@@ -1,0 +1,19 @@
+<% flash.each do |key, value|
+  if key == 'error' || key == 'alert'
+    bootstrap_class = 'danger'
+  elsif key == 'success'
+    bootstrap_class = 'success'
+  elsif key == 'notice'
+    bootstrap_class = 'info'
+  end %>
+
+  <div class="alert alert-<%= bootstrap_class %>" role="alert">
+    <a href="#" data-dismiss="alert" class="close">×</a>
+
+    <ul>
+      <li>
+        <%= value %>
+      </li>
+    </ul>
+  </div>
+<% end %>

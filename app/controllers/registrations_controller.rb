@@ -1,5 +1,8 @@
 class RegistrationsController < Devise::RegistrationsController
 
+  # Change scaffold layout to application, only when editing profile
+  layout 'application', only: [:edit, :update]
+
   private
 
   # Overwrite method to allow first name and last name on sign up

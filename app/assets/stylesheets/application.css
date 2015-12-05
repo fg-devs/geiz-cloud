@@ -12,8 +12,13 @@
  *
  *= require bootstrap
  *= require font-awesome
- *= require inspinia/inspinia
- *= require inspinia/animate
+ *= require nprogress
+ *= require nprogress-bootstrap
+ *= require inspinia
+ *= require animate
+ *= require footable.core
+ *= require icheck
+ *= require awesome-bootstrap-checkbox
  *= require_tree .
  *= require_self
  */

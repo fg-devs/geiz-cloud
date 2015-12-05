@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ram: 9.99
+  cpu: 9.99
+  storage: 9.99
+  bandwidth: 9.99
+  cloud_service_id: 
+
+two:
+  ram: 9.99
+  cpu: 9.99
+  storage: 9.99
+  bandwidth: 9.99
+  cloud_service_id: 

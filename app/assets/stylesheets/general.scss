@@ -1,0 +1,71 @@
+// Sticky footer
+body.top-navigation {
+  min-height: 100%;
+
+  #wrapper {
+    height: 100%;
+
+    #page-wrapper {
+      min-height: 100%;
+
+
+      .wrapper {
+        &.wrapper-content {
+          padding-bottom: 70px;
+        }
+      }
+
+    }
+  }
+}
+
+
+// Mark not translated strings
+.translation_missing {
+  color: red !important;
+}
+
+
+// Alert boxes
+.alert {
+  ul {
+    li {
+      text-align: left;
+    }
+  }
+}
+
+
+
+// TABLE
+.table {
+  tbody {
+    tr {
+      td.action-icons {
+        a {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+}
+
+.table.footable {
+  margin-bottom: 0;
+}
+
+
+
+// PAGINATION
+.pagination-info {
+  line-height: 35px;
+}
+
+
+
+// CHECKBOX
+.i-checks {
+  label {
+    font-weight: normal;
+  }
+}

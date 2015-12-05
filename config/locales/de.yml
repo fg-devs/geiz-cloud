@@ -21,8 +21,60 @@
 
 de:
 
-  project_name: 'GZ'
+  project_name: 'GeizCloud'
+  project_name_short: 'GZ'
   copyright: '2015 GeizCloud'
+  version: 'Version'
+
+  status: 'Status'
+  actions: 'Aktionen'
+  new: 'Neu'
+
+  navigation:
+    search: 'Suchen'
+    product_comparison: 'Produktvergleich'
+    cloud_services: 'Cloud Services'
+    display_cloud_services: 'Cloud Services anzeigen'
+    create_cloud_services: 'Cloud Service anlegen'
+    user_administration: 'Benutzerverwaltung'
+    profile: 'Profil'
+    edit_profile: 'Profil ändern'
+    logout: 'Ausloggen'
+
+  breadcrumbs:
+    home: 'Home'
+    cloud_services: 'Cloud Services'
+    administration: 'Administration'
+    cloud_service_administration: 'Cloud Services verwalten'
+    create_cloud_service: 'Cloud Service anlegen'
+    edit_cloud_service: 'Cloud Service ändern'
+    user_administration: 'Benutzerverwaltung'
+    edit_user: 'Benutzer ändern'
+    edit_profile: 'Profil ändern'
+
+  pagination:
+    truncate: '...'
+    first: 'Erste'
+    last: 'Letzte'
+    previous: 'Vorherige'
+    next: 'Nächste'
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "Keine %{entry_name} gefunden"
+          one: "Zeige <b>1</b> %{entry_name}"
+          other: "Zeige alle <b>%{count}</b> %{entry_name}"
+      more_pages:
+        display_entries: "Zeige <b>%{first}&nbsp;-&nbsp;%{last}</b> von <b>%{total}</b> Ergebnissen"
+
+  buttons:
+    save: 'Speichern'
+    cancel: 'Abbrechen'
+
+  profile:
+    edit_user: '%{first_name} %{last_name} ändern'
+    edit_profile: 'Profil ändern'
 
   account:
     login: 'Einloggen'
@@ -40,9 +92,146 @@ de:
     first_name: 'Vorname'
     last_name: 'Nachname'
     email: 'E-Mail'
+    current_password: 'Aktuelles Passwort'
+    new_password: 'Neues Passwort'
     password: 'Passwort'
     repeat_password: 'Passwort wiederholen'
 
+  user_administration:
+    user: 'Benutzer'
+    search_users: 'Benutzer suchen'
+    registered_users: 'Registrierte Benutzer'
+    user_updated: 'Der Benutzer wurde erfolgreich aktualisiert.'
+    status_updated: 'Der Status des Benutzers wurde erfolgreich aktualisiert.'
+    sure_to_change_status: 'Bist du dir sicher, dass du den Status des Benutzers ändern möchtest?'
+
+  cloud_service_administration:
+    cloud_services: 'Cloud Services'
+    create_cloud_service: 'Cloud Service anlegen'
+    display_cloud_services: 'Cloud Services anzeigen'
+    edit_cloud_service: 'Cloud Service ändern'
+    search_cloud_services: 'Cloud Services suchen'
+    cloud_service_model: 'Cloud Service Modell'
+    title: 'Titel'
+    short_description: 'Kurzbeschreibung'
+    long_description: 'Langbeschreibung'
+    price: 'Preis'
+    price_per_month: 'Preis pro Monat'
+    price_per_timeunit_or_calcunit: 'Preis pro Zeiteinheit/Recheneinheit'
+    price_per_timeunit: 'Preis pro Zeiteinheit'
+    provider_url: 'Link zum Anbieter'
+    operating_system: 'Betriebssystem'
+    ram: 'RAM (in MB)'
+    cpu: 'CPU (in GHz)'
+    storage: 'Speicherplatz (in MB)'
+    bandwidth: 'Bandbreite (in Mb/s)'
+    paas_categories: 'PaaS Kategorien'
+    saas_categories: 'SaaS Kategorien'
+    status: 'Status'
+    active: 'Aktiv'
+    inactive: 'Inaktiv'
+    cloud_service_created: 'Cloud Services wurde erfolgreich erstellt.'
+    status_updated: 'Der Status des Cloud Services wurde erfolgreich aktualisiert.'
+    sure_to_change_status: 'Bist du dir sicher, dass du den Status des Cloud Services ändern möchtest?'
+    cloud_service_updated: 'Das Cloud Service wurde erfolgreich aktualisiert.'
 
 
+  # Devise error messages
+  errors:
+    format: "%{message}"
+    messages:
+      not_saved: 'Vorgang konnte nicht durchgeführt werden:'
 
+
+  # Language strings that are used in database
+  for_database:
+    paas_categories:
+      monitoring_and_alerting: 'Monitoring und Alarmierung'
+      operation_and_deployment: 'Betrieb und Deployment'
+      scaling: 'Skalierung'
+      apis_and_devtools: 'APIs und Developer Tools'
+      standards_and_transferability: 'Standards und Übertragbarkeit'
+      security: 'Security'
+    saas_categories:
+      collaboration: 'Kollaboration'
+      crm: 'Customer Relationship Managemetn (CRM)'
+      erp: 'Enterprise Resource Planning (ERP)'
+      accounting: 'Rechnungswesen/Buchhaltung'
+      pm: 'Projektmanagement'
+      email_marketing: 'E-Mail Marketing'
+      web_hosting_ecommerce: 'Webhosting'
+      hr: 'Personalwesen (HR)'
+
+
+  # ActiveRecord errors
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            first_name:
+              blank: 'Vorname ist erforderlich'
+            last_name:
+              blank: 'Nachname ist erforderlich'
+            email:
+              invalid: 'E-Mail Adresse ist ungültig'
+              tw_invalid: 'E-Mail Adresse muss eine "@technikum-wien.at" Adresse sein'
+              blank: 'E-Mail Adresse ist erforderlich'
+            current_password:
+              blank: 'Aktuelles Passwort ist erforderlich'
+              invalid: 'Aktuelles Passwort ist falsch'
+            password:
+              blank: 'Passwort ist erforderlich'
+              too_short: 'Passwort ist zu kurz'
+            password_confirmation:
+              confirmation: 'Passwörter stimmen nicht überein'
+        cloud_service:
+          attributes:
+            title:
+              blank: 'Titel ist erforderlich'
+              too_long: 'Titel ist zu lang (max. %{count} Zeichen)'
+            short_description:
+              blank: 'Kurzbeschreibung ist erforderlich'
+              too_long: 'Kurzbeschreibung ist zu lang (max. %{count} Zeichen)'
+            long_description:
+              blank: 'Langbeschreibung ist erfoderlich'
+            provider_url:
+              blank: 'Link zum Anbieter ist erfoderlich'
+              too_long: 'Link zum Anbieter ist zu lang (max. %{count} Zeichen)'
+            price:
+              blank: 'Preis ist erforderlich'
+              greater_than_or_equal_to: 'Preis muss größer als %{count} sein'
+              not_a_number: 'Preis muss ein numerischer Wert sein'
+            paas_categories:
+              blank: 'Mindestens eine PaaS Kategorie ist erforderlich'
+            saas_categories:
+              blank: 'Mindestens eine SaaS Kategorie ist erforderlich'
+        iaas_attribute:
+          attributes:
+            ram:
+              blank: 'RAM ist erforderlich'
+              greater_than_or_equal_to: 'RAM muss größer als %{count} sein'
+              not_a_number: 'RAM muss ein numerischer Wert sein'
+            cpu:
+              blank: 'CPU ist erforderlich'
+              greater_than_or_equal_to: 'CPU muss größer als %{count} sein'
+              not_a_number: 'CPU muss ein numerischer Wert sein'
+            storage:
+              blank: 'Speicherplatz ist erforderlich'
+              greater_than_or_equal_to: 'Speicherplatz muss größer als %{count} sein'
+              not_a_number: 'Speicherplatz muss ein numerischer Wert sein'
+            bandwidth:
+              blank: 'Bandbreite ist erfoderlich'
+              greater_than_or_equal_to: 'Bandbreite muss größer als %{count} sein'
+              not_a_number: 'Bandbreite muss ein numerischer Wert sein'
+
+
+  # Options for Rails build-in number_to_currency helper method
+  number:
+    currency:
+      format:
+        format: "%n %u"
+        unit: "&euro;"
+        separator: ","
+        delimiter: "."
+        precision: 2

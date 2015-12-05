@@ -1,0 +1,72 @@
+<% breadcrumb :create_cloud_service %>
+
+<div class="ibox float-e-margins">
+  <div class="ibox-title">
+    <h5><%= t('cloud_service_administration.create_cloud_service') %></h5>
+  </div>
+
+  <div class="ibox-content">
+    <div class="row">
+
+      <%= form_for(@cloud_service, url: admin_cloud_services_path) do |f| %>
+
+
+        <div class="col-lg-12">
+          <%= render 'shared/form_messages', object: f.object %>
+        </div>
+
+        <!-- Left column -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.label :cloud_service_type_id, t('cloud_service_administration.cloud_service_model') %>
+            <%= f.select :cloud_service_type_id, options_from_collection_for_select(@cloud_service_types, 'id', 'name', @cloud_service.cloud_service_type_id), {}, autofocus: true, class: 'form-control' %>
+          </div>
+
+          <%= render 'admin/cloud_services/partial/general_fields', f: f %>
+        </div>
+
+        <!-- Right column -->
+        <div class="col-md-6">
+          <div class="form-group">
+
+            <div class="iaas-toggle">
+              <%= f.label :price, t('cloud_service_administration.price_per_month') %>
+            </div>
+            <div class="paas-toggle">
+              <%= f.label :price, t('cloud_service_administration.price_per_timeunit_or_calcunit') %>
+            </div>
+            <div class="saas-toggle">
+              <%= f.label :price, t('cloud_service_administration.price_per_timeunit') %>
+            </div>
+
+            <%= f.number_field :price, class: 'form-control', placeholder: t('cloud_service_administration.price'), min: 0, step: :any %>
+          </div>
+
+
+          <div class="iaas-toggle">
+            <%= f.fields_for(:iaas_attribute) do |ff| %>
+              <%= render 'admin/cloud_services/partial/iaas_fields', f: ff %>
+            <% end %>
+          </div>
+
+          <div class="paas-toggle">
+            <%= render 'admin/cloud_services/partial/paas_fields', f: f %>
+          </div>
+
+          <div class="saas-toggle">
+            <%= render 'admin/cloud_services/partial/saas_fields', f: f %>
+          </div>
+        </div>
+
+
+        <!-- Buttons -->
+        <div class="col-lg-12">
+          <%= f.button t('buttons.save'), class: 'btn btn-primary' %>
+          <%= link_to(t('buttons.cancel'), admin_cloud_services_path, class: 'btn btn-white') %>
+        </div>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>

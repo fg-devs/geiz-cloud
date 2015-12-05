@@ -1,32 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<%= render 'layouts/partials/head' %>
 
-  <title>GeizCloud</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
+<body class="top-navigation">
 
-<body>
+<div id="wrapper">
+  <div id="page-wrapper" class="gray-bg">
+
+    <%= render 'layouts/partials/navigation' %>
 
 
-<% if content_for?(:no_scaffold) %>
+    <div class="wrapper wrapper-content">
+      <div class="container">
 
-  <div id="no-scaffold" class="gray-bg">
-  <%= yield :no_scaffold%>
-  </div>
+        <%= render 'layouts/partials/breadcrumbs' %>
 
-<% else %>
+        <div class="row">
 
-    <div id="header">
-      <%= yield %>
+          <%= render 'shared/flash_messages' %>
+
+        <%= yield %>
+
+        </div>
+      </div>
     </div>
 
-<% end %>
+  <%= render 'layouts/partials/footer' %>
 
+  </div>
+</div>
 
 </body>
-</html>
+
+<%= render 'layouts/partials/tail' %>

@@ -46,14 +46,29 @@ group :development do
 end
 
 
+
 #### ADDED BY GEIZCLOUD DEVELOPERS ####
-# For environment variables
+group :development do
+  # For better debugging (https://github.com/charliesome/better_errors)
+  gem 'better_errors'
+  # Advanced Database cleaning tool (https://github.com/DatabaseCleaner/database_cleaner)
+  gem 'database_cleaner'
+end
+
+# For environment variables (https://github.com/laserlemon/figaro)
 gem 'figaro'
-# For user authentication
+# For user authentication (https://github.com/plataformatec/devise)
 gem 'devise'
+# For breadcrumbs (https://github.com/lassebunk/gretel)
+gem 'gretel'
+# For pagination (https://github.com/amatsuda/kaminari)
+gem 'kaminari'
+# To generate Seeds with sample data (https://github.com/stympy/faker)
+gem 'faker'
+# Show AJAX loader on page loading, due to Turbolinks (https://github.com/caarlos0/nprogress-rails)
+gem 'nprogress-rails'
 
-
-## Rails-assets (frontend application dependencies)
+## Rails-assets (frontend application dependencies; https://rails-assets.org)
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-font-awesome', '~> 4.3.0'
