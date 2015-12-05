@@ -47,6 +47,7 @@ de:
     administration: 'Administration'
     cloud_service_administration: 'Cloud Services verwalten'
     create_cloud_service: 'Cloud Service anlegen'
+    edit_cloud_service: 'Cloud Service ändern'
     user_administration: 'Benutzerverwaltung'
     edit_user: 'Benutzer ändern'
     edit_profile: 'Profil ändern'
@@ -108,6 +109,7 @@ de:
     cloud_services: 'Cloud Services'
     create_cloud_service: 'Cloud Service anlegen'
     display_cloud_services: 'Cloud Services anzeigen'
+    edit_cloud_service: 'Cloud Service ändern'
     search_cloud_services: 'Cloud Services suchen'
     cloud_service_model: 'Cloud Service Modell'
     title: 'Titel'
@@ -131,6 +133,7 @@ de:
     cloud_service_created: 'Cloud Services wurde erfolgreich erstellt.'
     status_updated: 'Der Status des Cloud Services wurde erfolgreich aktualisiert.'
     sure_to_change_status: 'Bist du dir sicher, dass du den Status des Cloud Services ändern möchtest?'
+    cloud_service_updated: 'Das Cloud Service wurde erfolgreich aktualisiert.'
 
 
   # Devise error messages
