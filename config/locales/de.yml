@@ -119,7 +119,7 @@ de:
     price_per_month: 'Preis pro Monat'
     price_per_timeunit_or_calcunit: 'Preis pro Zeiteinheit/Recheneinheit'
     price_per_timeunit: 'Preis pro Zeiteinheit'
-    provider_url: 'Link zum Angebot'
+    provider_url: 'Link zum Anbieter'
     operating_system: 'Betriebssystem'
     ram: 'RAM (in MB)'
     cpu: 'CPU (in GHz)'
@@ -154,6 +154,14 @@ de:
       security: 'Security'
     saas_categories:
       collaboration: 'Kollaboration'
+      crm: 'Customer Relationship Managemetn (CRM)'
+      erp: 'Enterprise Resource Planning (ERP)'
+      accounting: 'Rechnungswesen/Buchhaltung'
+      pm: 'Projektmanagement'
+      email_marketing: 'E-Mail Marketing'
+      web_hosting_ecommerce: 'Webhosting'
+      hr: 'Personalwesen (HR)'
+
 
   # ActiveRecord errors
   activerecord:
@@ -188,8 +196,8 @@ de:
             long_description:
               blank: 'Langbeschreibung ist erfoderlich'
             provider_url:
-              blank: 'Link zum Angebot ist erfoderlich'
-              too_long: 'Link zum Angebot ist zu lang (max. %{count} Zeichen)'
+              blank: 'Link zum Anbieter ist erfoderlich'
+              too_long: 'Link zum Anbieter ist zu lang (max. %{count} Zeichen)'
             price:
               blank: 'Preis ist erforderlich'
               greater_than_or_equal_to: 'Preis muss größer als %{count} sein'

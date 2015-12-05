@@ -1,5 +1,16 @@
 # GeizCloud
 
+## What is it?
+Web based application to find and compare Cloud Services from different providers.
+
+Features:
+- Search Cloud Services (attribute based search)
+- Add Cloud Services to product comparison
+- Administration of Cloud Services (Add, Update, Activate/Deactivate)
+- Administration of registered users (Update, Activate/Deactivate)
+- Register/Login
+- REST API for Cloud providers
+
 ## Used versions
 - Ruby 2.2.0 (Tip: use [Ruby Version Manager](https://rvm.io) to manage Ruby versions)
 - Rails 4.2.5 (will be installed with Bundler automatically through Gemfile)
@@ -8,8 +19,10 @@
 1. Pull/Clone repository
 2. Run `$ bundle install` to install missing dependencies
 3. Run `$ bundle exec figaro install` to create missing file for environment variables. Add the following to config/application.yml:
-    - SECRET_KEY_BASE: xxx
+    - SECRET_KEY_BASE: xxx (use `$ rake secret` to generate key)
+    - MYSQL_DEV_USER: xxx
     - MYSQL_DEV_PASSWORD: xxx
+    - MYSQL_PRD_USER: xxx
     - MYSQL_PRD_PASSWORD: xxx
 
 ## Developing
@@ -25,13 +38,12 @@
 
 ## Project Status
 ### Pending
-* GENERAL: Authorization - Check in controllers and in HTML to display links only to authorized users
+* GENERAL: Authorization - Check in controllers and in HTML, display links only to authorized users
 * GENERAL: Add active_link_to in navigation to mark current visited links
 * CLOUD_SERVICES: Show Cloud Services with filters
 * CLOUD_SERVICES: Add Cloud Services to product comparison
 * CLOUD_SERVICES: Remove Cloud Services from product comparison
 * REST_API: Create REST API for Cloud Service Providers
-* DB_SEED: Create seeds for SaaS categories
 
 ### In Progress
 
@@ -50,3 +62,4 @@
 * GENERAL: UserService GetAll Remove ::
 * GENERAL: Refactor helpers --> do not pass parameter, use instance variable instead (if its not called in a loop)
 * JAVASCRIPT: Refactor Javascripts
+* DB_SEED: Create seeds for SaaS categories
