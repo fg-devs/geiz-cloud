@@ -6,7 +6,7 @@ class CloudServiceService::GetAll
 
   # Get all Cloud Services
   def call
-    CloudService.joins(:cloud_service_type)
+    CloudService.includes(:cloud_service_type)
   end
 
 end

@@ -37,6 +37,30 @@ class Admin::CloudServicesController < ApplicationController
     end
   end
 
+  # GET admin/cloud_services/:id
+  def edit
+    @cloud_service = CloudServiceService::GetSingle.build.call(params[:id])
+    @paas_categories = PaasCategoryService::GetAll.build.call
+    @saas_categories = SaasCategoryService::GetAll.build.call
+    @operating_systems = OperatingSystemService::GetAll.build.call
+  end
+
+  # PUT admin/cloud_services/:id
+  # PATCH admin/cloud_services/:id
+  def update
+    @paas_categories = PaasCategoryService::GetAll.build.call
+    @saas_categories = SaasCategoryService::GetAll.build.call
+    @operating_systems = OperatingSystemService::GetAll.build.call
+
+    success, @cloud_service = CloudServiceService::Update.build.call(params[:id], cloud_service_params)
+
+    if success
+      redirect_to(admin_cloud_services_path, flash: { success: I18n.t('cloud_service_administration.cloud_service_updated') })
+    else
+      render 'edit'
+    end
+  end
+
 
   # DELETE admin/cloud_services/:id
   def activate_or_deactivate

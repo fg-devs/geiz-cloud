@@ -10,11 +10,12 @@
 
       <%= form_for(@cloud_service, url: admin_cloud_services_path) do |f| %>
 
-        <!-- Left column -->
+
         <div class="col-lg-12">
           <%= render 'shared/form_messages', object: f.object %>
         </div>
 
+        <!-- Left column -->
         <div class="col-md-6">
           <div class="form-group">
             <%= f.label :cloud_service_type_id, t('cloud_service_administration.cloud_service_model') %>

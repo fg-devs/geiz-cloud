@@ -1,9 +1,6 @@
 class CloudService < ActiveRecord::Base
 
-  # IDs from database table "cloud_service_types", they do and should not change
-  IAAS_ID = 1
-  PAAS_ID = 2
-  SAAS_ID = 3
+
 
   # Relationships
   belongs_to :cloud_service_type
@@ -33,12 +30,12 @@ class CloudService < ActiveRecord::Base
 
   # Should PaaS be validated?
   def should_validate_paas?
-    cloud_service_type_id == PAAS_ID
+    cloud_service_type_id == CloudServiceType::PAAS_ID
   end
 
   # Should SaaS be validated?
   def should_validate_saas?
-    cloud_service_type_id == SAAS_ID
+    cloud_service_type_id == CloudServiceType::SAAS_ID
   end
 
 end

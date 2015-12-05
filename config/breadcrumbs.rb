@@ -26,6 +26,12 @@ crumb :create_cloud_service do
   parent :cloud_service_administration
 end
 
+# Edit Cloud Service
+crumb :edit_cloud_service do
+  link I18n.t('breadcrumbs.edit_cloud_service'), edit_admin_cloud_service_path
+  parent :cloud_service_administration
+end
+
 # Display all users
 crumb :user_administration do
   link I18n.t('breadcrumbs.user_administration'), admin_users_path

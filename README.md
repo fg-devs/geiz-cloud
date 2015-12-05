@@ -34,6 +34,9 @@
 * CLOUD_SERVICES: Update Cloud Services as admin
 * REST_API: Create REST API for Cloud Service Providers
 * GENERAL: UserService GetAll Remove ::
+* GENERAL: Refactor helpers --> do not pass parameter, use instance variable instead (if its not called in a loop)
+* DB_SEED: Create seeds for SaaS categories
+* JAVASCRIPT: Refactor ready.jquery.js
 
 ### Completed
 * Registration: min. 8 characters delete or refactor
