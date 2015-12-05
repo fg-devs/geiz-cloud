@@ -13,12 +13,12 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
   host: localhost
 
 development:
   <<: *default
   database: geizcloud_development
+  username: <%= ENV["MYSQL_DEV_USER"] %>
   password: <%= ENV["MYSQL_DEV_PASSWORD"] %>
 
 
@@ -52,5 +52,5 @@ test:
 production:
   <<: *default
   database: geizcloud_production
-  username: geizcloud
+  username: <%= ENV["MYSQL_PRD_USER"] %>
   password: <%= ENV['MYSQL_PRD_PASSWORD'] %>

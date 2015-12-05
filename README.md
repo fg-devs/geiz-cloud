@@ -13,7 +13,7 @@ Web based application to find and compare Cloud Services from different provider
 
 ## Used versions
 - Ruby 2.2.0 (Tip: use [Ruby Version Manager](https://rvm.io) to manage Ruby versions)
-- Rails 4.2.5 (will be installed with Bundler automatically through Gemfile)
+- Rails 4.2.5 (will be automatically installed with Bundler through Gemfile)
 
 ## Installation
 1. Pull/Clone repository
