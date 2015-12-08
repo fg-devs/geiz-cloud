@@ -43,7 +43,6 @@ Web based application to find and compare Cloud Services from different provider
 * CLOUD_SERVICES: Add Cloud Services to product comparison
 * CLOUD_SERVICES: Remove Cloud Services from product comparison
 * REST_API: Create REST API for Cloud Service Providers
-* FIX: missing translation on registration, if email is already taken
 
 ### In Progress
 
@@ -64,3 +63,4 @@ Web based application to find and compare Cloud Services from different provider
 * JAVASCRIPT: Refactor Javascripts
 * DB_SEED: Create seeds for SaaS categories
 * JAVASCRIPT: Refactored JS to CoffeeScript
+* FIX: missing translation on registration, if email is already taken

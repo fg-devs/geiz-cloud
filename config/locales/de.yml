@@ -177,6 +177,7 @@ de:
               invalid: 'E-Mail Adresse ist ungültig'
               tw_invalid: 'E-Mail Adresse muss eine "@technikum-wien.at" Adresse sein'
               blank: 'E-Mail Adresse ist erforderlich'
+              taken: 'E-Mail Adresse wird bereits verwendet'
             current_password:
               blank: 'Aktuelles Passwort ist erforderlich'
               invalid: 'Aktuelles Passwort ist falsch'
