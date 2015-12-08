@@ -1,0 +1,16 @@
+// TABLE
+.table {
+  tbody {
+    tr {
+      td.action-icons {
+        a {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+}
+
+.table.footable {
+  margin-bottom: 0;
+}

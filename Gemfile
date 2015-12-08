@@ -72,4 +72,8 @@ gem 'nprogress-rails'
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-font-awesome', '~> 4.3.0'
+  gem 'rails-assets-open-sans'
+  gem 'rails-assets-roboto-fontface'
+  gem 'rails-assets-iCheck'
+  gem 'rails-assets-animate.css'
 end
