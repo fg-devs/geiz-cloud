@@ -2,8 +2,14 @@ Rails.application.routes.draw do
 
   root 'cloud_services#index'
 
+  # Cloud services
+  post 'cloud_services/filter'   => 'cloud_services#filter'
+
+
+  # Devise routes
   devise_for :users, :controllers => { registrations: 'registrations' }
 
+  # Admin namespace
   namespace :admin do
     # User
     resources :users, only: [:index, :edit, :update]

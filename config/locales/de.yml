@@ -29,6 +29,7 @@ de:
   status: 'Status'
   actions: 'Aktionen'
   new: 'Neu'
+  all: 'Alle'
 
   navigation:
     search: 'Suchen'
@@ -134,6 +135,10 @@ de:
     status_updated: 'Der Status des Cloud Services wurde erfolgreich aktualisiert.'
     sure_to_change_status: 'Bist du dir sicher, dass du den Status des Cloud Services ändern möchtest?'
     cloud_service_updated: 'Das Cloud Service wurde erfolgreich aktualisiert.'
+
+  cloud_service:
+    filter: 'Filter'
+    cloud_services: 'Cloud Services'
 
 
   # Devise error messages

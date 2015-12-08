@@ -1,7 +1,5 @@
 class CloudService < ActiveRecord::Base
 
-
-
   # Relationships
   belongs_to :cloud_service_type
   belongs_to :user
@@ -37,5 +35,10 @@ class CloudService < ActiveRecord::Base
   def should_validate_saas?
     cloud_service_type_id == CloudServiceType::SAAS_ID
   end
+
+
+  scope :is_active, -> { where(active: true) }
+
+
 
 end
