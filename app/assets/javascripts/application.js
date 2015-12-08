@@ -20,4 +20,8 @@
 //= require footable/footable.filter.min
 //= require footable/footable.sort.min
 //= require icheck.min
+
+// Geizcloud defines global variable. Include on top, so other modules can use it.
+//= require geizcloud/geizcloud
+
 //= require_tree .

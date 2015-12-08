@@ -17,6 +17,7 @@ Web based application to find and compare Cloud Services from different provider
 
 ## Installation
 1. Pull/Clone repository
+2. Go to project root
 2. Run `$ bundle install` to install missing dependencies
 3. Run `$ bundle exec figaro install` to create missing file for environment variables. Add the following to config/application.yml:
     - SECRET_KEY_BASE: xxx (use `$ rake secret` to generate key)
@@ -24,6 +25,8 @@ Web based application to find and compare Cloud Services from different provider
     - MYSQL_DEV_PASSWORD: xxx
     - MYSQL_PRD_USER: xxx
     - MYSQL_PRD_PASSWORD: xxx
+4. Run `$ rake db:schema:load` (database must exist)
+5. Run `$ rake db:seed`
 
 ## Information, Tutorials and more
 * [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links)
@@ -40,6 +43,7 @@ Web based application to find and compare Cloud Services from different provider
 * CLOUD_SERVICES: Add Cloud Services to product comparison
 * CLOUD_SERVICES: Remove Cloud Services from product comparison
 * REST_API: Create REST API for Cloud Service Providers
+* FIX: missing translation on registration, if email is already taken
 
 ### In Progress
 
@@ -59,3 +63,4 @@ Web based application to find and compare Cloud Services from different provider
 * GENERAL: Refactor helpers --> do not pass parameter, use instance variable instead (if its not called in a loop)
 * JAVASCRIPT: Refactor Javascripts
 * DB_SEED: Create seeds for SaaS categories
+* JAVASCRIPT: Refactored JS to CoffeeScript
