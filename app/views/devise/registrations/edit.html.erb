@@ -6,56 +6,64 @@
   </div>
 
   <div class="ibox-content">
-    <div class="row">
-      <div class="col-md-6">
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-            <%= devise_error_messages! %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 
-            <% # TODO Remove this block, if confirmable feature will not be used
-               # otherwise follow this tutorial: https://github.com/plataformatec/devise/wiki/How-To:-Add-:confirmable-to-Users %>
-            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-            <% end %>
+      <div class="row">
+        <div class="col-md-6">
 
-            <div class="form-group">
-              <%= f.label :first_name, t('account.first_name') %>
-              <%= f.text_field :first_name, class: 'form-control', placeholder: t('account.first_name'), autofocus: true %>
-            </div>
+          <%= devise_error_messages! %>
 
-            <div class="form-group">
-              <%= f.label :last_name, t('account.last_name') %>
-              <%= f.text_field :last_name, class: 'form-control', placeholder: t('account.last_name') %>
-            </div>
+          <% # TODO Remove this block, if confirmable feature will not be used
+            # otherwise follow this tutorial: https://github.com/plataformatec/devise/wiki/How-To:-Add-:confirmable-to-Users %>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
 
-            <div class="form-group">
-              <%= f.label :email, t('account.email') %>
-              <%= f.email_field :email, class: 'form-control', placeholder: t('account.email') %>
-            </div>
+          <div class="form-group">
+            <%= f.label :first_name, t('account.first_name') %>
+            <%= f.text_field :first_name, class: 'form-control', placeholder: t('account.first_name'), autofocus: true %>
+          </div>
 
-            <div class="form-group">
-              <%= f.label :current_password, t('account.current_password') %>
-              <%= f.password_field :current_password, class: 'form-control',
-                                   placeholder: t('account.current_password'), autocomplete: 'off' %>
-            </div>
+          <div class="form-group">
+            <%= f.label :last_name, t('account.last_name') %>
+            <%= f.text_field :last_name, class: 'form-control', placeholder: t('account.last_name') %>
+          </div>
 
-            <div class="form-group">
-              <%= f.label :password, t('account.new_password') %>
-              <%= f.password_field :password, class: 'form-control',
-                                   placeholder: t('account.new_password'), autocomplete: 'off' %>
-            </div>
+          <div class="form-group">
+            <%= f.label :email, t('account.email') %>
+            <%= f.email_field :email, class: 'form-control', placeholder: t('account.email') %>
+          </div>
 
-            <div class="form-group">
-              <%= f.label :password_confirmation, t('account.repeat_password') %>
-              <%= f.password_field :password_confirmation, class: 'form-control',
-                                   placeholder: t('account.repeat_password'), autocomplete: 'off' %>
-            </div>
+          <div class="form-group">
+            <%= f.label :current_password, t('account.current_password') %>
+            <%= f.password_field :current_password, class: 'form-control',
+                                 placeholder: t('account.current_password'), autocomplete: 'off' %>
+          </div>
 
-            <!-- Buttons -->
-            <%= f.button t('buttons.save'), class: 'btn btn-primary' %>
-            <%= link_to(t('buttons.cancel'), :back, class: 'btn btn-white') %>
+          <div class="form-group">
+            <%= f.label :password, t('account.new_password') %>
+            <%= f.password_field :password, class: 'form-control',
+                                 placeholder: t('account.new_password'), autocomplete: 'off' %>
+          </div>
 
-        <% end %>
+          <div class="form-group">
+            <%= f.label :password_confirmation, t('account.repeat_password') %>
+            <%= f.password_field :password_confirmation, class: 'form-control',
+                                 placeholder: t('account.repeat_password'), autocomplete: 'off' %>
+          </div>
+
+        </div>
       </div>
-    </div>
+
+
+      <!-- Buttons -->
+      <div class="row">
+        <div class="col-xs-12">
+          <%= f.button t('buttons.save'), class: 'btn btn-primary' %>
+          <%= link_to(t('buttons.cancel'), :back, class: 'btn btn-white') %>
+        </div>
+      </div>
+
+    <% end %>
   </div>
 </div>

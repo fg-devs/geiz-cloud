@@ -9,10 +9,10 @@
 
     <!-- Search field -->
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-sm-4">
         <input type="text" class="form-control input-sm m-b-xs" id="filter-users" placeholder="<%= t('user_administration.search_users') %>">
       </div>
-      <div class="col-sm-9 text-right">
+      <div class="col-sm-8 text-right">
           <div class="pagination-info">
             <%= page_entries_info @users, entry_name: t('user_administration.user') %>
           </div>
@@ -67,7 +67,7 @@
     </table>
 
     <div class="row">
-      <div class="col-lg-12 text-right">
+      <div class="col-xs-12 text-right">
         <%= paginate @users %>
 
       </div>

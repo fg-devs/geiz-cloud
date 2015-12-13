@@ -6,15 +6,15 @@
   </div>
 
   <div class="ibox-content">
-    <div class="row">
+    <%= form_for(@cloud_service, url: admin_cloud_services_path, html: { class: 'form-cloud-services' }) do |f| %>
 
-      <%= form_for(@cloud_service, url: admin_cloud_services_path, html: { class: 'form-cloud-services' }) do |f| %>
-
-
-        <div class="col-lg-12">
+      <div class="row">
+        <div class="col-xs-12">
           <%= render 'shared/form_messages', object: f.object %>
         </div>
+      </div>
 
+      <div class="row">
         <!-- Left column -->
         <div class="col-md-6">
           <div class="form-group">
@@ -57,16 +57,16 @@
             <%= render 'admin/cloud_services/partial/saas_fields', f: f %>
           </div>
         </div>
+      </div>
 
-
-        <!-- Buttons -->
-        <div class="col-lg-12">
+      <!-- Buttons -->
+      <div class="row">
+        <div class="col-xs-12">
           <%= f.button t('buttons.save'), class: 'btn btn-primary' %>
           <%= link_to(t('buttons.cancel'), admin_cloud_services_path, class: 'btn btn-white') %>
         </div>
+      </div>
 
-      <% end %>
-
-    </div>
+    <% end %>
   </div>
 </div>

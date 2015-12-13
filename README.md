@@ -44,8 +44,6 @@ Web based application to find and compare Cloud Services from different provider
 * CLOUD_SERVICES: Remove Cloud Services from product comparison
 * CLOUD_SERVICES: Release Cloud Cervices created by Cloud Service Providers (REST API)
 * REST_API: Create REST API for Cloud Service Providers
-* BUG: Create cloud service layout bug
-* GENERAL: Search box increase col size
 * GENERAL: Pagination - retain page number after updating or changing status of record
 
 ### In Progress
@@ -70,3 +68,5 @@ Web based application to find and compare Cloud Services from different provider
 * FIX: missing translation on registration, if email is already taken
 * CLOUD_SERVICES: Show Cloud Services with filters
 * CLOUD_SERVICES: Show Cloud Services detail
+* BUG: Create cloud service layout bug
+* GENERAL: Search box increase col size
