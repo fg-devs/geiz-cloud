@@ -38,8 +38,6 @@ Web based application to find and compare Cloud Services from different provider
 ## Project Status
 ### Pending
 * GENERAL: Authorization - Check in controllers and in HTML, display links only to authorized users
-* GENERAL: Add active_link_to in navigation to mark current visited links
-
 * CLOUD_SERVICES: Add Cloud Services to product comparison
 * CLOUD_SERVICES: Remove Cloud Services from product comparison
 * CLOUD_SERVICES: Release Cloud Cervices created by Cloud Service Providers (REST API)
@@ -70,3 +68,4 @@ Web based application to find and compare Cloud Services from different provider
 * CLOUD_SERVICES: Show Cloud Services detail
 * BUG: Create cloud service layout bug
 * GENERAL: Search box increase col size
+* GENERAL: Add active_link_to in navigation to mark current visited links

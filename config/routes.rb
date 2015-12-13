@@ -12,9 +12,8 @@ Rails.application.routes.draw do
     end
   end
 
-
-
-  #get 'cloud_services/filter'     => 'cloud_services#filter'
+  # Product comparison
+  resources :product_comparisons, only: [:index]
 
 
   # Devise routes

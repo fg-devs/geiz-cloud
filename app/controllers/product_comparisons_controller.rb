@@ -1,4 +1,4 @@
-class ProductComparisonController < ApplicationController
+class ProductComparisonsController < ApplicationController
 
   before_action :authenticate_user!
 
