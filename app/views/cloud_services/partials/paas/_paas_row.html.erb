@@ -1,0 +1,19 @@
+<tr>
+  <td>
+    <%= link_to cs.title, cs %>
+    <br>
+    <small><%= cs.short_description %></small>
+  </td>
+
+  <td class="list">
+    <ul>
+      <% cs.paas_categories.each do |category| %>
+        <li><%= t('for_database.paas_categories.' + category.name) %></li>
+      <% end %>
+    </ul>
+  </td>
+
+
+
+  <td class="text-right"><%= number_to_currency(cs.price) %></td>
+</tr>

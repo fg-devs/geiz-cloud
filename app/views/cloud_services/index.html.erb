@@ -1,7 +1,12 @@
-<% breadcrumb :cloud_services %>
+<% breadcrumb :search_cloud_services %>
 
+<script type="text/javascript">
+  $(document).on('ready page:load', function() {
+    GeizCloud.Plugins.initRangeSliders('<%== j @filter_settings.to_json %>');
+  });
+</script>
 
-<div class="row">
+<div class="row row-eq-height">
 
   <!-- Left column (filters) -->
   <div class="col-md-3">
@@ -11,13 +16,34 @@
       </div>
       <div class="ibox-content">
 
-        <%= form_for(:cloud_service, url: cloud_services_filter_path, remote: true, html: { id: :filter_cloud_services }) do |f| %>
+        <%= form_for(:cloud_service, url: filter_cloud_services_path, method: :get, remote: true, html: { id: 'filter-cloud-services', class: 'form-cloud-services' }) do |f| %>
           <div class="form-group">
             <%= f.label :cloud_service_type_id, t('cloud_service_administration.cloud_service_model') %>
-            <%= f.select :cloud_service_type_id, options_from_collection_for_select(@cloud_service_types, 'id', 'name'), { include_blank: t('all') }, { class: 'form-control' } %>
+            <%= f.select :cloud_service_type_id, options_from_collection_for_select(@cloud_service_types, 'id', 'name'),
+                         { include_blank: t('choose') }, { class: 'form-control select-cloud-service-type' } %>
+          </div>
+
+          <div class="general-fields">
+            <div class="form-group">
+              <%= f.label :price, t('cloud_service.price') %>
+              <%= f.text_field :price, id: 'range-slider-price' %>
+            </div>
+          </div>
+
+          <div class="iaas-fields">
+            <%= f.fields_for(:iaas_attributes) do |ff| %>
+              <%= render 'cloud_services/partials/iaas/iaas_fields', f: ff %>
+            <% end %>
+          </div>
+
+          <div class="paas-fields">
+            <%= render 'cloud_services/partials/paas/paas_fields', f: f %>
+          </div>
+
+          <div class="saas-fields">
+            <%= render 'cloud_services/partials/saas/saas_fields', f: f %>
           </div>
         <% end %>
-
 
       </div>
     </div>
@@ -32,40 +58,13 @@
       </div>
 
       <div class="ibox-content">
-        <!-- Info and Sorting -->
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="pagination-info">
-              <%= page_entries_info @cloud_services, entry_name: t('cloud_service.cloud_services') %>
-            </div>
-          </div>
+        <div id="cs-filtered-container">
+
+          <p><%= t('cloud_service.please_choose_cs_model') %></p>
+
         </div>
-
-        <!-- Cloud Services -->
-        <% unless @cloud_services.nil? || @cloud_services.blank? %>
-          <% @cloud_services.each do |cs| %>
-
-            <% if is_iaas?(cs) %>
-              <%= render 'cloud_services/partials/iaas_row', cs: cs %>
-            <% elsif is_paas?(cs) %>
-              <%= render 'cloud_services/partials/paas_row', cs: cs %>
-            <% elsif is_saas?(cs) %>
-              <%= render 'cloud_services/partials/saas_row', cs: cs %>
-            <% end %>
-
-          <% end %>
-        <% end %>
-
-        <!-- Pagination -->
-        <div class="row">
-          <div class="col-lg-12 text-right">
-            <%= paginate @cloud_services %>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
-
 
 </div>

@@ -7,28 +7,22 @@ ready = ->
   GeizCloud.Plugins.initIChecks()
   GeizCloud.Plugins.initFootables()
 
-  # Cloud Services
-  GeizCloud.CloudServices.setActiveCloudServiceType $('#cloud_service_cloud_service_type_id')
+  # Cloud Services Set Active Cloud Service Type
+  GeizCloud.CloudServices.setActiveCloudServiceType $('.select-cloud-service-type')
 
-  $(document).on 'change', '#cloud_service_cloud_service_type_id', ->
+  $(document).on 'change', '.select-cloud-service-type', ->
     GeizCloud.CloudServices.setActiveCloudServiceType $(this)
     return
 
 
-  $(document).on 'change', '#filter_cloud_services', ->
-    console.log("changed")
-    $(this).submit()
+  # Send form on changing type in search view
+  $(document).on 'change', '#filter-cloud-services', ->
+    GeizCloud.CloudServices.sendFilterFormOnChange $(this)
     return
 
-
-  $("#filter_cloud_services").on("ajax:success", (e, data, status, xhr) ->
-    console.log(data);
-    #$("#new_article").append xhr.responseText
+  $(document).on 'ifChanged', '#filter-cloud-services input[type="checkbox"]', ->
+    GeizCloud.CloudServices.sendFilterFormOnChange $(this)
     return
-  ).on "ajax:error", (e, xhr, status, error) ->
-  $("#new_article").append "<p>ERROR</p>"
-
-
 
 
   return

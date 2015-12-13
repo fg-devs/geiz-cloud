@@ -1,10 +1,23 @@
 // TABLE
 .table {
+  thead {
+    tr {
+      th {
+        white-space: nowrap;
+      }
+    }
+  }
+
   tbody {
     tr {
       td.action-icons {
         a {
           margin-right: 15px;
+        }
+      }
+      td.list {
+        > ul {
+          padding-left: 20px
         }
       }
     }

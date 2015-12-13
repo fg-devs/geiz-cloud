@@ -30,6 +30,8 @@ de:
   actions: 'Aktionen'
   new: 'Neu'
   all: 'Alle'
+  choose: 'Auswählen'
+  back: 'Zurück'
 
   navigation:
     search: 'Suchen'
@@ -44,10 +46,11 @@ de:
 
   breadcrumbs:
     home: 'Home'
-    cloud_services: 'Cloud Services'
+    search_cloud_services: 'Cloud Services suchen'
     administration: 'Administration'
     cloud_service_administration: 'Cloud Services verwalten'
     create_cloud_service: 'Cloud Service anlegen'
+    detail_cloud_service: 'Cloud Service Detail'
     edit_cloud_service: 'Cloud Service ändern'
     user_administration: 'Benutzerverwaltung'
     edit_user: 'Benutzer ändern'
@@ -118,8 +121,7 @@ de:
     long_description: 'Langbeschreibung'
     price: 'Preis'
     price_per_month: 'Preis pro Monat'
-    price_per_timeunit_or_calcunit: 'Preis pro Zeiteinheit/Recheneinheit'
-    price_per_timeunit: 'Preis pro Zeiteinheit'
+    price_per_unit: 'Preis pro Einheit'
     provider_url: 'Link zum Anbieter'
     operating_system: 'Betriebssystem'
     ram: 'RAM (in MB)'
@@ -139,6 +141,23 @@ de:
   cloud_service:
     filter: 'Filter'
     cloud_services: 'Cloud Services'
+    product_description: 'Produktbeschreibung'
+    features: 'Features'
+    title: 'Angebot'
+    provider: 'Anbieter'
+    price: 'Preis'
+    price_per_month: 'Preis/Monat'
+    price_per_unit: 'Preis/Einheit'
+    operating_system: 'Betriebssystem'
+    ram: 'RAM (MB)'
+    cpu: 'CPU (GHz)'
+    storage: 'Speicherplatz (MB)'
+    bandwidth: 'Bandbreite (Mbit/s)'
+    paas_categories: 'Kategorien'
+    saas_categories: 'Kategorien'
+    please_choose_cs_model: 'Cloud Service Modell unter dem Bereich "Filter" auswählen, um die Suche nach Cloud Services zu starten.'
+    to_provider: 'Zum Anbieter'
+    add_to_product_comparison: 'Produktvergleich'
 
 
   # Devise error messages
@@ -159,7 +178,7 @@ de:
       security: 'Security'
     saas_categories:
       collaboration: 'Kollaboration'
-      crm: 'Customer Relationship Managemetn (CRM)'
+      crm: 'Customer Relationship Management (CRM)'
       erp: 'Enterprise Resource Planning (ERP)'
       accounting: 'Rechnungswesen/Buchhaltung'
       pm: 'Projektmanagement'
@@ -232,12 +251,18 @@ de:
               not_a_number: 'Bandbreite muss ein numerischer Wert sein'
 
 
-  # Options for Rails build-in number_to_currency helper method
+  # Locales for rails build in number helper
   number:
+    # number_to_currency helper method
     currency:
       format:
-        format: "%n %u"
-        unit: "&euro;"
-        separator: ","
-        delimiter: "."
+        format: '%n %u'
+        unit: '&euro;'
+        separator: ','
+        delimiter: '.'
         precision: 2
+
+    # General format
+    format:
+      separator: ','
+      delimiter: '.'

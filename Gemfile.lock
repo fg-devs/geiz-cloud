@@ -119,6 +119,8 @@ GEM
     rails-assets-font-awesome (4.3.0)
     rails-assets-iCheck (1.0.2)
       rails-assets-jquery (>= 1.7)
+    rails-assets-ionrangeslider (2.1.2)
+      rails-assets-jquery (>= 1.8)
     rails-assets-jquery (2.1.4)
     rails-assets-open-sans (1.1.0)
     rails-assets-roboto-fontface (0.4.3)
@@ -196,6 +198,7 @@ DEPENDENCIES
   rails-assets-bootstrap!
   rails-assets-font-awesome (~> 4.3.0)!
   rails-assets-iCheck!
+  rails-assets-ionrangeslider!
   rails-assets-open-sans!
   rails-assets-roboto-fontface!
   sass-rails (~> 5.0)

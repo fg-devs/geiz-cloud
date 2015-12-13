@@ -76,4 +76,5 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-roboto-fontface'
   gem 'rails-assets-iCheck'
   gem 'rails-assets-animate.css'
+  gem 'rails-assets-ionrangeslider'
 end

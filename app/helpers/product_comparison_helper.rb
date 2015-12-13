@@ -1,0 +1,2 @@
+module ProductComparisonHelper
+end

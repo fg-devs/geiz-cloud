@@ -1,0 +1,14 @@
+<tr>
+  <td>
+    <%= link_to cs.title, cs %>
+    <br>
+    <small><%= cs.short_description %></small>
+  </td>
+
+  <td class="text-right"><%= number_with_delimiter cs.iaas_attribute.ram %></td>
+  <td class="text-right"><%= number_with_delimiter cs.iaas_attribute.cpu %></td>
+  <td class="text-right"><%= number_with_delimiter cs.iaas_attribute.storage %></td>
+  <td class="text-right"><%= number_with_delimiter cs.iaas_attribute.bandwidth %></td>
+
+  <td class="text-right"><%= number_to_currency(cs.price) %></td>
+</tr>

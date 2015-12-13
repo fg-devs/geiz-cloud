@@ -17,6 +17,7 @@
 //= require nprogress
 //= require nprogress-turbolinks
 //= require iCheck
+//= require ionrangeslider
 
 //= require footable/footable.min
 //= require footable/footable.filter.min

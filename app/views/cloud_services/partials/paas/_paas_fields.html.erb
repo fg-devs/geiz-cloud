@@ -1,0 +1,8 @@
+<div class="form-group">
+  <%= f.label :paas_category_ids, t('cloud_service.paas_categories') %>
+  <%= f.collection_check_boxes(:paas_category_ids, @paas_categories, :id, :name, include_hidden: false) do |cb| %>
+      <div class="i-checks">
+        <%= cb.label { cb.check_box + ' ' + t("for_database.paas_categories.#{cb.text}") } %>
+      </div>
+  <% end %>
+</div>

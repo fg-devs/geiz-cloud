@@ -7,14 +7,20 @@
 #
 #####################################
 
+# Clean Database (Only dev)
+if Rails.env.development?
+  DatabaseCleaner.clean_with :truncation
+end
+
+
 # Create Admin User
 User.create({first_name: 'Administrator', last_name: 'FH', email: 'admin@technikum-wien.at', password: '12345678',
              password_confirmation: '12345678', admin: true})
 
 # Create Cloud Service Types
-CloudServiceType.create({name: 'IaaS'})
-CloudServiceType.create({name: 'PaaS'})
-CloudServiceType.create({name: 'SaaS'})
+CloudServiceType.create({name: 'Infrastructure as a Service (IaaS)'})
+CloudServiceType.create({name: 'Platform as a Service (PaaS)'})
+CloudServiceType.create({name: 'Software as a Service (SaaS)'})
 
 
 # Create OS
@@ -51,10 +57,6 @@ SaasCategory.create({name: 'hr'})
 #####################################
 if Rails.env.development?
 
-  # Clean Database
-  DatabaseCleaner.clean_with :truncation
-
-
   # Create Test User
   User.create({first_name: 'Test', last_name: 'User', email: 'test@technikum-wien.at', password: '12345678',
                password_confirmation: '12345678', admin: false})
@@ -73,8 +75,8 @@ if Rails.env.development?
 
   # Create Cloud Services (IaaS)
   1.upto(15) do |i|
-    object = CloudService.create({title: Faker::Lorem.sentence, short_description: Faker::Lorem.sentence,
-                                  long_description: Faker::Lorem.paragraph, price: Faker::Number.decimal(2),
+    object = CloudService.create({title: Faker::Company.catch_phrase, short_description: Faker::Lorem.sentence,
+                                  long_description: Faker::Lorem.paragraph(25), price: Faker::Number.decimal(2),
                                   provider_url: Faker::Internet.url, active: rand(0..1), user_id: 1,
                                   cloud_service_type_id: 1})
 
