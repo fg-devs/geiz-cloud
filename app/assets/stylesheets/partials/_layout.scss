@@ -20,10 +20,16 @@ body.top-navigation {
 }
 
 
-// Mark not translated strings
-.translation_missing {
-  color: red !important;
+// BREADCRUMB
+#breadcrumbs {
+  margin-bottom: 20px;
+
+  .breadcrumb {
+    font-size: 15px;
+    padding-bottom: 20px;
+  }
 }
+
 
 
 // Rows with equal height columns
@@ -36,4 +42,11 @@ body.top-navigation {
       padding-bottom: 99999px;
     }
   }
+}
+
+
+
+// Mark not translated strings
+.translation_missing {
+  color: red !important;
 }

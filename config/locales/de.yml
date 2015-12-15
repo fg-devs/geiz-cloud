@@ -32,6 +32,8 @@ de:
   all: 'Alle'
   choose: 'Auswählen'
   back: 'Zurück'
+  close: 'Schließen'
+  remove: 'Entfernen'
 
   navigation:
     search: 'Suchen'
@@ -47,6 +49,7 @@ de:
   breadcrumbs:
     home: 'Home'
     search_cloud_services: 'Cloud Services suchen'
+    product_comparison: 'Produktvergleich'
     administration: 'Administration'
     cloud_service_administration: 'Cloud Services verwalten'
     create_cloud_service: 'Cloud Service anlegen'
@@ -66,7 +69,7 @@ de:
     page_entries_info:
       one_page:
         display_entries:
-          zero: "Keine %{entry_name} gefunden"
+          zero: "Keine %{entry_name} gefunden."
           one: "Zeige <b>1</b> %{entry_name}"
           other: "Zeige alle <b>%{count}</b> %{entry_name}"
       more_pages:
@@ -159,6 +162,23 @@ de:
     to_provider: 'Zum Anbieter'
     add_to_product_comparison: 'Produktvergleich'
 
+  product_comparison:
+    product_comparison: 'Produktvergleich'
+    to_product_comparison: 'Zum Produktvergleich'
+    no_products_yet: 'Es befinden sich noch keine Cloud Service Angebote im Produktvergleich.'
+    product_successfully_removed: 'Cloud Service Angebot wurde erfolgreich vom Produktvergleich entfernt.'
+    product_not_removed: 'Beim entfernen des Cloud Service Angebots aus dem Produktvergleich ist ein Fehler aufgetreten.'
+    wrong_cs_type: 'Es befindet sich bereits ein Cloud Service Angebot im Produktvergleich mit einem anderen Cloud Service Modell. Es können nur Cloud Services vom gleichen Modell verglichen werden. Entferne alle Produkte im Produktvergleich oder wähle ein anderes Angebot aus.'
+    already_in_pc: 'Cloud Service Angebot befindet sich bereits im Produktvergleich.'
+    successfully_added: 'Cloud Service Angebot wurde erfolgreich zum Produktvergleich hinzugefügt.'
+    features: 'Features'
+    price_per_month: 'Preis/Monat'
+    price_per_unit: 'Preis/Einheit'
+    operating_system: 'Betriebssystem'
+    ram: 'RAM (MB)'
+    cpu: 'CPU (GHz)'
+    storage: 'Speicherplatz (MB)'
+    bandwidth: 'Bandbreite (Mbit/s)'
 
   # Devise error messages
   errors:

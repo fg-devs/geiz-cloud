@@ -1,3 +1,47 @@
-// Place all the styles related to the ProductComparison controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#product-comparison {
+
+  .product-comparison-table-wrapper {
+
+    overflow-x: auto;
+    white-space: nowrap;
+
+    [class*="col"] {
+      display: inline-block;
+      float: none;
+    }
+
+
+    .product-comparison-table {
+      width: 99%;
+
+      .feature-col {
+        min-width: 280px;
+      }
+
+      .product-col {
+        min-width: 220px;
+      }
+
+      .ibox {
+        text-align: center;
+
+        .ibox-title {
+          min-height: 80px;
+
+          h5 {
+            float: none;
+            white-space: normal;
+          }
+        }
+
+        .ibox-content {
+          p {
+            min-height: 35px;
+            white-space: normal;
+          }
+        }
+      }
+    }
+
+  }
+}

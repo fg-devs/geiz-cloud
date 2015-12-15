@@ -14,6 +14,12 @@ crumb :detail_cloud_service do
   parent :search_cloud_services
 end
 
+# Product comparison
+crumb :product_comparison do
+  link I18n.t('breadcrumbs.product_comparison')
+  parent :root
+end
+
 # Administration
 crumb :administration do
   link I18n.t('breadcrumbs.administration')

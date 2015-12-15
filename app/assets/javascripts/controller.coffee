@@ -7,6 +7,9 @@ ready = ->
   GeizCloud.Plugins.initIChecks()
   GeizCloud.Plugins.initFootables()
 
+  # Product Comparison Stuff
+  GeizCloud.ProductComparison.handleAddRespone()
+
   # Cloud Services Set Active Cloud Service Type
   GeizCloud.CloudServices.setActiveCloudServiceType $('.select-cloud-service-type')
 
@@ -23,7 +26,6 @@ ready = ->
   $(document).on 'ifChanged', '#filter-cloud-services input[type="checkbox"]', ->
     GeizCloud.CloudServices.sendFilterFormOnChange $(this)
     return
-
 
   return
 

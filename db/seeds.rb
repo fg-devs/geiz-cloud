@@ -17,6 +17,17 @@ end
 User.create({first_name: 'Administrator', last_name: 'FH', email: 'admin@technikum-wien.at', password: '12345678',
              password_confirmation: '12345678', admin: true})
 
+# Create sample users
+1.upto(50) do |i|
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name
+
+  User.create({first_name: first_name, last_name: last_name,
+               email: first_name + '.' + last_name + (i * 53).to_s + '@technikum-wien.at', password: '12345678',
+               password_confirmation: '12345678', admin: false})
+end
+
+
 # Create Cloud Service Types
 CloudServiceType.create({name: 'Infrastructure as a Service (IaaS)'})
 CloudServiceType.create({name: 'Platform as a Service (PaaS)'})
@@ -62,19 +73,8 @@ if Rails.env.development?
                password_confirmation: '12345678', admin: false})
 
 
-  # Create sample users
-  1.upto(50) do |i|
-    first_name = Faker::Name.first_name
-    last_name = Faker::Name.last_name
-
-    User.create({first_name: first_name, last_name: last_name,
-                 email: i.to_s + '_' + first_name + '.' + last_name + '@technikum-wien.at', password: '12345678',
-                 password_confirmation: '12345678', admin: false})
-  end
-
-
   # Create Cloud Services (IaaS)
-  1.upto(15) do |i|
+  1.upto(30) do |i|
     object = CloudService.create({title: Faker::Company.catch_phrase, short_description: Faker::Lorem.sentence,
                                   long_description: Faker::Lorem.paragraph(25), price: Faker::Number.decimal(2),
                                   provider_url: Faker::Internet.url, active: rand(0..1), user_id: 1,
@@ -87,7 +87,7 @@ if Rails.env.development?
 
 
   # Create Cloud Services (PaaS)
-  1.upto(15) do |i|
+  1.upto(30) do |i|
     object = CloudService.new({title: Faker::Lorem.sentence, short_description: Faker::Lorem.sentence,
                                long_description: Faker::Lorem.paragraph, price: Faker::Number.decimal(2),
                                provider_url: Faker::Internet.url, active: rand(0..1), user_id: 1,
@@ -99,7 +99,7 @@ if Rails.env.development?
 
 
   # Create Cloud Services (SaaS)
-  1.upto(15) do |i|
+  1.upto(30) do |i|
     object = CloudService.new({title: Faker::Lorem.sentence, short_description: Faker::Lorem.sentence,
                                long_description: Faker::Lorem.paragraph, price: Faker::Number.decimal(2),
                                provider_url: Faker::Internet.url, active: rand(0..1), user_id: 1,

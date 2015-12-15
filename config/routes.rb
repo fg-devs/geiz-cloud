@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   # Product comparison
-  resources :product_comparisons, only: [:index]
+  resources :product_comparisons, only: [:index, :create, :destroy]
 
 
   # Devise routes

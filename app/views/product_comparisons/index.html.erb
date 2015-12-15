@@ -1,0 +1,86 @@
+<% breadcrumb :product_comparison %>
+
+<div id="product-comparison" class="row">
+
+  <% if @cloud_services.blank? %>
+
+    <div class="col-xs-12">
+      <div class="ibox">
+
+        <div class="ibox-title">
+          <h5><%= t('product_comparison.product_comparison') %></h5>
+        </div>
+
+        <div class="ibox-content">
+          <p><%= t('product_comparison.no_products_yet') %></p>
+        </div>
+
+      </div>
+    </div>
+
+  <% else %>
+
+    <div class="product-comparison-table-wrapper">
+      <div class="product-comparison-table">
+      <!-- Feature column -->
+      <div class="feature-col col-xs-<%= calc_feature_col(@cloud_services) %>">
+        <div class="ibox">
+
+          <div class="ibox-title">
+            <h5><%= t('product_comparison.features') %></h5>
+          </div>
+
+          <div class="ibox-content">
+
+            <% if is_iaas?(@cloud_services[0]) %>
+              <%= render 'product_comparisons/partials/iaas/features' %>
+            <% elsif is_paas?(@cloud_services[0]) %>
+              <%= render 'product_comparisons/partials/paas/features' %>
+            <% elsif is_saas?(@cloud_services[0]) %>
+              <%= render 'product_comparisons/partials/saas/features' %>
+            <% end %>
+
+            <p><%= t('remove') %></p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Data column -->
+      <% @cloud_services.each do |cs| %>
+      <div class="product-col col-xs-<%= calc_data_col(@cloud_services) %>">
+        <div class="ibox">
+
+          <div class="ibox-title">
+            <h5><%= cs.title %></h5>
+          </div>
+
+          <div class="ibox-content">
+
+            <% if is_iaas?(cs) %>
+              <%= render 'product_comparisons/partials/iaas/data', cs: cs %>
+            <% elsif is_paas?(@cloud_services[0]) %>
+                <%= render 'product_comparisons/partials/paas/data', cs: cs %>
+            <% elsif is_saas?(@cloud_services[0]) %>
+                <%= render 'product_comparisons/partials/saas/data', cs: cs %>
+            <% end %>
+
+            <p>
+              <%= link_to product_comparison_path(cs), method: :delete do %>
+                <i class="glyphicon glyphicon-trash"></i>
+              <% end %>
+            </p>
+
+          </div>
+        </div>
+      </div>
+      <% end %>
+
+
+      </div>
+    </div>
+
+  <% end %>
+
+</div>

@@ -6,3 +6,4 @@
 @GeizCloud =
   Plugins: {}
   CloudServices: {}
+  ProductComparison: {}

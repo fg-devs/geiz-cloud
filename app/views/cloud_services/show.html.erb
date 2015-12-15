@@ -5,86 +5,85 @@
     <div class="col-lg-12">
       <div class="ibox-content">
 
-      <h2 class="font-bold m-b-xs"><%= @cloud_service.title %></h2>
-      <p><%= @cloud_service.short_description %></p>
+        <h1 class="font-bold m-b-xs"><%= @cloud_service.title %></h1>
+        <p><%= @cloud_service.short_description %></p>
 
-      <div class="m-t-md">
-        <h2 class="price"><%= number_to_currency @cloud_service.price %> <small class="text-muted">inkl. USt</small> </h2>
-      </div>
-
-      <hr>
-
-      <div class="row">
-        <div class="col-md-8">
-          <h2><%= t('cloud_service.product_description') %></h2>
-
-          <div class="text-muted">
-            <%= @cloud_service.long_description %>
-          </div>
+        <div class="m-t-md">
+          <h2 class="price"><%= number_to_currency @cloud_service.price %> <small class="text-muted">inkl. USt</small> </h2>
         </div>
 
-        <div class="col-md-4">
-          <h2><%= t('cloud_service.features') %></h2>
+        <hr>
 
-          <% if is_iaas?(@cloud_service) %>
+        <div class="row">
+          <div class="col-md-8">
+            <h2><%= t('cloud_service.product_description') %></h2>
 
-              <dl class="dl-horizontal dl-align-left m-t-md">
-                <dt><%= t('cloud_service.ram') %>:</dt>
-                <dd><%= number_with_delimiter @cloud_service.iaas_attribute.ram %> MB</dd>
+            <div class="text-muted">
+              <%= @cloud_service.long_description %>
+            </div>
+          </div>
 
-                <dt><%= t('cloud_service.cpu') %>:</dt>
-                <dd><%= number_with_delimiter @cloud_service.iaas_attribute.cpu %> GHz</dd>
+          <div class="col-md-4">
+            <h2><%= t('cloud_service.features') %></h2>
 
-                <dt><%= t('cloud_service.storage') %>:</dt>
-                <dd><%= number_with_delimiter @cloud_service.iaas_attribute.storage %> MB</dd>
+            <% if is_iaas?(@cloud_service) %>
 
-                <dt><%= t('cloud_service.bandwidth') %>:</dt>
-                <dd><%= number_with_delimiter @cloud_service.iaas_attribute.bandwidth %> Mbit/s</dd>
-              </dl>
+                <dl class="dl-horizontal dl-align-left m-t-md">
+                  <dt><%= t('cloud_service.ram') %>:</dt>
+                  <dd><%= number_with_delimiter @cloud_service.iaas_attribute.ram %> MB</dd>
 
-          <% elsif is_paas?(@cloud_service) %>
+                  <dt><%= t('cloud_service.cpu') %>:</dt>
+                  <dd><%= number_with_delimiter @cloud_service.iaas_attribute.cpu %> GHz</dd>
 
-            <h4><%= t('cloud_service.paas_categories') %></h4>
-            <ul>
-              <% @cloud_service.paas_categories.each do |category| %>
-              <li><%= t('for_database.paas_categories.' + category.name) %></li>
-              <% end %>
-            </ul>
+                  <dt><%= t('cloud_service.storage') %>:</dt>
+                  <dd><%= number_with_delimiter @cloud_service.iaas_attribute.storage %> MB</dd>
 
-          <% elsif is_saas?(@cloud_service) %>
+                  <dt><%= t('cloud_service.bandwidth') %>:</dt>
+                  <dd><%= number_with_delimiter @cloud_service.iaas_attribute.bandwidth %> Mbit/s</dd>
+                </dl>
 
-              <h4><%= t('cloud_service.saas_categories') %></h4>
+            <% elsif is_paas?(@cloud_service) %>
+
+              <h4><%= t('cloud_service.paas_categories') %></h4>
               <ul>
-                <% @cloud_service.saas_categories.each do |category| %>
-                    <li><%= t('for_database.saas_categories.' + category.name) %></li>
+                <% @cloud_service.paas_categories.each do |category| %>
+                <li><%= t('for_database.paas_categories.' + category.name) %></li>
                 <% end %>
               </ul>
 
-          <% end %>
+            <% elsif is_saas?(@cloud_service) %>
+
+                <h4><%= t('cloud_service.saas_categories') %></h4>
+                <ul>
+                  <% @cloud_service.saas_categories.each do |category| %>
+                      <li><%= t('for_database.saas_categories.' + category.name) %></li>
+                  <% end %>
+                </ul>
+
+            <% end %>
+          </div>
+
         </div>
 
-      </div>
+        <hr>
 
-      <hr>
+        <div class="btn-group">
+          <%= link_to @cloud_service.provider_url, target: '_blank', class: 'btn btn-primary' do %>
+              <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+              <%= t('cloud_service.to_provider') %>
+          <% end %>
 
-      <div class="btn-group">
-        <%= link_to @cloud_service.provider_url, target: '_blank', class: 'btn btn-primary' do %>
-            <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
-            <%= t('cloud_service.to_provider') %>
-        <% end %>
+          <%= link_to product_comparisons_path, data: { remote: true, type: :html, method: :post, params: "cloud_service_id=#{@cloud_service.id}"}, id: 'add-to-product-comparison', class: 'btn btn-white' do %>
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              <%= t('cloud_service.add_to_product_comparison') %>
+          <% end %>
 
-        <%= link_to '#', target: '_blank', class: 'btn btn-white' do %>
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-            <%= t('cloud_service.add_to_product_comparison') %>
-        <% end %>
+          <%= link_to history_back, class: 'btn btn-white' do %>
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <%= t('back') %>
+          <% end %>
 
-        <%= link_to history_back, class: 'btn btn-white' do %>
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <%= t('back') %>
-        <% end %>
-
-      </div>
-
+        </div>
 
       </div>
     </div>
