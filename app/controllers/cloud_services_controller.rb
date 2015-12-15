@@ -28,7 +28,9 @@ class CloudServicesController < ApplicationController
   # GET cloud_services/filter
   # Responds to JS only (AJAX)
   def filter
-    unless filter_params[:cloud_service_type_id].empty?
+    if filter_params[:cloud_service_type_id].empty?
+      @cloud_services = nil
+    else
       cloud_services = CloudServiceService::GetFiltered.build.call(filter_params)
       @cloud_services = cloud_services.page(params[:page]).per(20)
     end

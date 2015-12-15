@@ -29,7 +29,7 @@
   # @param filterForm
   ###
   factory.sendFilterFormOnChange = (filterForm) ->
-    filterForm.submit();
+    filterForm.submit()
     return
 
   factory

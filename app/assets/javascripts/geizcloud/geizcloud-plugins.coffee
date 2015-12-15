@@ -31,6 +31,14 @@
 
 
   ###*
+  # Tooltips
+  ###
+  factory.initTooltips = ->
+    $('[data-toggle="tooltip"]').tooltip()
+    return
+
+
+  ###*
   # Range sliders
   ###
   factory.initRangeSliders = (filterSettingsJSON) ->
@@ -88,5 +96,34 @@
       prettify_separator: '.'
 
     return
+
+
+  ###*
+  # Handles AJAX Loader
+  ###
+  factory.ajaxLoader = do ->
+    localObject = {}
+
+    # Setup modal settings
+    localObject.init = ->
+      $('#ajax-loader-modal').modal
+        backdrop: 'static'
+        show: false
+      return
+
+    # Open modal
+    localObject.openModal = ->
+      $('#ajax-loader-modal').modal('show')
+      return
+
+    # Close modal
+    localObject.closeModal = ->
+      $('#ajax-loader-modal').modal('hide')
+      return
+
+    return localObject
+
+
+
 
   factory

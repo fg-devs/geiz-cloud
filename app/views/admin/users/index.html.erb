@@ -41,22 +41,22 @@
           <td><%= user.email %></td>
           <td class="text-center" data-value="<%= user.active %>">
             <% if user_active?(user) %>
-            <span class="glyphicon glyphicon-ok text-info"></span>
+            <span class="glyphicon glyphicon-ok text-info" data-toggle="tooltip" data-placement="left" title="<%= t('user_administration.user_unlocked') %>"></span>
             <% else %>
-            <span class="glyphicon glyphicon-remove text-danger"></span>
+            <span class="glyphicon glyphicon-remove text-danger" data-toggle="tooltip" data-placement="left" title="<%= t('user_administration.user_locked') %>"></span>
             <% end %>
           </td>
           <td class="text-center action-icons">
             <%= link_to edit_admin_user_path(user) do %>
-                <i class="glyphicon glyphicon-pencil"></i>
+                <i class="glyphicon glyphicon-pencil" data-toggle="tooltip" data-placement="left" title="<%= t('user_administration.edit_user') %>"></i>
             <% end %>
 
             <% unless user.admin || user == current_user %>
               <%= link_to admin_user_path(user), data: { confirm: t('user_administration.sure_to_change_status') }, method: :delete do %>
                 <% if user_active?(user) %>
-                  <i class="fa fa-lock"></i>
+                  <i class="fa fa-lock" data-toggle="tooltip" data-placement="right" title="<%= t('user_administration.lock_user') %>"></i>
                 <% else %>
-                  <i class="fa fa-unlock"></i>
+                  <i class="fa fa-unlock" data-toggle="tooltip" data-placement="right" title="<%= t('user_administration.unlock_user') %>"></i>
                 <% end %>
               <% end %>
             <% end %>

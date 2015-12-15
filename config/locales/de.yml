@@ -24,7 +24,6 @@ de:
   project_name: 'GeizCloud'
   project_name_short: 'GZ'
   copyright: '2015 GeizCloud'
-  version: 'Version'
 
   status: 'Status'
   actions: 'Aktionen'
@@ -34,6 +33,7 @@ de:
   back: 'Zurück'
   close: 'Schließen'
   remove: 'Entfernen'
+  loading_data: 'Lade Daten ...'
 
   navigation:
     search: 'Suchen'
@@ -92,7 +92,7 @@ de:
     register_to: 'Registriere dich, um alle Funktionalitäten von GeizCloud verwenden zu können.'
     login_to: 'Einloggen um GeizCloud zu verwenden.'
     account_yet: 'Hast du bereits ein Benutzerkonto?'
-    no_account_yet: 'Hast du noch kein Benutzerkonto?'
+    no_account_yet: 'Du hast noch kein Benutzerkonto?'
 
     min_chars: '(mind. %{chars} Zeichen)'
 
@@ -111,6 +111,11 @@ de:
     user_updated: 'Der Benutzer wurde erfolgreich aktualisiert.'
     status_updated: 'Der Status des Benutzers wurde erfolgreich aktualisiert.'
     sure_to_change_status: 'Bist du dir sicher, dass du den Status des Benutzers ändern möchtest?'
+    lock_user: 'Benutzer sperren'
+    unlock_user: 'Benutzer aktivieren'
+    user_locked: 'Benutzer ist gesperrt'
+    user_unlocked: 'Benutzer ist aktiviert'
+    edit_user: 'Benutzer ändern'
 
   cloud_service_administration:
     cloud_services: 'Cloud Services'
@@ -136,6 +141,10 @@ de:
     status: 'Status'
     active: 'Aktiv'
     inactive: 'Inaktiv'
+    lock_cs: 'Cloud Service sperren'
+    unlock_cs: 'Cloud Service aktivieren'
+    cs_locked: 'Cloud Service ist gesperrt'
+    cs_unlocked: 'Cloud Service ist aktiviert'
     cloud_service_created: 'Cloud Services wurde erfolgreich erstellt.'
     status_updated: 'Der Status des Cloud Services wurde erfolgreich aktualisiert.'
     sure_to_change_status: 'Bist du dir sicher, dass du den Status des Cloud Services ändern möchtest?'

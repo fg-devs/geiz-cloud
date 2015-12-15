@@ -6,6 +6,8 @@ ready = ->
   GeizCloud.Plugins.initNProgress()
   GeizCloud.Plugins.initIChecks()
   GeizCloud.Plugins.initFootables()
+  GeizCloud.Plugins.initTooltips()
+  GeizCloud.Plugins.ajaxLoader.init()
 
   # Product Comparison Stuff
   GeizCloud.ProductComparison.handleAddRespone()
@@ -26,6 +28,17 @@ ready = ->
   $(document).on 'ifChanged', '#filter-cloud-services input[type="checkbox"]', ->
     GeizCloud.CloudServices.sendFilterFormOnChange $(this)
     return
+
+
+  # Register elements for AJAX Loader
+  $('#filter-cloud-services')
+    .on 'ajax:before', ->
+      GeizCloud.Plugins.ajaxLoader.openModal()
+      return
+    .on 'ajax:complete', ->
+      GeizCloud.Plugins.ajaxLoader.closeModal()
+      return
+
 
   return
 
