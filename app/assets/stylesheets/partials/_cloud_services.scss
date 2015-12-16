@@ -1,0 +1,43 @@
+.form-cloud-services {
+
+  &.none-active {
+    .general-fields,
+    .iaas-fields,
+    .paas-fields,
+    .saas-fields {
+      display: none;
+    }
+  }
+
+  &.iaas-active {
+    .saas-fields,
+    .paas-fields {
+      display: none;
+    }
+  }
+
+  &.paas-active {
+    .iaas-fields,
+    .saas-fields {
+      display: none;
+    }
+  }
+
+  &.saas-active {
+    .iaas-fields,
+    .paas-fields {
+      display: none;
+    }
+  }
+
+}
+
+#cloud-service-detail {
+  h2.price {
+    font-size: 30px;
+
+    small {
+      font-size: 15px;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<div class="form-group">
+  <%= f.label :operating_system_id, t('cloud_service.operating_system') %>
+  <%= f.select :operating_system_id, options_from_collection_for_select(@operating_systems, 'id', 'name'), { include_blank: t('all')}, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <%= f.label :ram, t('cloud_service.ram') %>
+  <%= f.text_field :ram, id: 'range-slider-ram' %>
+</div>
+
+<div class="form-group">
+  <%= f.label :cpu, t('cloud_service.cpu') %>
+  <%= f.text_field :cpu, id: 'range-slider-cpu' %>
+</div>
+
+<div class="form-group">
+  <%= f.label :storage, t('cloud_service.storage') %>
+  <%= f.text_field :storage, id: 'range-slider-storage' %>
+</div>
+
+<div class="form-group">
+  <%= f.label :bandwidth, t('cloud_service.bandwidth') %>
+  <%= f.text_field :bandwidth, id: 'range-slider-bandwidth' %>
+</div>

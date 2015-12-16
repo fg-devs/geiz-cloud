@@ -22,13 +22,18 @@
 de:
 
   project_name: 'GeizCloud'
-  project_name_short: 'GZ'
+  project_name_short: 'GC'
   copyright: '2015 GeizCloud'
-  version: 'Version'
 
   status: 'Status'
   actions: 'Aktionen'
   new: 'Neu'
+  all: 'Alle'
+  choose: 'Auswählen'
+  back: 'Zurück'
+  close: 'Schließen'
+  remove_all: 'Alle entfernen'
+  loading_data: 'Lade Daten ...'
 
   navigation:
     search: 'Suchen'
@@ -43,10 +48,12 @@ de:
 
   breadcrumbs:
     home: 'Home'
-    cloud_services: 'Cloud Services'
+    search_cloud_services: 'Cloud Services suchen'
+    product_comparison: 'Produktvergleich'
     administration: 'Administration'
     cloud_service_administration: 'Cloud Services verwalten'
     create_cloud_service: 'Cloud Service anlegen'
+    detail_cloud_service: 'Cloud Service Detail'
     edit_cloud_service: 'Cloud Service ändern'
     user_administration: 'Benutzerverwaltung'
     edit_user: 'Benutzer ändern'
@@ -62,7 +69,7 @@ de:
     page_entries_info:
       one_page:
         display_entries:
-          zero: "Keine %{entry_name} gefunden"
+          zero: "Keine %{entry_name} gefunden."
           one: "Zeige <b>1</b> %{entry_name}"
           other: "Zeige alle <b>%{count}</b> %{entry_name}"
       more_pages:
@@ -85,7 +92,7 @@ de:
     register_to: 'Registriere dich, um alle Funktionalitäten von GeizCloud verwenden zu können.'
     login_to: 'Einloggen um GeizCloud zu verwenden.'
     account_yet: 'Hast du bereits ein Benutzerkonto?'
-    no_account_yet: 'Hast du noch kein Benutzerkonto?'
+    no_account_yet: 'Du hast noch kein Benutzerkonto?'
 
     min_chars: '(mind. %{chars} Zeichen)'
 
@@ -99,26 +106,28 @@ de:
 
   user_administration:
     user: 'Benutzer'
-    search_users: 'Benutzer suchen'
     registered_users: 'Registrierte Benutzer'
     user_updated: 'Der Benutzer wurde erfolgreich aktualisiert.'
     status_updated: 'Der Status des Benutzers wurde erfolgreich aktualisiert.'
     sure_to_change_status: 'Bist du dir sicher, dass du den Status des Benutzers ändern möchtest?'
+    lock_user: 'Benutzer sperren'
+    unlock_user: 'Benutzer aktivieren'
+    user_locked: 'Benutzer ist gesperrt'
+    user_unlocked: 'Benutzer ist aktiviert'
+    edit_user: 'Benutzer ändern'
 
   cloud_service_administration:
     cloud_services: 'Cloud Services'
     create_cloud_service: 'Cloud Service anlegen'
     display_cloud_services: 'Cloud Services anzeigen'
     edit_cloud_service: 'Cloud Service ändern'
-    search_cloud_services: 'Cloud Services suchen'
     cloud_service_model: 'Cloud Service Modell'
     title: 'Titel'
     short_description: 'Kurzbeschreibung'
     long_description: 'Langbeschreibung'
     price: 'Preis'
     price_per_month: 'Preis pro Monat'
-    price_per_timeunit_or_calcunit: 'Preis pro Zeiteinheit/Recheneinheit'
-    price_per_timeunit: 'Preis pro Zeiteinheit'
+    price_per_unit: 'Preis pro Einheit'
     provider_url: 'Link zum Anbieter'
     operating_system: 'Betriebssystem'
     ram: 'RAM (in MB)'
@@ -130,11 +139,60 @@ de:
     status: 'Status'
     active: 'Aktiv'
     inactive: 'Inaktiv'
+    lock_cs: 'Cloud Service sperren'
+    unlock_cs: 'Cloud Service aktivieren'
+    cs_locked: 'Cloud Service ist gesperrt'
+    cs_unlocked: 'Cloud Service ist aktiviert'
     cloud_service_created: 'Cloud Services wurde erfolgreich erstellt.'
     status_updated: 'Der Status des Cloud Services wurde erfolgreich aktualisiert.'
     sure_to_change_status: 'Bist du dir sicher, dass du den Status des Cloud Services ändern möchtest?'
     cloud_service_updated: 'Das Cloud Service wurde erfolgreich aktualisiert.'
 
+  cloud_service:
+    filter: 'Filter'
+    cloud_services: 'Cloud Services'
+    cloud_credits: 'Cloud Credits'
+    product_description: 'Produktbeschreibung'
+    features: 'Features'
+    title: 'Angebot'
+    provider: 'Anbieter'
+    price: 'Preis'
+    price_per_month: 'Preis/Monat'
+    price_per_unit: 'Preis/Einheit'
+    operating_system: 'Betriebssystem'
+    ram_with_unit: 'RAM (MB)'
+    cpu_with_unit: 'CPU (GHz)'
+    storage_with_unit: 'Speicherplatz (MB)'
+    bandwidth_with_unit: 'Bandbreite (Mbit/s)'
+    ram: 'RAM'
+    cpu: 'CPU'
+    storage: 'Speicherplatz'
+    bandwidth: 'Bandbreite'
+    paas_categories: 'Kategorien'
+    saas_categories: 'Kategorien'
+    please_choose_cs_model: 'Cloud Service Modell unter dem Bereich "Filter" auswählen, um die Suche nach Cloud Services zu starten.'
+    to_provider: 'Zum Anbieter'
+    add_to_product_comparison: 'Produktvergleich'
+
+  product_comparison:
+    product_comparison: 'Produktvergleich'
+    to_product_comparison: 'Zum Produktvergleich'
+    no_products_yet: 'Es befinden sich noch keine Cloud Service Angebote im Produktvergleich.'
+    product_successfully_removed: 'Cloud Service Angebot wurde erfolgreich vom Produktvergleich entfernt.'
+    product_not_removed: 'Beim entfernen des Cloud Service Angebots aus dem Produktvergleich ist ein Fehler aufgetreten.'
+    all_products_removed: 'Alle Cloud Service Angebote wurden erfolgreich aus dem Produktvergleich entfernt.'
+    wrong_cs_type: 'Es befindet sich bereits ein Cloud Service Angebot im Produktvergleich mit einem anderen Cloud Service Modell. Es können nur Cloud Services vom gleichen Modell verglichen werden. Entferne alle Produkte im Produktvergleich oder wähle ein anderes Angebot aus.'
+    already_in_pc: 'Cloud Service Angebot befindet sich bereits im Produktvergleich.'
+    successfully_added: 'Cloud Service Angebot wurde erfolgreich zum Produktvergleich hinzugefügt.'
+    features: 'Features'
+    price_per_month: 'Preis/Monat'
+    price_per_unit: 'Preis/Einheit'
+    operating_system: 'Betriebssystem'
+    ram: 'RAM (MB)'
+    cpu: 'CPU (GHz)'
+    storage: 'Speicherplatz (MB)'
+    bandwidth: 'Bandbreite (Mbit/s)'
+    remove_product: 'Produkt entfernen'
 
   # Devise error messages
   errors:
@@ -154,7 +212,7 @@ de:
       security: 'Security'
     saas_categories:
       collaboration: 'Kollaboration'
-      crm: 'Customer Relationship Managemetn (CRM)'
+      crm: 'Customer Relationship Management (CRM)'
       erp: 'Enterprise Resource Planning (ERP)'
       accounting: 'Rechnungswesen/Buchhaltung'
       pm: 'Projektmanagement'
@@ -177,6 +235,7 @@ de:
               invalid: 'E-Mail Adresse ist ungültig'
               tw_invalid: 'E-Mail Adresse muss eine "@technikum-wien.at" Adresse sein'
               blank: 'E-Mail Adresse ist erforderlich'
+              taken: 'E-Mail Adresse wird bereits verwendet'
             current_password:
               blank: 'Aktuelles Passwort ist erforderlich'
               invalid: 'Aktuelles Passwort ist falsch'
@@ -225,13 +284,22 @@ de:
               greater_than_or_equal_to: 'Bandbreite muss größer als %{count} sein'
               not_a_number: 'Bandbreite muss ein numerischer Wert sein'
 
+  footable:
+    search: 'Suchen'
+    no_rows: 'Keine Einträge'
 
-  # Options for Rails build-in number_to_currency helper method
+  # Locales for rails build in number helper
   number:
+    # number_to_currency helper method
     currency:
       format:
-        format: "%n %u"
-        unit: "&euro;"
-        separator: ","
-        delimiter: "."
+        format: '%n %u'
+        unit: '&euro;'
+        separator: ','
+        delimiter: '.'
         precision: 2
+
+    # General format
+    format:
+      separator: ','
+      delimiter: '.'

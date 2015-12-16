@@ -1,0 +1,51 @@
+<% if @cloud_services.blank? %>
+
+    <%= t('cloud_service.please_choose_cs_model') %>
+
+<% else  %>
+
+  <!-- Info and Sorting -->
+  <div class="row">
+    <div class="col-xs-12 text-right">
+      <div class="pagination-info">
+        <%= page_entries_info @cloud_services, entry_name: t('cloud_service.cloud_services') %>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Table with cloud services -->
+  <table id="table-cloud-services" class="table table-hover">
+    <thead>
+      <% if is_iaas?(@cloud_services[0]) %>
+        <%= render 'cloud_services/partials/iaas/iaas_header' %>
+      <% elsif is_paas?(@cloud_services[0]) %>
+        <%= render 'cloud_services/partials/paas/paas_header' %>
+      <% elsif is_saas?(@cloud_services[0]) %>
+        <%= render 'cloud_services/partials/saas/saas_header' %>
+    <% end %>
+    </thead>
+
+    <tbody>
+      <% @cloud_services.each do |cs| %>
+
+          <% if is_iaas?(cs) %>
+              <%= render 'cloud_services/partials/iaas/iaas_row', cs: cs %>
+          <% elsif is_paas?(cs) %>
+              <%= render 'cloud_services/partials/paas/paas_row', cs: cs %>
+          <% elsif is_saas?(cs) %>
+              <%= render 'cloud_services/partials/saas/saas_row', cs: cs %>
+          <% end %>
+
+      <% end %>
+    </tbody>
+  </table>
+
+
+  <div class="row">
+    <div class="col-lg-12 text-right cs-filter-paginator">
+      <%= paginate @cloud_services, remote: true %>
+    </div>
+  </div>
+
+<% end %>

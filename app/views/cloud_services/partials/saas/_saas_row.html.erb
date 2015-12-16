@@ -1,0 +1,23 @@
+<tr>
+  <td>
+    <%= link_to cs.title, cs %>
+    <br>
+    <small><%= cs.short_description %></small>
+  </td>
+
+  <td class="list">
+    <ul>
+      <% cs.saas_categories.each do |category| %>
+          <li><%= t('for_database.saas_categories.' + category.name) %></li>
+      <% end %>
+    </ul>
+  </td>
+
+  <td class="text-right" data-sort-value="<%= cs.price %>">
+    <%= number_to_currency(cs.price) %>
+  </td>
+
+  <td class="text-right" data-sort-value="<%= CsAttributeWeighting.calc_saas_credits(cs) %>">
+    <%= number_with_delimiter CsAttributeWeighting.calc_saas_credits(cs) %>
+  </td>
+</tr>

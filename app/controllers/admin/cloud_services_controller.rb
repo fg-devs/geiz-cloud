@@ -7,7 +7,7 @@ class Admin::CloudServicesController < ApplicationController
   # GET admin/cloud_services
   def index
     cloud_services = CloudServiceService::GetAll.build.call
-    @cloud_services = cloud_services.page(params[:page]).per(10)
+    @cloud_services = cloud_services.page(params[:page]).per(20)
   end
 
   # GET admin/cloud_services/new

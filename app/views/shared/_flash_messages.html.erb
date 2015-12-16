@@ -1,19 +1,19 @@
-<% flash.each do |key, value|
-  if key == 'error' || key == 'alert'
-    bootstrap_class = 'danger'
-  elsif key == 'success'
-    bootstrap_class = 'success'
-  elsif key == 'notice'
-    bootstrap_class = 'info'
-  end %>
+<div class="row">
+  <div class="col-xs-12">
 
-  <div class="alert alert-<%= bootstrap_class %>" role="alert">
-    <a href="#" data-dismiss="alert" class="close">×</a>
+    <% flash.each do |type, message| %>
 
-    <ul>
-      <li>
-        <%= value %>
-      </li>
-    </ul>
+        <div class="alert alert-<%= get_bootstrap_alert_class(type) %>" role="alert">
+          <a href="#" data-dismiss="alert" class="close">×</a>
+
+          <ul>
+            <li>
+              <%= message %>
+            </li>
+          </ul>
+        </div>
+    <% end %>
+
   </div>
-<% end %>
+</div>
+

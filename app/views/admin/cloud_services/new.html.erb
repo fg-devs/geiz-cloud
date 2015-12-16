@@ -6,20 +6,20 @@
   </div>
 
   <div class="ibox-content">
-    <div class="row">
+    <%= form_for(@cloud_service, url: admin_cloud_services_path, html: { class: 'form-cloud-services' }) do |f| %>
 
-      <%= form_for(@cloud_service, url: admin_cloud_services_path) do |f| %>
-
-
-        <div class="col-lg-12">
+      <div class="row">
+        <div class="col-xs-12">
           <%= render 'shared/form_messages', object: f.object %>
         </div>
+      </div>
 
+      <div class="row">
         <!-- Left column -->
         <div class="col-md-6">
           <div class="form-group">
             <%= f.label :cloud_service_type_id, t('cloud_service_administration.cloud_service_model') %>
-            <%= f.select :cloud_service_type_id, options_from_collection_for_select(@cloud_service_types, 'id', 'name', @cloud_service.cloud_service_type_id), {}, autofocus: true, class: 'form-control' %>
+            <%= f.select :cloud_service_type_id, options_from_collection_for_select(@cloud_service_types, 'id', 'name', @cloud_service.cloud_service_type_id), {}, autofocus: true, class: 'form-control select-cloud-service-type' %>
           </div>
 
           <%= render 'admin/cloud_services/partial/general_fields', f: f %>
@@ -29,44 +29,44 @@
         <div class="col-md-6">
           <div class="form-group">
 
-            <div class="iaas-toggle">
+            <div class="iaas-fields">
               <%= f.label :price, t('cloud_service_administration.price_per_month') %>
             </div>
-            <div class="paas-toggle">
-              <%= f.label :price, t('cloud_service_administration.price_per_timeunit_or_calcunit') %>
+            <div class="paas-fields">
+              <%= f.label :price, t('cloud_service_administration.price_per_month') %>
             </div>
-            <div class="saas-toggle">
-              <%= f.label :price, t('cloud_service_administration.price_per_timeunit') %>
+            <div class="saas-fields">
+              <%= f.label :price, t('cloud_service_administration.price_per_unit') %>
             </div>
 
             <%= f.number_field :price, class: 'form-control', placeholder: t('cloud_service_administration.price'), min: 0, step: :any %>
           </div>
 
 
-          <div class="iaas-toggle">
+          <div class="iaas-fields">
             <%= f.fields_for(:iaas_attribute) do |ff| %>
               <%= render 'admin/cloud_services/partial/iaas_fields', f: ff %>
             <% end %>
           </div>
 
-          <div class="paas-toggle">
+          <div class="paas-fields">
             <%= render 'admin/cloud_services/partial/paas_fields', f: f %>
           </div>
 
-          <div class="saas-toggle">
+          <div class="saas-fields">
             <%= render 'admin/cloud_services/partial/saas_fields', f: f %>
           </div>
         </div>
+      </div>
 
-
-        <!-- Buttons -->
-        <div class="col-lg-12">
+      <!-- Buttons -->
+      <div class="row">
+        <div class="col-xs-12">
           <%= f.button t('buttons.save'), class: 'btn btn-primary' %>
           <%= link_to(t('buttons.cancel'), admin_cloud_services_path, class: 'btn btn-white') %>
         </div>
+      </div>
 
-      <% end %>
-
-    </div>
+    <% end %>
   </div>
 </div>

@@ -10,14 +10,24 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
+
+// ********** INFORMATION *********
+// Global GeizCloud JS Object is defined in app/layouts/partials/_generated-javascript.html.erb
+// This file is included above all other JavaScript files
+
+
+// From gems
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
 //= require nprogress
 //= require nprogress-turbolinks
-//= require footable/footable.min
-//= require footable/footable.filter.min
-//= require footable/footable.sort.min
-//= require icheck.min
+//= require iCheck
+//= require ionrangeslider
+
+// From app/vendor
+//= require footable/footable3
+
 //= require_tree .

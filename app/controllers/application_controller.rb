@@ -6,12 +6,17 @@ class ApplicationController < ActionController::Base
 
   private
 
-  # Check if logged in user is an admin, if not redirect to root path
+  # Check if logged in user is an admin, if not redirect to cloud services search page
   def verify_is_admin
-    redirect_to root_path unless current_user.admin?
+    redirect_to cloud_services_path unless current_user.admin?
   end
 
-  # Overwriting the sign_out redirect path method
+  # Overwriting the sign_in redirect path method from devise gem
+  def after_sign_in_path_for(resource_or_scope)
+    cloud_services_path
+  end
+
+  # Overwriting the sign_out redirect path method from devise chem
   def after_sign_out_path_for(resource_or_scope)
     new_user_session_path
   end

@@ -6,9 +6,10 @@
   </div>
 
   <div class="ibox-content">
-    <div class="row">
-      <div class="col-md-6">
-      <%= form_for(@user, url: admin_user_path, method: :put) do |f| %>
+    <%= form_for(@user, url: admin_user_path, method: :put) do |f| %>
+
+      <div class="row">
+        <div class="col-md-6">
 
           <%= render 'shared/form_messages', object: f.object %>
 
@@ -27,12 +28,18 @@
             <%= f.email_field :email, class: 'form-control', placeholder: t('account.email') %>
           </div>
 
-          <!-- Buttons -->
+        </div>
+      </div>
+
+
+      <!-- Buttons -->
+      <div class="row">
+        <div class="col-xs-12">
           <%= f.button t('buttons.save'), class: 'btn btn-primary' %>
           <%= link_to(t('buttons.cancel'), admin_users_path, class: 'btn btn-white') %>
-
-      <% end %>
+        </div>
       </div>
-    </div>
+
+    <% end %>
   </div>
 </div>

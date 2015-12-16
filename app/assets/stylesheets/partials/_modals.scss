@@ -1,0 +1,40 @@
+// GENERAL
+.modal {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+
+// AJAX LOADER
+#ajax-loader-modal {
+
+  .modal-body {
+    height: 200px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h3 {
+      margin-top: 25px;
+      margin-bottom: 0;
+    }
+
+  }
+
+
+}

@@ -67,9 +67,18 @@ gem 'kaminari'
 gem 'faker'
 # Show AJAX loader on page loading, due to Turbolinks (https://github.com/caarlos0/nprogress-rails)
 gem 'nprogress-rails'
+# To mark active links in navigation (https://github.com/comfy/active_link_to)
+gem 'active_link_to'
+
 
 ## Rails-assets (frontend application dependencies; https://rails-assets.org)
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-font-awesome', '~> 4.3.0'
+  gem 'rails-assets-open-sans'
+  gem 'rails-assets-roboto-fontface'
+  gem 'rails-assets-iCheck'
+  gem 'rails-assets-animate.css'
+  gem 'rails-assets-ionrangeslider'
+  gem 'rails-assets-footable3'
 end

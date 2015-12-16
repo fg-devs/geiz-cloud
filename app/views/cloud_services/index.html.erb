@@ -1,6 +1,70 @@
-<% breadcrumb :cloud_services %>
+<% breadcrumb :search_cloud_services %>
+
+<script type="text/javascript">
+  $(document).on('ready page:load', function() {
+    GeizCloud.Plugins.initRangeSliders('<%== j @filter_settings.to_json %>');
+  });
+</script>
+
+<div class="row row-eq-height">
+
+  <!-- Left column (filters) -->
+  <div class="col-md-3">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h5><%= t('cloud_service.filter') %></h5>
+      </div>
+      <div class="ibox-content">
+
+        <%= form_for(:cloud_service, url: filter_cloud_services_path, method: :get, remote: true, html: { id: 'filter-cloud-services', class: 'form-cloud-services' }) do |f| %>
+          <div class="form-group">
+            <%= f.label :cloud_service_type_id, t('cloud_service_administration.cloud_service_model') %>
+            <%= f.select :cloud_service_type_id, options_from_collection_for_select(@cloud_service_types, 'id', 'name'),
+                         { include_blank: t('choose') }, { class: 'form-control select-cloud-service-type' } %>
+          </div>
+
+          <div class="general-fields">
+            <div class="form-group">
+              <%= f.label :price, t('cloud_service.price') %>
+              <%= f.text_field :price, id: 'range-slider-price' %>
+            </div>
+          </div>
+
+          <div class="iaas-fields">
+            <%= f.fields_for(:iaas_attributes) do |ff| %>
+              <%= render 'cloud_services/partials/iaas/iaas_fields', f: ff %>
+            <% end %>
+          </div>
+
+          <div class="paas-fields">
+            <%= render 'cloud_services/partials/paas/paas_fields', f: f %>
+          </div>
+
+          <div class="saas-fields">
+            <%= render 'cloud_services/partials/saas/saas_fields', f: f %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
 
 
-<h1>CloudServices</h1>
+  <!-- Right column (Results) -->
+  <div class="col-md-9">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h5><%= t('cloud_service.cloud_services') %></h5>
+      </div>
 
-<p>Search is not implemented yet.</p>
+      <div class="ibox-content">
+        <div id="cs-filtered-container">
+
+          <p><%= t('cloud_service.please_choose_cs_model') %></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

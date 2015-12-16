@@ -1,0 +1,41 @@
+// TABLE
+.table {
+  thead {
+    tr {
+      th {
+        white-space: nowrap;
+      }
+
+      th.text-right {
+        padding-right: 20px;
+      }
+
+    }
+  }
+
+  tbody {
+    tr {
+      td.text-right {
+        padding-right: 20px;
+      }
+
+      td.action-icons {
+        a {
+          margin-right: 15px;
+        }
+      }
+      td.list {
+        > ul {
+          padding-left: 20px
+        }
+      }
+    }
+  }
+
+}
+
+
+// FOOTABLES
+.table.footable {
+  margin-bottom: 0;
+}

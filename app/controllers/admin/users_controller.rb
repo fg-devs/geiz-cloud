@@ -7,7 +7,7 @@ class Admin::UsersController < ApplicationController
   # GET admin/users
   def index
     users = UserService::GetAll.build.call
-    @users = users.page(params[:page]).per(10)
+    @users = users.page(params[:page]).per(20)
   end
 
 

@@ -1,7 +1,5 @@
 class CloudService < ActiveRecord::Base
 
-
-
   # Relationships
   belongs_to :cloud_service_type
   belongs_to :user
@@ -37,5 +35,93 @@ class CloudService < ActiveRecord::Base
   def should_validate_saas?
     cloud_service_type_id == CloudServiceType::SAAS_ID
   end
+
+
+  #######################
+  # Scopes for filtering
+  #######################
+
+  # Only active
+  scope :is_active, -> { where(active: true) }
+
+  # By Cloud Service Type
+  scope :by_cs_type, ->(cs_type_id) {
+    if cs_type_id.blank?
+      all
+    else
+      where(cloud_service_type_id: cs_type_id)
+    end
+  }
+
+  # By Price
+  scope :by_price, ->(price) {
+    if price.blank?
+      all
+    else
+      where(price: price[0]..price[1])
+    end
+  }
+
+  scope :by_operating_system, ->(os_id) {
+    if os_id.blank?
+      all
+    else
+      joins(:iaas_attribute).where(iaas_attributes: { operating_system_id: os_id })
+    end
+  }
+
+  # By RAM
+  scope :by_ram, ->(ram) {
+    if ram.blank?
+      all
+    else
+      joins(:iaas_attribute).where(iaas_attributes: { ram: ram[0]..ram[1] })
+    end
+  }
+
+  # By CPU
+  scope :by_cpu, ->(cpu) {
+    if cpu.blank?
+      all
+    else
+      joins(:iaas_attribute).where(iaas_attributes: { cpu: cpu[0]..cpu[1] })
+    end
+  }
+
+  # By Storage
+  scope :by_storage, ->(storage) {
+    if storage.blank?
+      all
+    else
+      joins(:iaas_attribute).where(iaas_attributes: { storage: storage[0]..storage[1] })
+    end
+  }
+
+  # By Bandwidth
+  scope :by_bandwidth, ->(bandwidth) {
+    if bandwidth.blank?
+      all
+    else
+      joins(:iaas_attribute).where(iaas_attributes: { bandwidth: bandwidth[0]..bandwidth[1] })
+    end
+  }
+
+  # By PaaS category
+  scope :by_paas_categories, ->(paas_category_ids) {
+    if paas_category_ids.blank?
+      all
+    else
+      joins(:paas_categories).where(cloud_services_paas_categories: { paas_category_id: paas_category_ids }).uniq
+    end
+  }
+
+  # In SaaS category
+  scope :by_saas_categories, ->(saas_category_ids) {
+    if saas_category_ids.blank?
+      all
+    else
+      joins(:saas_categories).where(cloud_services_saas_categories: { saas_category_id: saas_category_ids }).uniq
+    end
+  }
 
 end

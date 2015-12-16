@@ -7,26 +7,28 @@
 
     <%= render 'layouts/partials/navigation' %>
 
+    <div class="wrapper wrapper-content container">
 
-    <div class="wrapper wrapper-content">
-      <div class="container">
-
+      <div id="breadcrumbs">
         <%= render 'layouts/partials/breadcrumbs' %>
-
-        <div class="row">
-
-          <%= render 'shared/flash_messages' %>
-
-        <%= yield %>
-
-        </div>
       </div>
+
+      <div id="flash-messages">
+        <%= render 'shared/flash_messages' %>
+      </div>
+
+      <div id="main-content">
+        <%= yield %>
+      </div>
+
     </div>
 
   <%= render 'layouts/partials/footer' %>
 
   </div>
 </div>
+
+<%= render 'shared/ajax_loader' %>
 
 </body>
 

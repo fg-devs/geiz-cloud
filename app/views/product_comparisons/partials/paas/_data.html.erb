@@ -1,0 +1,22 @@
+<% @paas_categories.each do |pc| %>
+
+    <% if has_paas_category?(cs, pc) %>
+
+      <p>
+        <i class="glyphicon glyphicon-ok text-info"></i>
+      </p>
+      <hr>
+
+    <% else %>
+
+        <p>
+          <i class="glyphicon glyphicon-remove text-danger"></i>
+        </p>
+        <hr>
+
+    <% end %>
+
+<% end %>
+
+
+<p><%= number_to_currency cs.price %></p><hr>
