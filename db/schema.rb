@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151205085033) do
+ActiveRecord::Schema.define(version: 20151216201122) do
 
   create_table "cloud_service_types", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(version: 20151205085033) do
   create_table "cloud_services_saas_categories", id: false, force: :cascade do |t|
     t.integer "cloud_service_id", limit: 4, null: false
     t.integer "saas_category_id", limit: 4, null: false
+  end
+
+  create_table "cs_attribute_weightings", force: :cascade do |t|
+    t.float    "ram",        limit: 24
+    t.float    "cpu",        limit: 24
+    t.float    "storage",    limit: 24
+    t.float    "bandwidth",  limit: 24
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "iaas_attributes", force: :cascade do |t|

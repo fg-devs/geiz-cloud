@@ -13,5 +13,13 @@
     </ul>
   </td>
 
-  <td class="text-right"><%= number_to_currency(cs.price) %></td>
+  <td class="text-right" data-sort-value="<%= cs.price %>">
+    <%= number_to_currency(cs.price) %>
+  </td>
+
+
+  <td class="text-right" data-sort-value="<%= CsAttributeWeighting.calc_paas_credits(cs) %>">
+    <%= number_with_delimiter CsAttributeWeighting.calc_paas_credits(cs) %>
+  </td>
+
 </tr>

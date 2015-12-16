@@ -28,6 +28,10 @@ User.create({first_name: 'Administrator', last_name: 'FH', email: 'admin@technik
 end
 
 
+# Create Cloud Service Attribute Weighting
+CsAttributeWeighting.create({ram: 0.4, cpu: 0.2, storage: 0.3, bandwidth: 0.1})
+
+
 # Create Cloud Service Types
 CloudServiceType.create({name: 'Infrastructure as a Service (IaaS)'})
 CloudServiceType.create({name: 'Platform as a Service (PaaS)'})

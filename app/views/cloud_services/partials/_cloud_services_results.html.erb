@@ -15,7 +15,7 @@
 
 
   <!-- Table with cloud services -->
-  <table id="table-cloud-services" class="table table-hover" data-expand-first="true">
+  <table id="table-cloud-services" class="table table-hover">
     <thead>
       <% if is_iaas?(@cloud_services[0]) %>
         <%= render 'cloud_services/partials/iaas/iaas_header' %>
@@ -27,17 +27,17 @@
     </thead>
 
     <tbody>
-        <% @cloud_services.each do |cs| %>
+      <% @cloud_services.each do |cs| %>
 
-            <% if is_iaas?(cs) %>
-                <%= render 'cloud_services/partials/iaas/iaas_row', cs: cs %>
-            <% elsif is_paas?(cs) %>
-                <%= render 'cloud_services/partials/paas/paas_row', cs: cs %>
-            <% elsif is_saas?(cs) %>
-                <%= render 'cloud_services/partials/saas/saas_row', cs: cs %>
-            <% end %>
+          <% if is_iaas?(cs) %>
+              <%= render 'cloud_services/partials/iaas/iaas_row', cs: cs %>
+          <% elsif is_paas?(cs) %>
+              <%= render 'cloud_services/partials/paas/paas_row', cs: cs %>
+          <% elsif is_saas?(cs) %>
+              <%= render 'cloud_services/partials/saas/saas_row', cs: cs %>
+          <% end %>
 
-        <% end %>
+      <% end %>
     </tbody>
   </table>
 
