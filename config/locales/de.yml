@@ -22,7 +22,7 @@
 de:
 
   project_name: 'GeizCloud'
-  project_name_short: 'GZ'
+  project_name_short: 'GC'
   copyright: '2015 GeizCloud'
 
   status: 'Status'
@@ -32,7 +32,7 @@ de:
   choose: 'Auswählen'
   back: 'Zurück'
   close: 'Schließen'
-  remove: 'Entfernen'
+  remove_all: 'Alle entfernen'
   loading_data: 'Lade Daten ...'
 
   navigation:
@@ -106,7 +106,6 @@ de:
 
   user_administration:
     user: 'Benutzer'
-    search_users: 'Benutzer suchen'
     registered_users: 'Registrierte Benutzer'
     user_updated: 'Der Benutzer wurde erfolgreich aktualisiert.'
     status_updated: 'Der Status des Benutzers wurde erfolgreich aktualisiert.'
@@ -122,7 +121,6 @@ de:
     create_cloud_service: 'Cloud Service anlegen'
     display_cloud_services: 'Cloud Services anzeigen'
     edit_cloud_service: 'Cloud Service ändern'
-    search_cloud_services: 'Cloud Services suchen'
     cloud_service_model: 'Cloud Service Modell'
     title: 'Titel'
     short_description: 'Kurzbeschreibung'
@@ -177,6 +175,7 @@ de:
     no_products_yet: 'Es befinden sich noch keine Cloud Service Angebote im Produktvergleich.'
     product_successfully_removed: 'Cloud Service Angebot wurde erfolgreich vom Produktvergleich entfernt.'
     product_not_removed: 'Beim entfernen des Cloud Service Angebots aus dem Produktvergleich ist ein Fehler aufgetreten.'
+    all_products_removed: 'Alle Cloud Service Angebote wurden erfolgreich aus dem Produktvergleich entfernt.'
     wrong_cs_type: 'Es befindet sich bereits ein Cloud Service Angebot im Produktvergleich mit einem anderen Cloud Service Modell. Es können nur Cloud Services vom gleichen Modell verglichen werden. Entferne alle Produkte im Produktvergleich oder wähle ein anderes Angebot aus.'
     already_in_pc: 'Cloud Service Angebot befindet sich bereits im Produktvergleich.'
     successfully_added: 'Cloud Service Angebot wurde erfolgreich zum Produktvergleich hinzugefügt.'
@@ -188,6 +187,7 @@ de:
     cpu: 'CPU (GHz)'
     storage: 'Speicherplatz (MB)'
     bandwidth: 'Bandbreite (Mbit/s)'
+    remove_product: 'Produkt entfernen'
 
   # Devise error messages
   errors:
@@ -279,6 +279,9 @@ de:
               greater_than_or_equal_to: 'Bandbreite muss größer als %{count} sein'
               not_a_number: 'Bandbreite muss ein numerischer Wert sein'
 
+  footable:
+    search: 'Suchen'
+    no_rows: 'Keine Einträge'
 
   # Locales for rails build in number helper
   number:

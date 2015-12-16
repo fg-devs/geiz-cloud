@@ -13,7 +13,11 @@ Rails.application.routes.draw do
   end
 
   # Product comparison
-  resources :product_comparisons, only: [:index, :create, :destroy]
+  resources :product_comparisons, only: [:index, :create, :destroy] do
+    collection do
+      delete 'empty'
+    end
+  end
 
 
   # Devise routes

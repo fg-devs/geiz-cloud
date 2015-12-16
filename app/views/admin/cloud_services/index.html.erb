@@ -15,10 +15,7 @@
 
     <!-- Result information -->
     <div class="row">
-      <div class="col-sm-4">
-        <input type="text" class="form-control input-sm m-b-xs" id="filter-cloud-services" placeholder="<%= t('cloud_service_administration.search_cloud_services') %>">
-      </div>
-      <div class="col-sm-8 text-right">
+      <div class="col-xs-12 text-right">
         <div class="pagination-info">
           <%= page_entries_info @cloud_services, entry_name: t('cloud_service_administration.cloud_services') %>
         </div>
@@ -28,14 +25,14 @@
 
     <% unless @cloud_services.blank? %>
     <!-- Table with Cloud Services -->
-    <table id="footable-cloud-services" class="footable table table-stripped toggle-arrow-tiny" data-filter="#filter-cloud-services">
+    <table class="footable table table-striped">
       <thead>
         <tr>
-          <th><%= t('cloud_service_administration.title') %></th>
-          <th data-hide="phone"><%= t('cloud_service_administration.cloud_service_model') %></th>
-          <th class="text-right" data-hide="phone"><%= t('cloud_service_administration.price') %></th>
-          <th class="text-center"><%= t('status') %></th>
-          <th class="text-center" data-sort-ignore="true"><%= t('actions') %></th>
+          <th data-type="html"><%= t('cloud_service_administration.title') %></th>
+          <th data-breakpoints="xs sm"><%= t('cloud_service_administration.cloud_service_model') %></th>
+          <th class="text-right" data-breakpoints="xs"><%= t('cloud_service_administration.price') %></th>
+          <th class="text-center" data-type="html" data-filterable="false"><%= t('status') %></th>
+          <th class="text-center" data-type="html" data-filterable="false" data-sortable="false"><%= t('actions') %></th>
         </tr>
       </thead>
 
@@ -45,13 +42,15 @@
             <td><%= link_to cs.title, cloud_service_path(cs) %></td>
             <td><%= cs.cloud_service_type.name %></td>
             <td class="text-right"><%= number_to_currency(cs.price) %></td>
-            <td class="text-center" data-value="<%= cs.active %>">
+
+            <td class="text-center">
               <% if cloud_service_active?(cs) %>
                   <span class="glyphicon glyphicon-ok text-info" data-toggle="tooltip" data-placement="left" title="<%= t('cloud_service_administration.cs_unlocked') %>"></span>
               <% else %>
                   <span class="glyphicon glyphicon-remove text-danger" data-toggle="tooltip" data-placement="left" title="<%= t('cloud_service_administration.cs_locked') %>"></span>
               <% end %>
             </td>
+
             <td class="text-center action-icons">
               <%= link_to edit_admin_cloud_service_path(cs) do %>
                   <i class="glyphicon glyphicon-pencil" data-toggle="tooltip" data-placement="left" title="<%= t('cloud_service_administration.edit_cloud_service') %>"></i>

@@ -4,42 +4,32 @@
   <div class="ibox-title">
     <h5><%= t('user_administration.registered_users') %></h5>
 
+    <div class="pull-right">
+      <%= page_entries_info @users, entry_name: t('user_administration.user') %>
+    </div>
   </div>
   <div class="ibox-content">
 
-    <!-- Search field -->
-    <div class="row">
-      <div class="col-sm-4">
-        <input type="text" class="form-control input-sm m-b-xs" id="filter-users" placeholder="<%= t('user_administration.search_users') %>">
-      </div>
-      <div class="col-sm-8 text-right">
-          <div class="pagination-info">
-            <%= page_entries_info @users, entry_name: t('user_administration.user') %>
-          </div>
-      </div>
-    </div>
-
-
     <!-- Table with users -->
     <% unless @users.blank? %>
-    <table id="footable-users" class="footable table table-stripped toggle-arrow-tiny" data-filter="#filter-users">
+    <table class="table table-striped footable">
       <thead>
         <tr>
-          <th><%= t('account.last_name') %></th>
-          <th data-hide="phone"><%= t('account.first_name') %></th>
-          <th data-hide="phone"><%= t('account.email') %></th>
-          <th class="text-center"><%= t('status') %></th>
-          <th class="text-center" data-sort-ignore="true"><%= t('actions') %></th>
+          <th data-breakpoints="xs sm"><%= t('account.first_name') %></th>
+          <th data-breakpoints="xs"><%= t('account.last_name') %></th>
+          <th><%= t('account.email') %></th>
+          <th class="text-center" data-type="html" data-filterable="false"><%= t('status') %></th>
+          <th class="text-center" data-type="html" data-filterable="false" data-sortable="false"><%= t('actions') %></th>
         </tr>
       </thead>
 
       <tbody>
       <% @users.each do |user| %>
         <tr>
-          <td><%= user.first_name %></td>
           <td><%= user.last_name %></td>
+          <td><%= user.first_name %></td>
           <td><%= user.email %></td>
-          <td class="text-center" data-value="<%= user.active %>">
+          <td class="text-center">
             <% if user_active?(user) %>
             <span class="glyphicon glyphicon-ok text-info" data-toggle="tooltip" data-placement="left" title="<%= t('user_administration.user_unlocked') %>"></span>
             <% else %>

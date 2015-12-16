@@ -27,9 +27,6 @@ class ProductComparisonsController < ApplicationController
     # Remove id
     success_remove, message = ProductComparisonService::Remove.build(session).call(params[:id])
 
-    # Get current cloud services
-    success_all, @cloud_services = ProductComparisonService::GetAll.build(session).call
-
     # Redirect with flash message
     if success_remove
       redirect_to(product_comparisons_url, flash: { success: message })
@@ -38,5 +35,16 @@ class ProductComparisonsController < ApplicationController
     end
   end
 
+
+  # DELETE /product_comparisons/empty
+  def empty
+    # Empty product comparison
+    ProductComparisonService::Empty.build(session).call
+
+    # Redirect
+    redirect_to(product_comparisons_url, flash: { success: I18n.t('product_comparison.all_products_removed') })
+
+
+  end
 
 end

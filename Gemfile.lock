@@ -119,6 +119,7 @@ GEM
     rails-assets-bootstrap (3.3.6)
       rails-assets-jquery (>= 1.9.1, < 3)
     rails-assets-font-awesome (4.3.0)
+    rails-assets-footable3 (3.0.1)
     rails-assets-iCheck (1.0.2)
       rails-assets-jquery (>= 1.7)
     rails-assets-ionrangeslider (2.1.2)
@@ -200,6 +201,7 @@ DEPENDENCIES
   rails-assets-animate.css!
   rails-assets-bootstrap!
   rails-assets-font-awesome (~> 4.3.0)!
+  rails-assets-footable3!
   rails-assets-iCheck!
   rails-assets-ionrangeslider!
   rails-assets-open-sans!

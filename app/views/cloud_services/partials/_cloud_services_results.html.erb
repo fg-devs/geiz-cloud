@@ -6,7 +6,7 @@
 
   <!-- Info and Sorting -->
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-xs-12 text-right">
       <div class="pagination-info">
         <%= page_entries_info @cloud_services, entry_name: t('cloud_service.cloud_services') %>
       </div>
@@ -15,7 +15,7 @@
 
 
   <!-- Table with cloud services -->
-  <table id="footable-cloud-services" class="table table-hover footable toggle-arrow-tiny">
+  <table id="table-cloud-services" class="table table-hover" data-expand-first="true">
     <thead>
       <% if is_iaas?(@cloud_services[0]) %>
         <%= render 'cloud_services/partials/iaas/iaas_header' %>

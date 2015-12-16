@@ -3,20 +3,20 @@
 ## What is it?
 Web based application to find and compare Cloud Services from different providers.
 
-### Features:
+### Features
 * Search Cloud Services (attribute based search)
 * Add Cloud Services to product comparison
-* Administration of Cloud Services (Add, Update, Activate/Deactivate)
+* Administration of Cloud Services (Add, Update, Release, Activate/Deactivate)
 * Administration of registered users (Update, Activate/Deactivate)
 * Register/Login
 * REST API for Cloud providers
 
-## Used versions
-- Ruby 2.2.0 (Tip: use [Ruby Version Manager](https://rvm.io) to manage Ruby versions)
-- Rails 4.2.5 (will be automatically installed with Bundler through Gemfile)
+## Dependencies
+- Ruby >= 2.2.0 (Tip: use [Ruby Version Manager](https://rvm.io) to manage Ruby versions)
+- MySQL >= 5.7
 
 ## Installation
-1. Pull/Clone repository
+1. Clone repository
 2. Go to project root
 2. Run `$ bundle install` to install missing dependencies
 3. Run `$ bundle exec figaro install` to create missing file for environment variables. Add the following to config/application.yml:
@@ -38,8 +38,6 @@ Web based application to find and compare Cloud Services from different provider
 ## Project Status
 ### Pending
 * GENERAL: Authorization - Check in controllers and in HTML, display links only to authorized users
-* CLOUD_SERVICES: Add Cloud Services to product comparison
-* CLOUD_SERVICES: Remove Cloud Services from product comparison
 * CLOUD_SERVICES: Release Cloud Cervices created by Cloud Service Providers (REST API)
 * REST_API: Create REST API for Cloud Service Providers
 * GENERAL: Pagination - retain page number after updating or changing status of record
@@ -69,3 +67,5 @@ Web based application to find and compare Cloud Services from different provider
 * BUG: Create cloud service layout bug
 * GENERAL: Search box increase col size
 * GENERAL: Add active_link_to in navigation to mark current visited links
+* CLOUD_SERVICES: Add Cloud Services to product comparison
+* CLOUD_SERVICES: Remove Cloud Services from product comparison

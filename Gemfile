@@ -80,4 +80,5 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-iCheck'
   gem 'rails-assets-animate.css'
   gem 'rails-assets-ionrangeslider'
+  gem 'rails-assets-footable3'
 end

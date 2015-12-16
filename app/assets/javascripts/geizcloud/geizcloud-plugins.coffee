@@ -25,8 +25,24 @@
   # Footables
   ###
   factory.initFootables = ->
-    $('#footable-users').footable()
-    $('#footable-cloud-services').footable()
+
+    # General footables
+    $('.footable').footable
+      empty: GeizCloud.Generated.locales.footableNoRows
+      filtering:
+        enabled: true
+        delay: 200
+        position: 'left'
+        placeholder: GeizCloud.Generated.locales.footableSearchPlaceholder
+      sorting:
+        enabled: true
+
+    # For cloud service filtering results
+    $('#table-cloud-services').footable
+      empty: GeizCloud.Generated.locales.footableNoRows
+      sorting:
+        enabled: true
+
     return
 
 

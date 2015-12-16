@@ -5,6 +5,7 @@
     <small><%= cs.short_description %></small>
   </td>
 
+  <td class="text-right"><%= cs.iaas_attribute.operating_system.name %></td>
   <td class="text-right"><%= number_with_delimiter cs.iaas_attribute.ram %></td>
   <td class="text-right"><%= number_with_delimiter cs.iaas_attribute.cpu %></td>
   <td class="text-right"><%= number_with_delimiter cs.iaas_attribute.storage %></td>

@@ -10,6 +10,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *
+ * From gems
  *= require bootstrap
  *= require font-awesome
  *= require open-sans
@@ -19,9 +21,10 @@
  *= require iCheck/skins/all
  *= require ionrangeslider
  *= require animate
+ *= require footable3/compiled/footable.bootstrap
 
+ * From app/vendor
  *= require inspinia/inspinia
- *= require footables/footable.core
-
+ *
  *= require main
  */
