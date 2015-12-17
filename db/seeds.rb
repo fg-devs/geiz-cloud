@@ -92,8 +92,8 @@ if Rails.env.development?
 
   # Create Cloud Services (PaaS)
   1.upto(30) do |i|
-    object = CloudService.new({title: Faker::Lorem.sentence, short_description: Faker::Lorem.sentence,
-                               long_description: Faker::Lorem.paragraph, price: Faker::Number.decimal(2),
+    object = CloudService.new({title: Faker::Company.catch_phrase, short_description: Faker::Lorem.sentence,
+                               long_description: Faker::Lorem.paragraph(25), price: Faker::Number.decimal(2),
                                provider_url: Faker::Internet.url, active: rand(0..1), user_id: 1,
                                cloud_service_type_id: 2})
 
@@ -104,8 +104,8 @@ if Rails.env.development?
 
   # Create Cloud Services (SaaS)
   1.upto(30) do |i|
-    object = CloudService.new({title: Faker::Lorem.sentence, short_description: Faker::Lorem.sentence,
-                               long_description: Faker::Lorem.paragraph, price: Faker::Number.decimal(2),
+    object = CloudService.new({title: Faker::Company.catch_phrase, short_description: Faker::Lorem.sentence,
+                               long_description: Faker::Lorem.paragraph(25), price: Faker::Number.decimal(2),
                                provider_url: Faker::Internet.url, active: rand(0..1), user_id: 1,
                                cloud_service_type_id: 3})
 
