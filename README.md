@@ -30,9 +30,9 @@ Web based application to find and compare Cloud Services from different provider
 
 ## Information, Tutorials and more
 * [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links)
-* For detailed information about used gems, please refer to Gemfile
+* For detailed information about used gems take a look at the Gemfile
 * [Rails Assets](http://rails-assets.org) (for frontend application dependencies, ex. Bootstrap)
-* [Rails Services for Business Logic](http://adamniedzielski.github.io/blog/2014/11/25/my-take-on-services-in-rails/) (Why using service layer?)
+* [Rails Services for Business Logic](http://adamniedzielski.github.io/blog/2014/11/25/my-take-on-services-in-rails/)
 * [Frontend Framework - INSPINIA (based on Bootstrap3)](http://wrapbootstrap.com/preview/WB0R5L90S)
 
 ## Project Status
@@ -40,6 +40,7 @@ Web based application to find and compare Cloud Services from different provider
 * CLOUD_SERVICES: Release Cloud Cervices created by Cloud Service Providers (REST API)
 * REST_API: Create REST API for Cloud Service Providers
 * GENERAL: Pagination - retain page number after updating or changing status of record
+* REGISTRATION: Add devise confirmable module
 
 ### In Progress
 

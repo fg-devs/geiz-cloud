@@ -22,6 +22,7 @@
  *= require ionrangeslider
  *= require animate
  *= require footable3/compiled/footable.bootstrap
+ *= require bootstrap-wysihtml5
 
  * From app/vendor
  *= require inspinia/inspinia

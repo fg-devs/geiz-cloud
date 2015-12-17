@@ -26,6 +26,8 @@
 //= require nprogress-turbolinks
 //= require iCheck
 //= require ionrangeslider
+//= require bootstrap-wysihtml5
+//= require bootstrap-wysihtml5/locales/de-DE
 
 // From app/vendor
 //= require footable/footable3

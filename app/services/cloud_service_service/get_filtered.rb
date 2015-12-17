@@ -37,7 +37,7 @@ class CloudServiceService::GetFiltered
       filtered_cs = filtered_cs.by_saas_categories cs_filter_attributes[:saas_category_ids]
     end
 
-    filtered_cs
+    filtered_cs.order(:price)
   end
 
 end

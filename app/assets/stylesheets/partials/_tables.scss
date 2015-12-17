@@ -24,6 +24,14 @@
           margin-right: 15px;
         }
       }
+
+      td.image-icon {
+        > img {
+          height: 11px;
+          margin-bottom: 2px,
+        }
+      }
+
       td.list {
         > ul {
           padding-left: 20px

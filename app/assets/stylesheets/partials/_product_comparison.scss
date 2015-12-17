@@ -20,6 +20,13 @@
 
       .product-col {
         min-width: 220px;
+
+        p.image-icon {
+          img {
+            height: 11px;
+            margin-bottom: 2px;
+          }
+        }
       }
 
       .ibox {

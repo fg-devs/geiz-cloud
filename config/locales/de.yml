@@ -185,6 +185,7 @@ de:
     already_in_pc: 'Cloud Service Angebot befindet sich bereits im Produktvergleich.'
     successfully_added: 'Cloud Service Angebot wurde erfolgreich zum Produktvergleich hinzugefügt.'
     features: 'Features'
+    cloud_credits: 'Cloud Credits'
     price_per_month: 'Preis/Monat'
     price_per_unit: 'Preis/Einheit'
     operating_system: 'Betriebssystem'

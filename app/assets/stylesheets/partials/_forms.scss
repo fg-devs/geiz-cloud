@@ -4,3 +4,11 @@
     font-weight: normal;
   }
 }
+
+
+// Textarea as WYSIQYG editor
+.form-group.wysiwyg-editor {
+  .wysihtml5-sandbox {
+    width: 100% !important;
+  }
+}
