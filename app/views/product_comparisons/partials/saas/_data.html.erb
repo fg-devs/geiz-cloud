@@ -1,5 +1,9 @@
-<% @saas_categories.each do |sc| %>
+<p class="image-icon">
+  <%= number_with_delimiter CsAttributeWeighting.calc_saas_credits(cs) %>
+  <%= image_tag 'icons/glyphicon-coins.png' %>
+</p><hr>
 
+<% @saas_categories.each do |sc| %>
     <% if has_saas_category?(cs, sc) %>
 
       <p>
@@ -15,7 +19,6 @@
         <hr>
 
     <% end %>
-
 <% end %>
 
 <p><%= number_to_currency cs.price %></p><hr>

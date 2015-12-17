@@ -16,7 +16,7 @@
 
       <div class="row">
         <!-- Left column -->
-        <div class="col-md-6">
+        <div class="col-md-7">
           <div class="form-group">
             <%= f.label :cloud_service_type_id, t('cloud_service_administration.cloud_service_model') %>
             <%= f.select :cloud_service_type_id, options_from_collection_for_select(@cloud_service_types, 'id', 'name', @cloud_service.cloud_service_type_id), {}, autofocus: true, class: 'form-control select-cloud-service-type' %>
@@ -26,7 +26,7 @@
         </div>
 
         <!-- Right column -->
-        <div class="col-md-6">
+        <div class="col-md-5">
           <div class="form-group">
 
             <div class="iaas-fields">

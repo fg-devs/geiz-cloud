@@ -1,3 +1,8 @@
+<p class="image-icon">
+  <%= number_with_delimiter CsAttributeWeighting.calc_iaas_credits(cs) %>
+  <%= image_tag 'icons/glyphicon-coins.png' %>
+</p><hr>
+
 <p><%= number_with_delimiter cs.iaas_attribute.ram %></p><hr>
 <p><%= number_with_delimiter cs.iaas_attribute.cpu %></p><hr>
 <p><%= number_with_delimiter cs.iaas_attribute.storage %></p><hr>

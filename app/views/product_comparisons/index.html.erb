@@ -35,6 +35,8 @@
 
             <div class="ibox-content">
 
+              <p><%= t('product_comparison.cloud_credits') %></p><hr>
+
               <% if is_iaas?(@cloud_services[0]) %>
                 <%= render 'product_comparisons/partials/iaas/features' %>
               <% elsif is_paas?(@cloud_services[0]) %>

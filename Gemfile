@@ -71,6 +71,9 @@ gem 'nprogress-rails'
 gem 'active_link_to'
 
 
+# Not working with Rails assets
+gem 'bootstrap-wysihtml5-rails'
+
 ## Rails-assets (frontend application dependencies; https://rails-assets.org)
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'

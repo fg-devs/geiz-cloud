@@ -1,5 +1,9 @@
-<% @paas_categories.each do |pc| %>
+<p class="image-icon">
+  <%= number_with_delimiter CsAttributeWeighting.calc_paas_credits(cs) %>
+  <%= image_tag 'icons/glyphicon-coins.png' %>
+</p><hr>
 
+<% @paas_categories.each do |pc| %>
     <% if has_paas_category?(cs, pc) %>
 
       <p>
@@ -15,8 +19,6 @@
         <hr>
 
     <% end %>
-
 <% end %>
-
 
 <p><%= number_to_currency cs.price %></p><hr>

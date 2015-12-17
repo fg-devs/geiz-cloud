@@ -19,7 +19,7 @@
             <h2><%= t('cloud_service.product_description') %></h2>
 
             <div class="text-muted">
-              <%= @cloud_service.long_description %>
+              <%= @cloud_service.long_description.html_safe %>
             </div>
           </div>
 

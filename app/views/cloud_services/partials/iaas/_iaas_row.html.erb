@@ -1,35 +1,26 @@
-<tr>
-  <td>
-    <%= link_to cs.title, cs %>
-    <br>
-    <small><%= cs.short_description %></small>
-  </td>
+<td class="text-right"><%= cs.iaas_attribute.operating_system.name %></td>
 
-  <td class="text-right"><%= cs.iaas_attribute.operating_system.name %></td>
+<td class="text-right" data-sort-value="<%= cs.iaas_attribute.ram %>">
+  <%= number_with_delimiter cs.iaas_attribute.ram %>
+</td>
 
-  <td class="text-right" data-sort-value="<%= cs.iaas_attribute.ram %>">
-    <%= number_with_delimiter cs.iaas_attribute.ram %>
-  </td>
+<td class="text-right" data-sort-value="<%= cs.iaas_attribute.cpu %>">
+  <%= number_with_delimiter cs.iaas_attribute.cpu %>
+</td>
 
-  <td class="text-right" data-sort-value="<%= cs.iaas_attribute.cpu %>">
-    <%= number_with_delimiter cs.iaas_attribute.cpu %>
-  </td>
+<td class="text-right" data-sort-value="<%= cs.iaas_attribute.storage %>">
+  <%= number_with_delimiter cs.iaas_attribute.storage %>
+</td>
 
-  <td class="text-right" data-sort-value="<%= cs.iaas_attribute.storage %>">
-    <%= number_with_delimiter cs.iaas_attribute.storage %>
-  </td>
+<td class="text-right" data-sort-value="<%= cs.iaas_attribute.bandwidth %>">
+  <%= number_with_delimiter cs.iaas_attribute.bandwidth %>
+</td>
 
-  <td class="text-right" data-sort-value="<%= cs.iaas_attribute.bandwidth %>">
-    <%= number_with_delimiter cs.iaas_attribute.bandwidth %>
-  </td>
+<td class="text-right" data-sort-value="<%= cs.price %>">
+  <%= number_to_currency(cs.price) %>
+</td>
 
-  <td class="text-right" data-sort-value="<%= cs.price %>">
-    <%= number_to_currency(cs.price) %>
-  </td>
-
-  <td class="text-right" data-sort-value="<%= CsAttributeWeighting.calc_iaas_credits(cs) %>">
-    <%= number_with_delimiter CsAttributeWeighting.calc_iaas_credits(cs) %>
-  </td>
-
-
-</tr>
+<td class="text-right image-icon" data-sort-value="<%= CsAttributeWeighting.calc_iaas_credits(cs) %>">
+  <%= number_with_delimiter CsAttributeWeighting.calc_iaas_credits(cs) %>
+  <%= image_tag 'icons/glyphicon-coins.png' %>
+</td>

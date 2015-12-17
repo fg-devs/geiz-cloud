@@ -45,6 +45,19 @@
 
     return
 
+  ###*
+  # Wysiwyq editor
+  ###
+  factory.initWysiwyg = ->
+    $('#wysiwyg').wysihtml5
+      locale: GeizCloud.Generated.locales.currentLocale + '-' + GeizCloud.Generated.locales.currentLocale.toUpperCase()
+      toolbar:
+        blockquote: false
+        html: true
+        size: 'xs'
+
+    return
+
 
   ###*
   # Tooltips

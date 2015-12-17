@@ -17,26 +17,39 @@
   <!-- Table with cloud services -->
   <table id="table-cloud-services" class="table table-hover">
     <thead>
-      <% if is_iaas?(@cloud_services[0]) %>
-        <%= render 'cloud_services/partials/iaas/iaas_header' %>
-      <% elsif is_paas?(@cloud_services[0]) %>
-        <%= render 'cloud_services/partials/paas/paas_header' %>
-      <% elsif is_saas?(@cloud_services[0]) %>
-        <%= render 'cloud_services/partials/saas/saas_header' %>
-    <% end %>
+      <tr>
+        <th data-type="html"><%= t('cloud_service.title') %></th>
+
+        <% if is_iaas?(@cloud_services[0]) %>
+          <%= render 'cloud_services/partials/iaas/iaas_header' %>
+        <% elsif is_paas?(@cloud_services[0]) %>
+          <%= render 'cloud_services/partials/paas/paas_header' %>
+        <% elsif is_saas?(@cloud_services[0]) %>
+          <%= render 'cloud_services/partials/saas/saas_header' %>
+        <% end %>
+
+        <th class="text-right" data-type="html"><%= t('cloud_service.cloud_credits') %></th>
+      </tr>
     </thead>
 
     <tbody>
       <% @cloud_services.each do |cs| %>
+      <tr>
+        <td>
+          <%= link_to cs.title, cs %>
+          <br>
+          <small><%= cs.short_description %></small>
+        </td>
 
-          <% if is_iaas?(cs) %>
-              <%= render 'cloud_services/partials/iaas/iaas_row', cs: cs %>
-          <% elsif is_paas?(cs) %>
-              <%= render 'cloud_services/partials/paas/paas_row', cs: cs %>
-          <% elsif is_saas?(cs) %>
-              <%= render 'cloud_services/partials/saas/saas_row', cs: cs %>
-          <% end %>
+        <% if is_iaas?(cs) %>
+            <%= render 'cloud_services/partials/iaas/iaas_row', cs: cs %>
+        <% elsif is_paas?(cs) %>
+            <%= render 'cloud_services/partials/paas/paas_row', cs: cs %>
+        <% elsif is_saas?(cs) %>
+            <%= render 'cloud_services/partials/saas/saas_row', cs: cs %>
+        <% end %>
 
+      </tr>
       <% end %>
     </tbody>
   </table>
