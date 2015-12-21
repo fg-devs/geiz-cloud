@@ -25,6 +25,10 @@ Web based application to find and compare Cloud Services from different provider
     - MYSQL_DEV_PASSWORD: xxx
     - MYSQL_PRD_USER: xxx
     - MYSQL_PRD_PASSWORD: xxx
+    - GMAIL_DEV_USERNAME: xxx
+    - GMAIL_DEV_PASSWORD: xxx
+    - GMAIL_PRD_USERNAME: xxx
+    - GMAIL_PRD_PASSWORD: xxx
 4. Run `$ rake db:schema:load` (database must exist)
 5. Run `$ rake db:seed`
 
@@ -39,8 +43,7 @@ Web based application to find and compare Cloud Services from different provider
 ### Pending
 * CLOUD_SERVICES: Release Cloud Cervices created by Cloud Service Providers (REST API)
 * REST_API: Create REST API for Cloud Service Providers
-* GENERAL: Pagination - retain page number after updating or changing status of record
-* REGISTRATION: Add devise confirmable module
+* ENV: Setup email in production env, adjust seeds for production env and test email in production
 
 ### In Progress
 
@@ -70,3 +73,4 @@ Web based application to find and compare Cloud Services from different provider
 * CLOUD_SERVICES: Add Cloud Services to product comparison
 * CLOUD_SERVICES: Remove Cloud Services from product comparison
 * GENERAL: Authorization - Check in controllers and in HTML, display links only to authorized users
+* REGISTRATION: Add devise confirmable module
