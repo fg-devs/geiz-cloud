@@ -7,6 +7,10 @@ de:
       confirmed_and_signed_in: "Vielen Dank für Deine Registrierung. Du bist jetzt angemeldet."
       send_instructions: "Du erhältst in wenigen Minuten eine E-Mail, mit der Du Deine Registrierung bestätigen kannst."
       send_paranoid_instructions: "Falls Deine E-Mail-Adresse in unserer Datenbank existiert erhältst Du in wenigen Minuten eine E-Mail mit der Du Deine Registrierung bestätigen kannst."
+      email:
+        welcome: 'Willkommen bei GeizCloud %{email}!'
+        confirm_below: 'Du kannst deinen Account durch klicken des untenstehenden Links aktivieren.'
+        activate_my_account: 'Meinen Account aktivieren'
     failure:
       not_found_in_database: "E-Mail-Adresse oder Passwort ungültig."
       already_authenticated: "Du bist bereits angemeldet."
@@ -49,11 +53,12 @@ de:
       send_paranoid_instructions: "Falls Deine E-Mail-Adresse in unserer Datenbank existiert erhältst Du in wenigen Minuten eine E-Mail mit der Anleitung, wie Du Deinen Account entsperren kannst."
       unlocked: "Dein Account wurde entsperrt. Du bist jetzt angemeldet."
   errors:
+    format: "%{message}"
     messages:
-      already_confirmed: "wurde bereits bestätigt"
+      already_confirmed: "E-Mail wurde bereits bestätigt"
       confirmation_period_expired: "muss innerhalb %{period} bestätigt werden, bitte fordere einen neuen Link an"
       expired: "ist abgelaufen, bitte neu anfordern"
-      not_found: "nicht gefunden"
+      not_found: "E-Mail Adresse nicht gefunden"
       not_locked: "ist nicht gesperrt"
       not_saved:
         one: "Konnte %{resource} nicht speichern: ein Fehler."

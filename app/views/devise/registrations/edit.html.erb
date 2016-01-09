@@ -13,12 +13,6 @@
 
           <%= devise_error_messages! %>
 
-          <% # TODO Remove this block, if confirmable feature will not be used
-            # otherwise follow this tutorial: https://github.com/plataformatec/devise/wiki/How-To:-Add-:confirmable-to-Users %>
-          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-          <% end %>
-
           <div class="form-group">
             <%= f.label :first_name, t('account.first_name') %>
             <%= f.text_field :first_name, class: 'form-control', placeholder: t('account.first_name'), autofocus: true %>
