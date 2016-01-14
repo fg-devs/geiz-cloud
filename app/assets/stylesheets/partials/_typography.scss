@@ -7,3 +7,13 @@
     margin-bottom: 15px;
   }
 }
+
+
+// HEADINGS
+h4.sub-header {
+  font-weight: normal;
+
+  &.border-bottom {
+    padding-bottom: 10px;
+  }
+}

@@ -1,6 +1,7 @@
 class CloudServicesController < ApplicationController
 
-  before_action :authenticate_user!
+  # Authorization with CanCanCan
+  load_and_authorize_resource
 
   # GET cloud_services
   def index
@@ -26,13 +27,13 @@ class CloudServicesController < ApplicationController
 
 
   # GET cloud_services/filter
+  #
   # Responds to JS only (AJAX)
   def filter
     if filter_params[:cloud_service_type_id].empty?
-      @cloud_services = nil
+      @cloud_services = :select_type
     else
-      cloud_services = CloudServiceService::GetFiltered.build.call(filter_params)
-      @cloud_services = cloud_services.page(params[:page]).per(20)
+      @cloud_services = CloudServiceService::GetFiltered.build.call(filter_params)
     end
   end
 

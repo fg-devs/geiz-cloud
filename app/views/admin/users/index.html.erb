@@ -1,18 +1,14 @@
-<% breadcrumb :user_administration %>
+<% breadcrumb :registered_user_administration %>
 
 <div class="ibox afloat-e-margins">
   <div class="ibox-title">
     <h5><%= t('user_administration.registered_users') %></h5>
-
-    <div class="pull-right">
-      <%= page_entries_info @users, entry_name: t('user_administration.user') %>
-    </div>
   </div>
   <div class="ibox-content">
 
     <!-- Table with users -->
     <% unless @users.blank? %>
-    <table class="table table-striped footable">
+    <table class="table table-striped general-footable">
       <thead>
         <tr>
           <th data-breakpoints="xs sm"><%= t('account.first_name') %></th>
@@ -41,8 +37,8 @@
                 <i class="glyphicon glyphicon-pencil" data-toggle="tooltip" data-placement="left" title="<%= t('user_administration.edit_user') %>"></i>
             <% end %>
 
-            <% unless user.admin || user == current_user %>
-              <%= link_to admin_user_path(user), data: { confirm: t('user_administration.sure_to_change_status') }, method: :delete do %>
+            <% unless user.has_role? :admin || user == current_user %>
+              <%= link_to toggle_status_admin_user_path(user, redirect_location: :index), data: { confirm: t('user_administration.sure_to_change_status') }, method: :post do %>
                 <% if user_active?(user) %>
                   <i class="fa fa-lock" data-toggle="tooltip" data-placement="right" title="<%= t('user_administration.lock_user') %>"></i>
                 <% else %>
@@ -55,15 +51,6 @@
       <% end %>
 
     </table>
-
-    <div class="row">
-      <div class="col-xs-12 text-right">
-        <%= paginate @users %>
-
-      </div>
-    </div>
-
-
   <% end %>
 
   </div>

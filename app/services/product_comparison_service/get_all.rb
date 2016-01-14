@@ -13,20 +13,18 @@ class ProductComparisonService::GetAll
 
   # Adds a Cloud Service to product comparison
   def call
-    session_hash = nil
-    session_hash = @session[:product_comparison].symbolize_keys unless @session[:product_comparison].nil?
+    product_comparison = ProductComparison.new(@session[:product_comparison])
+    pp product_comparison
 
     # Return empty array if session variable does not exist
-    if session_hash.blank?
+    if product_comparison.cloud_service_type_id.blank?
       [false, []]
     else
       cloud_services = Array.new
 
-      session_hash[:cloud_service_ids].each do |id|
+      product_comparison.cloud_service_ids.each do |id|
         cloud_services.push @cloud_service_service.call id
       end
-
-      @session[:product_comparison] = session_hash
 
       [true, cloud_services]
     end

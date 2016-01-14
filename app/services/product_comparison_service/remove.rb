@@ -13,18 +13,18 @@ class ProductComparisonService::Remove
   # Removes a Cloud Service from product comparison
   # @param [int] id
   def call(id)
-    session_hash = @session[:product_comparison].symbolize_keys
+    product_comparison = ProductComparison.new(@session[:product_comparison])
 
     begin
-      session_hash[:cloud_service_ids].delete(id.to_i)
+      product_comparison.cloud_service_ids.delete(id.to_i)
     rescue
         [false, I18n.t('product_comparison.product_not_removed')]
     else
       # Clear session variable if no product inside
-      session_hash = nil if session_hash[:cloud_service_ids].blank?
+      product_comparison = nil if product_comparison.cloud_service_ids.blank?
 
-      # Assign session variable
-      @session[:product_comparison] = session_hash
+      # Assign updated product comparison
+      @session[:product_comparison] = product_comparison
 
       [true, I18n.t('product_comparison.product_successfully_removed')]
     end

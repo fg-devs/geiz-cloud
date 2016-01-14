@@ -1,16 +1,15 @@
-# Create Admin User
-User.create({first_name: 'Administrator', last_name: 'FH', email: 'admin@technikum-wien.at', password: '12345678',
-             password_confirmation: '12345678', admin: true})
-
-# Create sample users
-1.upto(50) do |i|
-  first_name = Faker::Name.first_name
-  last_name = Faker::Name.last_name
-
-  User.create({first_name: first_name, last_name: last_name,
-               email: first_name + '.' + last_name + (i * 53).to_s + '@technikum-wien.at', password: '12345678',
-               password_confirmation: '12345678', admin: false})
+# Create roles
+[:admin, :user, :api].each do |role|
+  Role.create({name: role})
 end
+
+
+# Create Admin User
+admin_user = User.new({first_name: 'Administrator', last_name: 'FH', email: 'admin@technikum-wien.at', password: '12345678',
+                       password_confirmation: '12345678'})
+admin_user.add_role :admin
+admin_user.skip_confirmation!
+admin_user.save
 
 
 # Create Cloud Service Attribute Weighting

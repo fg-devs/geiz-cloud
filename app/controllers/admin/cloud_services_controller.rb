@@ -1,13 +1,16 @@
-class Admin::CloudServicesController < ApplicationController
+class Admin::CloudServicesController < Admin::BaseController
 
-  before_action :authenticate_user!
-  before_action :verify_is_admin
-
+  # Authorization with CanCanCan
+  load_and_authorize_resource
 
   # GET admin/cloud_services
   def index
-    cloud_services = CloudServiceService::GetAll.build.call
-    @cloud_services = cloud_services.page(params[:page]).per(20)
+    @cloud_services = CloudServiceService::GetAll.build.call
+  end
+
+  # GET admin/cloud_services/release
+  def index_release
+    @cloud_services = CloudServiceService::GetAll.build.call([:api], false)
   end
 
   # GET admin/cloud_services/new
@@ -62,12 +65,17 @@ class Admin::CloudServicesController < ApplicationController
   end
 
 
-  # DELETE admin/cloud_services/:id
-  def activate_or_deactivate
+  # POST admin/cloud_services/:id/toggle_status
+  def toggle_status
+    redirect_location = params[:redirect_location].to_sym
     success, @cloud_service = CloudServiceService::ChangeStatus.build.call(params[:id])
 
     if success
-      redirect_to(admin_cloud_services_path, flash: { success: I18n.t('cloud_service_administration.status_updated') })
+      if redirect_location == :index
+        redirect_to(admin_cloud_services_path, flash: { success: I18n.t('cloud_service_administration.status_updated') })
+      elsif redirect_location == :index_release
+        redirect_to(release_admin_cloud_services_path, flash: { success: I18n.t('cloud_service_administration.cloud_service_released') })
+      end
     else
       render 'index'
     end
