@@ -76,4 +76,21 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+
+  # ADDED BY GEIZCLOUD developers
+  config.action_mailer.default_url_options = { host: 'wi-gate.technikum-wien.at', port: 60437, protocol: 'https' }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = {
+      address:              'smtp.gmail.com',
+      port:                 587,
+      domain:               'localhost',
+      user_name:            ENV['GMAIL_PRD_USERNAME'],
+      password:             ENV['GMAIL_PRD_PASSWORD'],
+      authentication:       'plain',
+      enable_starttls_auto: true
+  }
+
 end

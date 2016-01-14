@@ -6,7 +6,7 @@
         white-space: nowrap;
       }
 
-      th.text-right {
+      th {
         padding-right: 20px;
       }
 
@@ -15,8 +15,9 @@
 
   tbody {
     tr {
-      td.text-right {
+      td {
         padding-right: 20px;
+        vertical-align: middle;
       }
 
       td.action-icons {
@@ -40,10 +41,4 @@
     }
   }
 
-}
-
-
-// FOOTABLES
-.table.footable {
-  margin-bottom: 0;
 }

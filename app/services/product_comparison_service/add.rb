@@ -16,24 +16,26 @@ class ProductComparisonService::Add
 
     # Get product comparison session or create initial value with new product
     if @session[:product_comparison].nil?
-      session_hash = {
-          cloud_service_type_id: cloud_service.cloud_service_type_id,
-          cloud_service_ids: Array.new
-      }
+      product_comparison = ProductComparison.new({cloud_service_type_id: cloud_service.cloud_service_type_id, cloud_service_ids: Array.new})
+      pp product_comparison
     else
-      session_hash = @session[:product_comparison].symbolize_keys
+      product_comparison = ProductComparison.new(@session[:product_comparison])
+      pp product_comparison
     end
 
 
-    if cloud_service.cloud_service_type_id != session_hash[:cloud_service_type_id]
+    if cloud_service.cloud_service_type_id != product_comparison.cloud_service_type_id
       [false, I18n.t('product_comparison.wrong_cs_type')]
 
-    elsif session_hash[:cloud_service_ids].include?(cloud_service.id)
+    elsif product_comparison.cloud_service_ids.include?(cloud_service.id)
       [false, I18n.t('product_comparison.already_in_pc')]
 
     else
-      session_hash[:cloud_service_ids] << cloud_service.id
-      @session[:product_comparison] = session_hash
+      product_comparison.cloud_service_ids << cloud_service.id
+      @session[:product_comparison] = product_comparison
+
+      pp product_comparison
+      pp @session[:product_comparison]
 
       [true, I18n.t('product_comparison.successfully_added')]
     end

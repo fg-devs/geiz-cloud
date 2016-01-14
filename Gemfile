@@ -23,14 +23,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -51,20 +43,31 @@ end
 group :development do
   # For better debugging (https://github.com/charliesome/better_errors)
   gem 'better_errors'
-  # Advanced Database cleaning tool (https://github.com/DatabaseCleaner/database_cleaner)
-  gem 'database_cleaner'
 end
 
+
+group :doc do
+  # Generate documentation
+  gem 'yard'
+end
+
+
+# To generate Seeds with sample data (https://github.com/stympy/faker)
+gem 'faker'
+# Advanced Database cleaning tool (https://github.com/DatabaseCleaner/database_cleaner)
+gem 'database_cleaner'
+# Advanced seeding (https://github.com/james2m/seedbank)
+gem 'seedbank'
 # For environment variables (https://github.com/laserlemon/figaro)
 gem 'figaro'
 # For user authentication (https://github.com/plataformatec/devise)
 gem 'devise'
+# For authorization (https://github.com/CanCanCommunity/cancancan)
+gem 'cancancan'
+# For role management (https://github.com/RolifyCommunity/rolify)
+gem 'rolify'
 # For breadcrumbs (https://github.com/lassebunk/gretel)
 gem 'gretel'
-# For pagination (https://github.com/amatsuda/kaminari)
-gem 'kaminari'
-# To generate Seeds with sample data (https://github.com/stympy/faker)
-gem 'faker'
 # Show AJAX loader on page loading, due to Turbolinks (https://github.com/caarlos0/nprogress-rails)
 gem 'nprogress-rails'
 # To mark active links in navigation (https://github.com/comfy/active_link_to)
@@ -84,4 +87,5 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-animate.css'
   gem 'rails-assets-ionrangeslider'
   gem 'rails-assets-footable3'
+  gem 'rails-assets-wenzhixin--bootstrap-show-password'
 end

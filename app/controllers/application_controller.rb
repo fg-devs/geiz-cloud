@@ -6,9 +6,13 @@ class ApplicationController < ActionController::Base
 
   private
 
-  # Check if logged in user is an admin, if not redirect to cloud services search page
-  def verify_is_admin
-    redirect_to cloud_services_path unless current_user.admin?
+  # Redirect if not authorized (CanCanCan)
+  rescue_from CanCan::AccessDenied do |exception|
+    if current_user.nil?
+      redirect_to new_user_session_url, :alert => I18n.t('devise.failure.unauthenticated')
+    else
+      redirect_to cloud_services_url, :alert => exception.message
+    end
   end
 
   # Overwriting the sign_in redirect path method from devise gem

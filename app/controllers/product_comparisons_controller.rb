@@ -1,9 +1,11 @@
 class ProductComparisonsController < ApplicationController
 
-  before_action :authenticate_user!
-
   # GET /product_comparisons
   def index
+
+    # Handle authorization manually since ProductComparison Model uses no DB-Table
+    authorize! :index, ProductComparison
+
     success, @cloud_services = ProductComparisonService::GetAll.build(session).call
 
     @paas_categories = PaasCategoryService::GetAll.build.call
@@ -12,6 +14,9 @@ class ProductComparisonsController < ApplicationController
 
   # POST /product_comparison
   def create
+
+    # Handle authorization manually since ProductComparison Model uses no DB-Table
+    authorize! :create, ProductComparison
 
     # Get Cloud Service to add
     cloud_service = CloudServiceService::GetSingle.build.call(params[:cloud_service_id])
@@ -24,6 +29,10 @@ class ProductComparisonsController < ApplicationController
 
   # DELETE /product_comparison/:id
   def destroy
+
+    # Handle authorization manually since ProductComparison Model uses no DB-Table
+    authorize! :destroy, ProductComparison
+
     # Remove id
     success_remove, message = ProductComparisonService::Remove.build(session).call(params[:id])
 
@@ -38,13 +47,15 @@ class ProductComparisonsController < ApplicationController
 
   # DELETE /product_comparisons/empty
   def empty
+
+    # Handle authorization manually since ProductComparison Model uses no DB-Table
+    authorize! :empty, ProductComparison
+
     # Empty product comparison
     ProductComparisonService::Empty.build(session).call
 
     # Redirect
     redirect_to(product_comparisons_url, flash: { success: I18n.t('product_comparison.all_products_removed') })
-
-
   end
 
 end

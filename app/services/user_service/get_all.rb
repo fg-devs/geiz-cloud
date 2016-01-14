@@ -5,8 +5,14 @@ class UserService::GetAll
   end
 
   # Get all registered users
-  def call
-    User.all
+  # @param [Array] roles
+  def call(roles = nil)
+    users = User.all
+
+    # Filter by role (optionally)
+    users = users.by_role(roles)
+
+    users
   end
 
 end

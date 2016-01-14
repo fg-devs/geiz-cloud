@@ -27,21 +27,35 @@
   factory.initFootables = ->
 
     # General footables
-    $('.footable').footable
+    $('.general-footable').footable
       empty: GeizCloud.Generated.locales.footableNoRows
       filtering:
         enabled: true
         delay: 200
-        position: 'left'
+        position: 'right'
         placeholder: GeizCloud.Generated.locales.footableSearchPlaceholder
+      sorting:
+        enabled: true
+      paging:
+        enabled: true
+        size: 20
+        countFormat: GeizCloud.Generated.locales.footablePagingCountFormat
+
+    # General API footables
+    $('.footable-api-users').footable
+      empty: GeizCloud.Generated.locales.footableNoRows
       sorting:
         enabled: true
 
     # For cloud service filtering results
-    $('#table-cloud-services').footable
+    $('.filter-cs-footable').footable
       empty: GeizCloud.Generated.locales.footableNoRows
       sorting:
         enabled: true
+      paging:
+        enabled: true
+        size: 15
+        countFormat: GeizCloud.Generated.locales.footablePagingCountFormat
 
     return
 
@@ -56,6 +70,13 @@
         html: true
         size: 'xs'
 
+    return
+
+  ###
+  # Bottstrap-show-password
+  ###
+  factory.togglePassword = ->
+    $('.toggle-password').password()
     return
 
 

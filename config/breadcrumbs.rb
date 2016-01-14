@@ -20,7 +20,7 @@ crumb :product_comparison do
   parent :root
 end
 
-# Administration
+# Administration (Admin)
 crumb :administration do
   link I18n.t('breadcrumbs.administration')
   parent :root
@@ -32,28 +32,46 @@ crumb :cloud_service_administration do
   parent :administration
 end
 
-# Create Cloud Service
+# Release Cloud Services (Admin)
+crumb :release_cloud_services do
+  link I18n.t('breadcrumbs.release_cloud_services'), release_admin_cloud_services_path
+  parent :administration
+end
+
+# Create Cloud Service (Admin)
 crumb :create_cloud_service do
   link I18n.t('breadcrumbs.create_cloud_service'), new_admin_cloud_service_path
   parent :cloud_service_administration
 end
 
-# Edit Cloud Service
+# Edit Cloud Service (Admin)
 crumb :edit_cloud_service do
   link I18n.t('breadcrumbs.edit_cloud_service'), edit_admin_cloud_service_path
   parent :cloud_service_administration
 end
 
-# Display all users
+# User administration (Admin)
 crumb :user_administration do
-  link I18n.t('breadcrumbs.user_administration'), admin_users_path
+  link I18n.t('breadcrumbs.user_administration')
   parent :administration
 end
 
-# Administrate specific user
+# Administrate registered users (Admin)
+crumb :registered_user_administration do
+  link I18n.t('breadcrumbs.registered_user_administration'), admin_users_path
+  parent :user_administration
+end
+
+# Administrate API users (Admin)
+crumb :api_user_administration do
+  link I18n.t('breadcrumbs.api_user_administration'), api_admin_users_path
+  parent :user_administration
+end
+
+# Administrate specific user (Admin)
 crumb :administrate_user do
   link I18n.t('breadcrumbs.edit_user')
-  parent :user_administration
+  parent :registered_user_administration
 end
 
 # Edit profile
@@ -61,31 +79,3 @@ crumb :edit_profile do
   link I18n.t('breadcrumbs.edit_profile')
   parent :root
 end
-
-
-
-
-# crumb :projects do
-#   link "Projects", projects_path
-# end
-
-# crumb :project do |project|
-#   link project.name, project_path(project)
-#   parent :projects
-# end
-
-# crumb :project_issues do |project|
-#   link "Issues", project_issues_path(project)
-#   parent :project, project
-# end
-
-# crumb :issue do |issue|
-#   link issue.title, issue_path(issue)
-#   parent :project_issues, issue.project
-# end
-
-# If you want to split your breadcrumbs configuration over multiple files, you
-# can create a folder named `config/breadcrumbs` and put your configuration
-# files there. All *.rb files (e.g. `frontend.rb` or `products.rb`) in that
-# folder are loaded and reloaded automatically when you change them, just like
-# this file (`config/breadcrumbs.rb`).

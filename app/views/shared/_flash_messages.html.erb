@@ -3,15 +3,18 @@
 
     <% flash.each do |type, message| %>
 
-        <div class="alert alert-<%= get_bootstrap_alert_class(type) %>" role="alert">
-          <a href="#" data-dismiss="alert" class="close">×</a>
+      <% unless message.blank? %>
+      <div class="alert alert-<%= get_bootstrap_alert_class(type) %>" role="alert">
+        <a href="#" data-dismiss="alert" class="close">×</a>
 
-          <ul>
-            <li>
-              <%= message %>
-            </li>
-          </ul>
-        </div>
+        <ul>
+          <li>
+            <%= message %>
+          </li>
+        </ul>
+      </div>
+      <% end %>
+
     <% end %>
 
   </div>

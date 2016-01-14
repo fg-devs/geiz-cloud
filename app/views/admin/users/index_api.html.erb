@@ -1,0 +1,95 @@
+<% breadcrumb :api_user_administration %>
+
+<div class="ibox afloat-e-margins">
+  <div class="ibox-title">
+    <h5><%= t('user_administration.administrate_api_users') %></h5>
+  </div>
+  <div class="ibox-content">
+
+    <div class="row">
+
+      <div class="col-md-4 create-api-user-block">
+        <h4 class="sub-header border-bottom"><%= t('user_administration.create_api_user') %></h4>
+
+        <%= form_for(@user, url: api_admin_users_path) do |f| %>
+
+            <%= render 'shared/form_messages', object: f.object %>
+
+            <div class="form-group">
+              <%= f.label :company, t('account.company') %>
+              <%= f.text_field :company, class: 'form-control', placeholder: t('account.company'), autofocus: true %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :email, t('account.email') %>
+              <%= f.email_field :email, class: 'form-control', placeholder: t('account.email') %>
+            </div>
+
+            <p>
+              <i class="glyphicon glyphicon-info-sign"></i>
+              <%= t('user_administration.api_key_will_be_generated') %>
+            </p>
+
+            <!-- Buttons -->
+            <div class="row">
+              <div class="col-xs-12">
+                <%= f.button t('buttons.save'), class: 'btn btn-primary' %>
+                <%= link_to(t('buttons.cancel'), admin_users_path, class: 'btn btn-white') %>
+              </div>
+            </div>
+        <% end %>
+      </div>
+
+      <div class="col-md-8">
+        <h4 class="sub-header border-bottom"><%= t('user_administration.created_api_users') %></h4>
+
+        <% unless @api_users.blank? %>
+          <table class="table table-striped footable-api-users">
+            <thead>
+            <tr>
+              <th data-breakpoints="xs sm"><%= t('account.company') %></th>
+              <th data-breakpoints="xs"><%= t('account.email') %></th>
+              <th data-type="html" data-sortable="false"><%= t('account.api_key') %></th>
+              <th class="text-center" data-type="html"><%= t('status') %></th>
+              <th class="text-center" data-type="html" data-sortable="false"><%= t('actions') %></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <% @api_users.each do |user| %>
+              <tr>
+                <td><%= user.company %></td>
+                <td><%= user.email %></td>
+                <td>
+                  <div class="input-append input-group">
+                    <input type="password" class="form-control toggle-password" value="<%= user.authentication_token %>" readonly>
+                  </div>
+                <td class="text-center">
+                  <% if user_active?(user) %>
+                      <span class="glyphicon glyphicon-ok text-info" data-toggle="tooltip" data-placement="left" title="<%= t('user_administration.user_unlocked') %>"></span>
+                  <% else %>
+                      <span class="glyphicon glyphicon-remove text-danger" data-toggle="tooltip" data-placement="left" title="<%= t('user_administration.user_locked') %>"></span>
+                  <% end %>
+                </td>
+                <td class="text-center action-icons">
+                  <% unless user.has_role? :admin || user == current_user %>
+                      <%= link_to toggle_status_admin_user_path(user, redirect_location: :index_api), data: { confirm: t('user_administration.sure_to_change_status') }, method: :post do %>
+                          <% if user_active?(user) %>
+                              <i class="fa fa-lock" data-toggle="tooltip" data-placement="right" title="<%= t('user_administration.lock_user') %>"></i>
+                          <% else %>
+                              <i class="fa fa-unlock" data-toggle="tooltip" data-placement="right" title="<%= t('user_administration.unlock_user') %>"></i>
+                          <% end %>
+                      <% end %>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        <% end %>
+
+      </div>
+    </div>
+
+  </div>
+</div>

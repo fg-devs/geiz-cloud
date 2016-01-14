@@ -13,6 +13,10 @@
 /tmp
 .byebug_history
 
+# Ignore yardocs
+/.yardoc
+/doc
+
 # Ignore .idea folder
 .idea/*
 

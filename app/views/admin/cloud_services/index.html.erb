@@ -13,19 +13,9 @@
   </div>
   <div class="ibox-content">
 
-    <!-- Result information -->
-    <div class="row">
-      <div class="col-xs-12 text-right">
-        <div class="pagination-info">
-          <%= page_entries_info @cloud_services, entry_name: t('cloud_service_administration.cloud_services') %>
-        </div>
-      </div>
-    </div>
-
-
     <% unless @cloud_services.blank? %>
     <!-- Table with Cloud Services -->
-    <table class="footable table table-striped">
+    <table class="table table-striped general-footable">
       <thead>
         <tr>
           <th data-type="html"><%= t('cloud_service_administration.title') %></th>
@@ -60,7 +50,7 @@
                   <i class="glyphicon glyphicon-pencil" data-toggle="tooltip" data-placement="left" title="<%= t('cloud_service_administration.edit_cloud_service') %>"></i>
               <% end %>
 
-              <%= link_to admin_cloud_service_path(cs), data: { confirm: t('cloud_service_administration.sure_to_change_status') }, method: :delete do %>
+              <%= link_to toggle_status_admin_cloud_service_path(cs, redirect_location: :index), data: { confirm: t('cloud_service_administration.sure_to_change_status') }, method: :post do %>
                   <% if cloud_service_active?(cs) %>
                       <i class="fa fa-lock" data-toggle="tooltip" data-placement="right" title="<%= t('cloud_service_administration.lock_cs') %>"></i>
                   <% else %>
@@ -74,13 +64,6 @@
       </tbody>
     </table>
     <% end %>
-
-
-    <div class="row">
-      <div class="col-xs-12 text-right">
-        <%= paginate @cloud_services %>
-      </div>
-    </div>
 
   </div>
 </div>

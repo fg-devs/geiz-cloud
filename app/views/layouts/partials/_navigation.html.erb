@@ -18,19 +18,29 @@
 
         <%= active_link_to(t('navigation.product_comparison'), product_comparisons_path, wrap_tag: :li) %>
 
-        <% if current_user.admin? %>
-        <li class="dropdown <%= 'active' if is_active_link?(admin_cloud_services_path, :inclusive) %>">
+        <% if current_user.has_role? :admin %>
+        <li class="dropdown <%= 'active' if is_active_link?(admin_cloud_services_path) %>">
           <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown">
             <%= t('navigation.cloud_services') %>
             <span class="caret"></span>
           </a>
           <ul role="menu" class="dropdown-menu">
             <%= active_link_to(t('navigation.display_cloud_services'), admin_cloud_services_path, active: [['admin/cloud_services'], ['index', 'edit']], wrap_tag: :li) %>
+            <%= active_link_to(t('navigation.release_cloud_services'), release_admin_cloud_services_path, wrap_tag: :li) %>
             <%= active_link_to(t('navigation.create_cloud_services'), new_admin_cloud_service_path, active: :inclusive, wrap_tag: :li) %>
           </ul>
         </li>
 
-          <%= active_link_to(t('navigation.user_administration'), admin_users_path, wrap_tag: :li) %>
+        <li class="dropdown <%= 'active' if is_active_link?(admin_users_path) %>">
+          <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <%= t('navigation.user_administration') %>
+            <span class="caret"></span>
+          </a>
+          <ul role="menu" class="dropdown-menu">
+            <%= active_link_to(t('navigation.registered_users'), admin_users_path, active: [['admin/users'], ['index', 'edit']], wrap_tag: :li) %>
+            <%= active_link_to(t('navigation.api_users'), api_admin_users_path, wrap_tag: :li) %>
+          </ul>
+        </li>
         <% end %>
       </ul>
 
