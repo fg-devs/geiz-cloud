@@ -1,0 +1,60 @@
+<% breadcrumb :release_cloud_services %>
+
+<div class="ibox afloat-e-margins">
+  <div class="ibox-title">
+    <h5><%= t('cloud_service_administration.release_cloud_services') %></h5>
+  </div>
+
+  <div class="ibox-content">
+
+    <p>
+      <i class="glyphicon glyphicon-info-sign"></i>
+      <%= t('cloud_service_administration.release_api_info') %>
+    </p>
+
+    <% unless @cloud_services.blank? %>
+    <!-- Table with Cloud Services -->
+    <table class="table table-striped general-footable">
+      <thead>
+        <tr>
+          <th data-type="html"><%= t('cloud_service_administration.title') %></th>
+          <th data-breakpoints="xs sm"><%= t('cloud_service_administration.cloud_service_model') %></th>
+          <th class="text-right" data-breakpoints="xs"><%= t('cloud_service_administration.price') %></th>
+          <th class="text-center" data-type="html" data-filterable="false"><%= t('status') %></th>
+          <th class="text-center" data-type="html" data-filterable="false" data-sortable="false"><%= t('actions') %></th>
+        </tr>
+      </thead>
+
+      <tbody>
+      <% @cloud_services.each do |cs| %>
+          <tr>
+            <td><%= link_to cs.title, cloud_service_path(cs) %></td>
+
+            <td><%= cs.cloud_service_type.name %></td>
+
+            <td class="text-right" data-sort-value="<%= cs.price %>">
+              <%= number_to_currency(cs.price) %>
+            </td>
+
+            <td class="text-center">
+              <% if cloud_service_active?(cs) %>
+                  <span class="glyphicon glyphicon-ok text-info" data-toggle="tooltip" data-placement="left" title="<%= t('cloud_service_administration.cs_unlocked') %>"></span>
+              <% else %>
+                  <span class="glyphicon glyphicon-remove text-danger" data-toggle="tooltip" data-placement="left" title="<%= t('cloud_service_administration.cs_locked') %>"></span>
+              <% end %>
+            </td>
+
+            <td class="text-center action-icons">
+              <%= link_to toggle_status_admin_cloud_service_path(cs, redirect_location: :index_release), data: { confirm: t('cloud_service_administration.sure_to_release') }, method: :post do %>
+                <i class="fa fa-unlock" data-toggle="tooltip" data-placement="right" title="<%= t('cloud_service_administration.release_cs') %>"></i>
+              <% end %>
+            </td>
+          </tr>
+      <% end %>
+
+      </tbody>
+    </table>
+    <% end %>
+
+  </div>
+</div>

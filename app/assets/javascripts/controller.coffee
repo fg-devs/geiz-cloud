@@ -8,6 +8,7 @@ ready = ->
   GeizCloud.Plugins.initFootables()
   GeizCloud.Plugins.initTooltips()
   GeizCloud.Plugins.initWysiwyg()
+  GeizCloud.Plugins.togglePassword()
   GeizCloud.Plugins.ajaxLoader.init()
 
   # Product Comparison Stuff

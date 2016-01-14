@@ -40,8 +40,11 @@ de:
     product_comparison: 'Produktvergleich'
     cloud_services: 'Cloud Services'
     display_cloud_services: 'Cloud Services anzeigen'
+    release_cloud_services: 'API Cloud Services veröffentlichen'
     create_cloud_services: 'Cloud Service anlegen'
     user_administration: 'Benutzerverwaltung'
+    registered_users: 'Registrierte Benutzer'
+    api_users: 'API Benutzer'
     profile: 'Profil'
     edit_profile: 'Profil ändern'
     logout: 'Ausloggen'
@@ -53,27 +56,14 @@ de:
     administration: 'Administration'
     cloud_service_administration: 'Cloud Services verwalten'
     create_cloud_service: 'Cloud Service anlegen'
+    release_cloud_services: 'API Cloud Services veröffentlichen'
     detail_cloud_service: 'Cloud Service Detail'
     edit_cloud_service: 'Cloud Service ändern'
     user_administration: 'Benutzerverwaltung'
+    registered_user_administration: 'Registrierte Benutzer verwalten'
+    api_user_administration: 'API Benutzer verwalten'
     edit_user: 'Benutzer ändern'
     edit_profile: 'Profil ändern'
-
-  pagination:
-    truncate: '...'
-    first: 'Erste'
-    last: 'Letzte'
-    previous: 'Vorherige'
-    next: 'Nächste'
-  helpers:
-    page_entries_info:
-      one_page:
-        display_entries:
-          zero: "Keine %{entry_name} gefunden."
-          one: "Zeige <b>1</b> %{entry_name}"
-          other: "Zeige alle <b>%{count}</b> %{entry_name}"
-      more_pages:
-        display_entries: "Zeige <b>%{first}&nbsp;-&nbsp;%{last}</b> von <b>%{total}</b> Ergebnissen"
 
   buttons:
     save: 'Speichern'
@@ -102,6 +92,8 @@ de:
     first_name: 'Vorname'
     last_name: 'Nachname'
     email: 'E-Mail'
+    company: 'Unternehmen'
+    api_key: 'API Key'
     current_password: 'Aktuelles Passwort'
     new_password: 'Neues Passwort'
     password: 'Passwort'
@@ -110,6 +102,11 @@ de:
   user_administration:
     user: 'Benutzer'
     registered_users: 'Registrierte Benutzer'
+    administrate_api_users: 'API Benutzer verwalten'
+    create_api_user: 'API Bentuzer erstellen'
+    created_api_users: 'Erfasste API Benutzer'
+    api_key_will_be_generated: 'API Key wird automatisch generiert.'
+    api_user_created: 'API Benutzer wurde erfolgreich ertstellt.'
     user_updated: 'Der Benutzer wurde erfolgreich aktualisiert.'
     status_updated: 'Der Status des Benutzers wurde erfolgreich aktualisiert.'
     sure_to_change_status: 'Bist du dir sicher, dass du den Status des Benutzers ändern möchtest?'
@@ -123,6 +120,7 @@ de:
     cloud_services: 'Cloud Services'
     create_cloud_service: 'Cloud Service anlegen'
     display_cloud_services: 'Cloud Services anzeigen'
+    release_cloud_services: 'API Cloud Services veröffentlichen'
     edit_cloud_service: 'Cloud Service ändern'
     cloud_service_model: 'Cloud Service Modell'
     title: 'Titel'
@@ -146,10 +144,14 @@ de:
     unlock_cs: 'Cloud Service aktivieren'
     cs_locked: 'Cloud Service ist gesperrt'
     cs_unlocked: 'Cloud Service ist aktiviert'
+    release_cs: 'Cloud Service veröffentlichen'
     cloud_service_created: 'Cloud Services wurde erfolgreich erstellt.'
     status_updated: 'Der Status des Cloud Services wurde erfolgreich aktualisiert.'
     sure_to_change_status: 'Bist du dir sicher, dass du den Status des Cloud Services ändern möchtest?'
+    sure_to_release: 'Bist du dir sicher, dass du das Cloud Service veröffentlichen möchtest?'
     cloud_service_updated: 'Das Cloud Service wurde erfolgreich aktualisiert.'
+    cloud_service_released: 'Cloud Service wurde erfolgreich veröffentlicht.'
+    release_api_info: 'Hier werden alle Cloud Services angezeigt, welche durch die öffentliche API von dritten Cloud Service Anbietern erstellt wurden.'
 
   cloud_service:
     filter: 'Filter'
@@ -218,6 +220,11 @@ de:
       hr: 'Personalwesen (HR)'
 
 
+  # CanCanCan Gem
+  unauthorized:
+    default: 'Du hast keinen Zugriff auf diesen Inhalt!'
+
+
   # ActiveRecord errors
   activerecord:
     errors:
@@ -233,6 +240,8 @@ de:
               tw_invalid: 'E-Mail Adresse muss eine "@technikum-wien.at" Adresse sein'
               blank: 'E-Mail Adresse ist erforderlich'
               taken: 'E-Mail Adresse wird bereits verwendet'
+            company:
+              blank: 'Unternehmen ist erforderlich'
             current_password:
               blank: 'Aktuelles Passwort ist erforderlich'
               invalid: 'Aktuelles Passwort ist falsch'
@@ -281,9 +290,11 @@ de:
               greater_than_or_equal_to: 'Bandbreite muss größer als %{count} sein'
               not_a_number: 'Bandbreite muss ein numerischer Wert sein'
 
+  # JavaScript Footable plugin translations
   footable:
     search: 'Suchen'
     no_rows: 'Keine Einträge'
+    paging_count_format: '{CP} von {TP}'
 
   # Locales for rails build in number helper
   number:

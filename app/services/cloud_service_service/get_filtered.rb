@@ -7,7 +7,7 @@ class CloudServiceService::GetFiltered
   # Get all Cloud Services filtered
   def call(cs_filter_attributes)
 
-    filtered_cs = CloudService.is_active
+    filtered_cs = CloudService.by_status(true) # Only active ones
     filtered_cs = filtered_cs.by_cs_type cs_filter_attributes[:cloud_service_type_id]
     filtered_cs = filtered_cs.by_price cs_filter_attributes[:price].split(';')
 

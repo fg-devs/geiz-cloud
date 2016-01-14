@@ -38,11 +38,17 @@ class CloudService < ActiveRecord::Base
 
 
   #######################
-  # Scopes for filtering
+  # Scopes for querying
   #######################
 
-  # Only active
-  scope :is_active, -> { where(active: true) }
+  # By status
+  scope :by_status, ->(status) {
+    if status == nil
+      all
+    else
+      where(active: status)
+    end
+  }
 
   # By Cloud Service Type
   scope :by_cs_type, ->(cs_type_id) {
@@ -62,6 +68,7 @@ class CloudService < ActiveRecord::Base
     end
   }
 
+  # By Operating System
   scope :by_operating_system, ->(os_id) {
     if os_id.blank?
       all
@@ -121,6 +128,15 @@ class CloudService < ActiveRecord::Base
       all
     else
       joins(:saas_categories).where(cloud_services_saas_categories: { saas_category_id: saas_category_ids }).uniq
+    end
+  }
+
+  # By user role created
+  scope :created_by_role, ->(roles) {
+    if roles.nil?
+      all
+    else
+      includes(user: :roles).where(roles: { name: roles })
     end
   }
 

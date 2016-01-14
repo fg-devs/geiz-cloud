@@ -53,4 +53,4 @@ production:
   <<: *default
   database: geizcloud_production
   username: <%= ENV["MYSQL_PRD_USER"] %>
-  password: <%= ENV['MYSQL_PRD_PASSWORD'] %>
+  password: <%= ENV["MYSQL_PRD_PASSWORD"] %>

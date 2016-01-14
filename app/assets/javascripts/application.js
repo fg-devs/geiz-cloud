@@ -28,6 +28,7 @@
 //= require ionrangeslider
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales/de-DE
+//= require bootstrap-show-password
 
 // From app/vendor
 //= require footable/footable3
