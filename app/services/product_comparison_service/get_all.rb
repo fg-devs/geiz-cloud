@@ -14,7 +14,6 @@ class ProductComparisonService::GetAll
   # Adds a Cloud Service to product comparison
   def call
     product_comparison = ProductComparison.new(@session[:product_comparison])
-    pp product_comparison
 
     # Return empty array if session variable does not exist
     if product_comparison.cloud_service_type_id.blank?
