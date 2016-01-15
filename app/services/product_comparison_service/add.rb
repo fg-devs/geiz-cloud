@@ -17,10 +17,8 @@ class ProductComparisonService::Add
     # Get product comparison session or create initial value with new product
     if @session[:product_comparison].nil?
       product_comparison = ProductComparison.new({cloud_service_type_id: cloud_service.cloud_service_type_id, cloud_service_ids: Array.new})
-      pp product_comparison
     else
       product_comparison = ProductComparison.new(@session[:product_comparison])
-      pp product_comparison
     end
 
 
@@ -33,9 +31,6 @@ class ProductComparisonService::Add
     else
       product_comparison.cloud_service_ids << cloud_service.id
       @session[:product_comparison] = product_comparison
-
-      pp product_comparison
-      pp @session[:product_comparison]
 
       [true, I18n.t('product_comparison.successfully_added')]
     end
