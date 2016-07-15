@@ -46,4 +46,4 @@ University project: Web based application (Ruby on Rails) to find and compare Cl
 * [Frontend Framework - INSPINIA (based on Bootstrap 3)](http://wrapbootstrap.com/preview/WB0R5L90S)
 
 ## License
-[MIT]{LICENSE.md}
+[MIT](LICENSE.md)
