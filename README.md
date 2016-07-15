@@ -1,12 +1,14 @@
+# THIS PROJECT IS NOT MAINTAINED ANYMORE!!!
+
 # GeizCloud
 
 ## What is it?
-Web based application to find and compare Cloud Services from different providers.
+University project: Web based application (Ruby on Rails) to find and compare Cloud Services from different providers.
 
 ### Features
 * Register/Login
 * Search Cloud Services (attribute based search)
-* Add Cloud Services to product comparison
+* Cloud Service Comparison
 * Administration of Cloud Services (Add, Update, Release, Activate/Deactivate)
 * Administration of Users (Create, Update, Activate/Deactivate)
 * REST API for Cloud providers
@@ -41,4 +43,7 @@ Web based application to find and compare Cloud Services from different provider
 * For detailed information about used gems take a look at the Gemfile
 * [Rails Assets](http://rails-assets.org) (for frontend application dependencies, ex. Bootstrap)
 * [Rails Services for Business Logic](http://adamniedzielski.github.io/blog/2014/11/25/my-take-on-services-in-rails/)
-* [Frontend Framework - INSPINIA (based on Bootstrap3)](http://wrapbootstrap.com/preview/WB0R5L90S)
+* [Frontend Framework - INSPINIA (based on Bootstrap 3)](http://wrapbootstrap.com/preview/WB0R5L90S)
+
+## License
+[MIT](LICENSE.md)
